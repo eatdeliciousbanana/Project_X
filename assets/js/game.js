@@ -12,7 +12,7 @@ $(function () {
         index = getRandom(0, words.length);
         untyped = words[index]['rome'];
         updateField(words[index]);
-    }, 100);
+    }, 1000);
 
     // キー入力したときの処理
     document.addEventListener('keydown', function (event) {
