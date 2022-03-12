@@ -14,8 +14,15 @@ $(function () {
         updateField(words[index]);
     }, 1000);
 
+    let lightKey = '';  // 点灯中のキー
+
     // キー入力したときの処理
     document.addEventListener('keydown', function (event) {
+
+        // キー点灯
+        $('#key_' + lightKey).css('background-color', 'rgb(243, 243, 243)');
+        lightKey = event.code;
+        $('#key_' + lightKey).css('background-color', 'orange');
 
         // 入力したキーが、打ってない文字の先頭であった場合
         if (event.key === untyped.charAt(0)) {
