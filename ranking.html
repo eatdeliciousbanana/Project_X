@@ -10,12 +10,23 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/ranking.css">
+    <link rel="styhesheet" href="assets/css/common.css">
 </head>
 
 <body>
     <div>ランキング画面</div>
     <a href="./index.html">メイン</a>
     <a href="./help.html">ヘルプ</a>
+
+    <!-- Footer is added by ishiuchi in 2022/03/14 -->
+    <footer class="footer">
+        <div class="container text-center">
+        <!-- JavaScriptで自動で西暦を記述させます 
+        <br>タグを使わない方が良いらしいですが、書き方に困り使用しました。-->
+            <p class="text-muted"><span class="font">&copy; <script>document.write(new Date().getFullYear());</script>   UU Project_X</span>
+                <br>一切の商用利用を禁ずる</span></p>
+        </div>
+    </footer> 
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
