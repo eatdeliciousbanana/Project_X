@@ -1,31 +1,34 @@
-  /* Added by ishiuchi in 2022/03/14 */
-  .box-outside{
-    padding: 0.5em 1em;
-    margin: 2em 1em 10em 1em;
-    color: #5d627b;
-    background: white;
-    border-top: solid 5px #5d627b;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-  }
-  .box-outside p {
-    font-size: 250%;
-    margin: 0; 
-    padding: 0;
-  }
-  .box-outside .box-in {
-    padding: 0.5em 1em;
-    margin: 1.5em 0;
-    color: #232323;
-    background: #e4fcff;
-    border-left: solid 10px #4682b4;
-  }
-  .box-outside .box-in p {
-    font-size: 200%;
-    margin: 0; 
-    padding: 0;
-  }
+/*ボックス定義*/
+.box-outside {
+  padding: 0.5em 1em;
+  margin: 2em 1em 10em 1em;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
 
-  .color-change:hover{
-	  font-size: 20px;
-	  font-weight: bold;
-  }
+.box-outside p {
+  font-size: 250%;
+  margin: 0;
+  padding: 0;
+}
+
+.box-outside .box-in {
+  padding: 0.5em 1em;
+  margin: 1.5em 0;
+  color: #232323;
+  background: #e4fcff;
+  border-left: solid 10px #4682b4;
+}
+
+.box-outside .box-in p {
+  font-size: 200%;
+  margin: 0;
+  padding: 0;
+}
+
+.color-change:hover {
+  font-size: 20px;
+  font-weight: bold;
+}

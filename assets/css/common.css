@@ -1,29 +1,31 @@
 html {
-    position: relative;
-    min-height: 100%;
-  }
-  body {
-    margin-bottom: 60px;
-  }
+  position: relative;
+  min-height: 100%;
+}
 
-  /* Footer is added by ishiuchi in 2022/03/14 */
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 90px;
-    background-color: #a9a9a9;
-  }
-  .container {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
-  }
-  .container .text-muted {
-    margin: 20px 0;
-  }
-  /* 無理やり色を変更 */
-  .container .font{
-    font-size: 150%;
-    color:black;
-  }
+body {
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #a9a9a9;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.container .font {
+  font-size: 150%;
+  color: black;
+}
