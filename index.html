@@ -16,11 +16,109 @@
 </head>
 
 <body>
-    <div>メイン画面</div>
-    <a href="./ranking.html">ランキング</a>
-    <a href="./help.html">ヘルプ</a>
 
-    <div id="json_test">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            SimpleTyping</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <img src="assets/img/house.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ranking.html">
+                  <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                  ランキング
+                </a>
+              </li>
+              <li clzzass="nav-item">
+                <a class="nav-link" href="help.html">
+                  <img src="assets/img/question-diamond.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                  ヘルプ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- header -->
+      <div id="header">
+        <img src="assets/img/typing(3,2).jpg" class="img-fluid" width=90%>
+        <div id ="header-contents" class="container-fluid" >
+          <div class="row">
+            <div class="col text">
+              <h1 id ="game-title" class="text-white">シンプルタイピングゲーム</h1>
+              <p class="text-white opacity">今すぐ腕試し！</p>
+              <button type="submit" class="btn bg-white text-dark">Let's start!</button>
+            </div>
+          </div>
+        </div>
+        <div id="header-arrow" class="container-fluid" >
+          <p class="text-white">詳細はこちら</p>
+          <img src="assets/img/arrow_to_bottom.svg" width="30">
+        </div>
+      </div>
+
+      <!-- subheader -->
+        <div id="subheader" class="container-fluid" >
+          <h5>色々なゲームモード</h5>
+          <div id="subheader-contents"class="row" >
+            <div class="col-3">
+                <div class="gamemode">
+                  <img class="gamemode-img" src="assets/img/baby.svg">
+                  <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="gamemode">
+                  <img class="gamemode-img" src="assets/img/baby.svg">
+                  <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="gamemode">
+                  <img class="gamemode-img" src="assets/img/baby.svg">
+                  <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="gamemode">
+                  <img class="gamemode-img" src="assets/img/baby.svg">
+                  <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- feature-box -->
+      <div class= "feature-box" class="container">
+        <div class="row">
+            <div class="col-md-4">
+              <img src="assets/img/baby.svg" class="img-fluid" width="50%">
+            </div>
+            <div class="col-md-8">
+                <h1>sampletext</h1>
+                <p>samplet extsampletextsam pletextsampletextsamplete xtsampl etextsa mpletextsamplet
+                  exts amplet extsamp lete xtsam p letext sampl ete xtsamp letextsample text sam plet ext 
+                    sa mp l etext sa mp let exts amplete xtsample textsa mplet extsam ple text
+                </p>
+            </div>
+        </div>
+    </div>
+  
+
+    <!-- gamescreen -->
+    <div id="json_test" style="display:none">
         <div id="kanzi_field"></div>
         <div id="kana_field"></div>
         <div id="rome_field">
@@ -28,7 +126,8 @@
         </div>
     </div>
 
-    <div id="keyboard">
+    <!-- keyboard -->
+    <div id="keyboard" style="display:none">
         <div class="keyboard-base">
             <div class="key">~</div>
             <div class="key" id="key_Digit1">1</div>
