@@ -1,1 +1,28 @@
-
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin-bottom: 60px;
+  }
+  /*フッター部記述*/
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #a9a9a9;
+  }
+  .container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+  }
+  .container .text-muted {
+    margin: 20px 0;
+  }
+  /*無理やり色を変更（石内）*/
+  .container .font{
+    font-size: 150%;
+    color:black;
+  }
