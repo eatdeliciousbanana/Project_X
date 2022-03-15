@@ -1,4 +1,4 @@
-$(function () {
+function typingGame() {
     let words = [];    // 文字
     let index = 0;     // 文字のインデックス
     let untyped = '';  // 打ってない文字
@@ -45,7 +45,7 @@ $(function () {
             $('#typed').html(typed);
         }
     });
-});
+}
 
 
 // jsonから文字のオブジェクトを取ってくる関数

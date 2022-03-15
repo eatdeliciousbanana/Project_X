@@ -1,8 +1,12 @@
-#json_test {
+#moji_field {
     text-align: center;
     font-size: 40px;
 }
 
 #typed {
     color: red;
+}
+
+#loading_spinner {
+    font-size: medium;
 }

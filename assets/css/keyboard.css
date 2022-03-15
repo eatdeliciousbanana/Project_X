@@ -1,78 +1,138 @@
-#keyboard {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+h1 {
+    text-align: center;
+    font-size: 1.8em;
+    font-family: monospace;
+    padding: 0.7em;
 }
 
-.keyboard-base {
-    max-width: 1085px;
-    padding: 20px;
+.keyboard {
+    text-align: center;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.keyboard__row {
+    display: inline-block;
+    height: 3em;
+    margin: 0.2em;
+}
+
+.keyboard__row--h1 {
+    height: 1.7em;
+    line-height: 1.4em;
+}
+
+.keyboard__row--h3 {
+    height: 3.3em;
+}
+
+.keyboard__row>* {
+    position: relative;
+    background: rgb(243, 243, 243);
+    text-align: center;
+    float: left;
+    border-radius: 0.3em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 3.3em;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1px solid #444;
+    border-bottom-color: #555;
+}
+
+.keyboard__row--h1>div {
+    width: 3.5em;
+}
+
+.keyboard__row>div[data-pressed],
+.keyboard__row>div:active {
+    background: #2a2a2a;
+    color: #aaa;
+    position: relative;
+    top: 0.2em;
+    box-shadow: 0 0 0 0.05em black;
+}
+
+.key--w3 {
+    width: 4.6em;
+}
+
+.key--w4 {
+    width: 6em;
+}
+
+.key--w5 {
+    width: 6.5em;
+}
+
+.key--w6 {
+    width: 8.3em;
+}
+
+.key--space {
+    width: 18em;
+}
+
+.key--double>* {
+    padding-top: 0.1em;
+}
+
+.key--letter {
+    line-height: 2.8em;
+}
+
+.key--bottom-left>* {
+    position: absolute;
+    text-align: left;
+    bottom: 0.4em;
+    left: 0.4em;
+}
+
+.key--bottom-right>* {
+    position: absolute;
+    text-align: right;
+    bottom: 0.4em;
+    right: 0.4em;
+}
+
+.key--fn>* {
+    font-size: 0.6em;
+    line-height: 1em;
+    padding-top: 1.2em;
+    padding-right: 0.2em;
+    text-align: right;
+    float: right;
+}
+
+.key--word>* {
+    font-size: 0.8em;
+}
+
+.key--arrow--tall>*,
+.key--arrow>* {
+    font-size: 0.5em;
+    line-height: 3em;
+}
+
+.key--arrow {
+    height: 1.8em;
+    margin-top: 1.7em;
+    line-height: 0.5em;
+}
+
+.key--arrow--tall>* {
+    padding-top: 0.2em;
+}
+
+.keyboard>.keyboard__row {
+    text-align: center;
+}
+
+.vertical_align {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(197, 197, 197);
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(30, 30px);
-    grid-template-rows: repeat(5, 60px);
-    grid-gap: 5px;
-}
-
-
-.key {
-    background-color: rgb(243, 243, 243);
-    border: 2px solid black;
-    border-radius: 5px;
-    grid-column: span 2;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 17px;
-}
-
-.key:hover {
-    border: 1px solid #eeeeee;
-
-}
-
-.delete {
-    grid-column: span 4;
-}
-
-.tab {
-    grid-column: span 3;
-}
-
-.backslash {
-    grid-column: span 3;
-}
-
-.capslock {
-    grid-column: span 4;
-}
-
-.return {
-    grid-column: span 4;
-}
-
-.leftshift {
-    grid-column: span 5;
-}
-
-.rightshift {
-    grid-column: span 5;
-}
-
-.leftctrl {
-    grid-column: span 3;
-}
-
-.command {
-    grid-column: span 3;
-    font-size: 14px;
-}
-
-.space {
-    grid-column: span 13;
 }
