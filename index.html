@@ -20,176 +20,266 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            SimpleTyping</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  <img src="assets/img/house.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">
-                  <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                  ランキング
-                </a>
-              </li>
-              <li clzzass="nav-item">
-                <a class="nav-link" href="help.html">
-                  <img src="assets/img/question-diamond.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                  ヘルプ
-                </a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                SimpleTyping</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <img src="assets/img/house.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ranking.html">
+                            <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            ランキング
+                        </a>
+                    </li>
+                    <li clzzass="nav-item">
+                        <a class="nav-link" href="help.html">
+                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            ヘルプ
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-    
-      <!-- header -->
-      <div id="header">
+    </nav>
+
+    <!-- header -->
+    <div id="header">
         <img src="assets/img/typing(3,2).jpg" class="img-fluid" width=90%>
-        <div id ="header-contents" class="container-fluid" >
-          <div class="row">
-            <div class="col text">
-              <h1 id ="game-title" class="text-white">シンプルタイピングゲーム</h1>
-              <p class="text-white opacity">今すぐ腕試し！</p>
-              <button type="submit" class="btn bg-white text-dark">Let's start!</button>
+        <div id="header-contents" class="container-fluid">
+            <div class="row">
+                <div class="col text">
+                    <h1 id="game-title" class="text-white">シンプルタイピングゲーム</h1>
+                    <p class="text-white opacity">今すぐ腕試し！</p>
+                    <button type="submit" class="btn bg-white text-dark" id="btn_gamestart">Let's start!</button>
+                </div>
             </div>
-          </div>
         </div>
-        <div id="header-arrow" class="container-fluid" >
-          <p class="text-white">詳細はこちら</p>
-          <img src="assets/img/arrow_to_bottom.svg" width="30">
+        <div id="header-arrow" class="container-fluid">
+            <p class="text-white">詳細はこちら</p>
+            <img src="assets/img/arrow_to_bottom.svg" width="30">
         </div>
-      </div>
+    </div>
 
-      <!-- subheader -->
-        <div id="subheader" class="container-fluid" >
-          <h5>色々なゲームモード</h5>
-          <div id="subheader-contents"class="row" >
-            <div class="col-3">
-                <div class="gamemode">
-                  <img class="gamemode-img" src="assets/img/baby.svg">
-                  <p class="gamemode-text">共産党モード</p>
-                </div>
+    <!-- gamescreen -->
+    <div id="gamescreen">
+        <div id="moji_field">
+            <div id="kanzi_field"></div>
+            <div id="kana_field"></div>
+            <div id="rome_field">
+                <span id="typed"></span><span id="untyped">
+                    ロード中...
+                    <div class="spinner-border" role="status" id="loading_spinner">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </span>
             </div>
-            <div class="col-3">
-                <div class="gamemode">
-                  <img class="gamemode-img" src="assets/img/baby.svg">
-                  <p class="gamemode-text">共産党モード</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="gamemode">
-                  <img class="gamemode-img" src="assets/img/baby.svg">
-                  <p class="gamemode-text">共産党モード</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="gamemode">
-                  <img class="gamemode-img" src="assets/img/baby.svg">
-                  <p class="gamemode-text">共産党モード</p>
-                </div>
-            </div>
-          </div>
         </div>
 
-      <!-- feature-box -->
-      <div class= "feature-box" class="container">
+        <div class="keyboard">
+            <div class="keyboard__row">
+                <div class="key--double" data-key="192">
+                    <div class="vertical_align">~</div>
+                </div>
+                <div class="key--double" id="key_Digit1" data-key="49">
+                    <div class="vertical_align">1</div>
+                </div>
+                <div class="key--double" id="key_Digit2" data-key="50">
+                    <div class="vertical_align">2</div>
+                </div>
+                <div class="key--double" id="key_Digit3" data-key="51">
+                    <div class="vertical_align">3</div>
+                </div>
+                <div class="key--double" id="key_Digit4" data-key="52">
+                    <div class="vertical_align">4</div>
+                </div>
+                <div class="key--double" id="key_Digit5" data-key="53">
+                    <div class="vertical_align">5</div>
+                </div>
+                <div class="key--double" id="key_Digit6" data-key="54">
+                    <div class="vertical_align">6</div>
+                </div>
+                <div class="key--double" id="key_Digit7" data-key="55">
+                    <div class="vertical_align">7</div>
+                </div>
+                <div class="key--double" id="key_Digit8" data-key="56">
+                    <div class="vertical_align">8</div>
+                </div>
+                <div class="key--double" id="key_Digit9" data-key="57">
+                    <div class="vertical_align">9</div>
+                </div>
+                <div class="key--double" id="key_Digit0" data-key="48">
+                    <div class="vertical_align">0</div>
+                </div>
+                <div class="key--double" id="key_Minus" data-key="189">
+                    <div class="vertical_align">-</div>
+                </div>
+                <div class="key--double" id="key_Equal" data-key="187">
+                    <div class="vertical_align">=</div>
+                </div>
+                <div class="key--bottom-right key--word key--w4" id="key_Delete" data-key="8">
+                    <span>delete</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--bottom-left key--word key--w4" id="key_Tab" data-key="9">
+                    <span>tab</span>
+                </div>
+                <div class="key--letter" id="key_KeyQ" data-char="Q">Q</div>
+                <div class="key--letter" id="key_KeyW" data-char="W">W</div>
+                <div class="key--letter" id="key_KeyE" data-char="E">E</div>
+                <div class="key--letter" id="key_KeyR" data-char="R">R</div>
+                <div class="key--letter" id="key_KeyT" data-char="T">T</div>
+                <div class="key--letter" id="key_KeyY" data-char="Y">Y</div>
+                <div class="key--letter" id="key_KeyU" data-char="U">U</div>
+                <div class="key--letter" id="key_KeyI" data-char="I">I</div>
+                <div class="key--letter" id="key_KeyO" data-char="O">O</div>
+                <div class="key--letter" id="key_KeyP" data-char="P">P</div>
+                <div class="key--double" data-key="219" data-char="{[">
+                    <div class="vertical_align">[</div>
+                </div>
+                <div class="key--double" data-key="221" data-char="}]">
+                    <div class="vertical_align">]</div>
+                </div>
+                <div class="key--double" data-key="220" data-char="|\">
+                    <div class="vertical_align">\</div>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--bottom-left key--word key--w5" id="key_CapsLock" data-key="20">
+                    <span>caps lock</span>
+                </div>
+                <div class="key--letter" id="key_KeyA" data-char="A">A</div>
+                <div class="key--letter" id="key_KeyS" data-char="S">S</div>
+                <div class="key--letter" id="key_KeyD" data-char="D">D</div>
+                <div class="key--letter" id="key_KeyF" data-char="F">F</div>
+                <div class="key--letter" id="key_KeyG" data-char="G">G</div>
+                <div class="key--letter" id="key_KeyH" data-char="H">H</div>
+                <div class="key--letter" id="key_KeyJ" data-char="J">J</div>
+                <div class="key--letter" id="key_KeyK" data-char="K">K</div>
+                <div class="key--letter" id="key_KeyL" data-char="L">L</div>
+                <div class="key--double" id="key_Semicolon" data-key="186">
+                    <div class="vertical_align">;</div>
+                </div>
+                <div class="key--double" id="key_Quote" data-key="222">
+                    <div class="vertical_align">'</div>
+                </div>
+                <div class="key--bottom-right key--word key--w5" id="key_Enter" data-key="13">
+                    <span>return</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div class="key--bottom-left key--word key--w6" id="key_ShiftLeft" data-key="16">
+                    <span>shift</span>
+                </div>
+                <div class="key--letter" id="key_KeyZ" data-char="Z">Z</div>
+                <div class="key--letter" id="key_KeyX" data-char="X">X</div>
+                <div class="key--letter" id="key_KeyC" data-char="C">C</div>
+                <div class="key--letter" id="key_KeyV" data-char="V">V</div>
+                <div class="key--letter" id="key_KeyB" data-char="B">B</div>
+                <div class="key--letter" id="key_KeyN" data-char="N">N</div>
+                <div class="key--letter" id="key_KeyM" data-char="M">M</div>
+                <div class="key--double" id="key_Comma" data-key="188">
+                    <div class="vertical_align">,</div>
+                </div>
+                <div class="key--double" id="key_Period" data-key="190">
+                    <div class="vertical_align">.</div>
+                </div>
+                <div class="key--double" id="key_Slash" data-key="191">
+                    <div class="vertical_align">/</div>
+                </div>
+                <div class="key--bottom-right key--word key--w6" id="key_ShiftRight" data-key="16-R">
+                    <span>shift</span>
+                </div>
+            </div>
+            <div class="keyboard__row keyboard__row--h3">
+                <div class="key--bottom-left key--word">
+                    <span>fn</span>
+                </div>
+                <div class="key--bottom-left key--word key--w1" id="key_ControlLeft" data-key="17">
+                    <span>control</span>
+                </div>
+                <div class="key--bottom-left key--word key--w1" data-key="18">
+                    <span>option</span>
+                </div>
+                <div class="key--bottom-right key--word key--w3" data-key="91">
+                    <span>command</span>
+                </div>
+                <div class="key--double key--right key--space" id="key_Space" data-key="32" data-char=" ">
+                    &nbsp;
+                </div>
+                <div class="key--bottom-left key--word key--w3" data-key="93-R">
+                    <span>command</span>
+                </div>
+                <div class="key--bottom-left key--word key--w1" data-key="18-R">
+                    <span>option</span>
+                </div>
+                <div data-key="37" class="key--arrow">
+                    <span>&#9664;</span>
+                </div>
+                <div class="key--double key--arrow--tall" data-key="38">
+                    <div>&#9650;</div>
+                    <div>&#9660;</div>
+                </div>
+                <div data-key="39" class="key--arrow">
+                    <span>&#9654;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- subheader -->
+    <div id="subheader" class="container-fluid">
+        <h5>色々なゲームモード</h5>
+        <div id="subheader-contents" class="row">
+            <div class="col-3">
+                <div class="gamemode">
+                    <img class="gamemode-img" src="assets/img/baby.svg">
+                    <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="gamemode">
+                    <img class="gamemode-img" src="assets/img/baby.svg">
+                    <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="gamemode">
+                    <img class="gamemode-img" src="assets/img/baby.svg">
+                    <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="gamemode">
+                    <img class="gamemode-img" src="assets/img/baby.svg">
+                    <p class="gamemode-text">共産党モード</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- feature-box -->
+    <div class="feature-box" class="container">
         <div class="row">
             <div class="col-md-4">
-              <img src="assets/img/baby.svg" class="img-fluid" width="50%">
+                <img src="assets/img/baby.svg" class="img-fluid" width="50%">
             </div>
             <div class="col-md-8">
                 <h1>sampletext</h1>
                 <p>samplet extsampletextsam pletextsampletextsamplete xtsampl etextsa mpletextsamplet
-                  exts amplet extsamp lete xtsam p letext sampl ete xtsamp letextsample text sam plet ext 
+                    exts amplet extsamp lete xtsam p letext sampl ete xtsamp letextsample text sam plet ext
                     sa mp l etext sa mp let exts amplete xtsample textsa mplet extsam ple text
                 </p>
             </div>
-        </div>
-    </div>
-  
-
-    <!-- gamescreen -->
-    <div id="json_test" style="display:none">
-        <div id="kanzi_field"></div>
-        <div id="kana_field"></div>
-        <div id="rome_field">
-            <span id="typed"></span><span id="untyped">ロード中...</span>
-        </div>
-    </div>
-
-    <!-- keyboard -->
-    <div id="keyboard" style="display:none">
-        <div class="keyboard-base">
-            <div class="key">~</div>
-            <div class="key" id="key_Digit1">1</div>
-            <div class="key" id="key_Digit2">2</div>
-            <div class="key" id="key_Digit3">3</div>
-            <div class="key" id="key_Digit4">4</div>
-            <div class="key" id="key_Digit5">5</div>
-            <div class="key" id="key_Digit6">6</div>
-            <div class="key" id="key_Digit7">7</div>
-            <div class="key" id="key_Digit8">8</div>
-            <div class="key" id="key_Digit9">9</div>
-            <div class="key" id="key_Digit0">0</div>
-            <div class="key" id="key_Minus">-</div>
-            <div class="key">+</div>
-            <div class="key delete" id="key_Delete">Delete</div>
-            <div class="key tab" id="key_Tab">Tab</div>
-            <div class="key" id="key_KeyQ">Q</div>
-            <div class="key" id="key_KeyW">w</div>
-            <div class="key" id="key_KeyE">E</div>
-            <div class="key" id="key_KeyR">R</div>
-            <div class="key" id="key_KeyT">T</div>
-            <div class="key" id="key_KeyY">Y</div>
-            <div class="key" id="key_KeyU">U</div>
-            <div class="key" id="key_KeyI">I</div>
-            <div class="key" id="key_KeyO">O</div>
-            <div class="key" id="key_KeyP">P</div>
-            <div class="key">[</div>
-            <div class="key">]</div>
-            <div class="key backslash">\</div>
-            <div class="key capslock" id="key_CapsLock">CapsLock</div>
-            <div class="key" id="key_KeyA">A</div>
-            <div class="key" id="key_KeyS">S</div>
-            <div class="key" id="key_KeyD">D</div>
-            <div class="key" id="key_KeyF">F</div>
-            <div class="key" id="key_KeyG">G</div>
-            <div class="key" id="key_KeyH">H</div>
-            <div class="key" id="key_KeyJ">J</div>
-            <div class="key" id="key_KeyK">K</div>
-            <div class="key" id="key_KeyL">L</div>
-            <div class="key" id="key_Semicolon">;</div>
-            <div class="key" id="key_Quote">'</div>
-            <div class="key return" id="key_Enter">Return</div>
-            <div class="key leftshift" id="key_ShiftLeft">Shift</div>
-            <div class="key" id="key_KeyZ">Z</div>
-            <div class="key" id="key_KeyX">X</div>
-            <div class="key" id="key_KeyC">C</div>
-            <div class="key" id="key_KeyV">V</div>
-            <div class="key" id="key_KeyB">B</div>
-            <div class="key" id="key_KeyN">N</div>
-            <div class="key" id="key_KeyM">M</div>
-            <div class="key" id="key_Comma">,</div>
-            <div class="key" id="key_Period">.</div>
-            <div class="key" id="key_Slash">/</div>
-            <div class="key rightshift" id="key_ShiftRight">Shift</div>
-            <div class="key leftctrl" id="key_ControlLeft">Ctrl</div>
-            <div class="key" id="key_AltLeft">Alt</div>
-            <div class="key command">Command</div>
-            <div class="key space" id="key_Space">Space</div>
-            <div class="key command">command</div>
-            <div class="key">Alt</div>
-            <div class="key">Ctrl</div>
-            <div class="key">Fn</div>
         </div>
     </div>
 
@@ -215,6 +305,7 @@
 
     <!-- JS file -->
     <script src="assets/js/game.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
