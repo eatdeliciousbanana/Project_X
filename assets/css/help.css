@@ -37,6 +37,13 @@
   border: 1px solid #ccc; /* 枠線 */
   box-shadow: 1px 1px 2px #ccc; /* 影 */
  }
+
+ .Hochi-box p {
+  font-size: 200%;
+  margin: 0; 
+  padding: 0;
+}
+
  .Hochi-box::before, 
  .Hochi-box::after {
   position: absolute;
