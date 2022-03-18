@@ -10,3 +10,115 @@
 #loading_spinner {
     font-size: medium;
 }
+
+/* 黒板風 */
+.kokuban {
+    position: relative;
+    margin: 0.3em auto;
+    padding: 1em 1em 1em;
+    width: 90%;
+    /* ボックス幅 */
+    background-color: #202020;
+    /* ボックス背景色 */
+    color: #fff;
+    /* 文章色 */
+    border: 10px solid #8b4513;
+    /* 枠線 */
+    border-radius: 3px;
+    /* 角の丸み */
+    box-shadow: 0 0 5px #333;
+}
+
+.kokuban::before,
+.kokuban::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+}
+
+.kokuban::before {
+    right: 10px;
+    border: solid 3px red;
+    /*チョーク*/
+    width: 20px;
+    border-radius: 3px 2px 0 2px;
+}
+
+.kokuban::after {
+    right: 40px;
+    border: solid 3px #fff;
+    /*チョーク（白）*/
+    width: 15px;
+    border-radius: 8px 5px 2px 5px;
+}
+
+.c-clock {
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+
+.c-clock__hour {
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 35px;
+    background: #333;
+    transform-origin: bottom;
+}
+
+.c-clock__min {
+    position: absolute;
+    top: calc(50% - 45px);
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 45px;
+    background: #333;
+    transform-origin: bottom;
+}
+
+.c-clock__sec {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 40px;
+    background: #ff0000;
+    transform-origin: bottom;
+}
+
+.c-clock__12 {
+    position: absolute;
+    top: 1px;
+    left: calc(50%);
+    transform: translateX(-50%);
+    font-size: 18px;
+}
+
+.c-clock__3 {
+    position: absolute;
+    top: 50%;
+    right: 1px;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.c-clock__6 {
+    position: absolute;
+    bottom: 1px;
+    left: calc(50%);
+    transform: translateX(-50%);
+    font-size: 18px;
+}
+
+.c-clock__9 {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    font-size: 18px;
+}

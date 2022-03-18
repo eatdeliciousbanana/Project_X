@@ -1,56 +1,56 @@
 #header {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
 }
 
 #header-contents {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #game-title {
-    padding-top: 10%;
+  padding-top: 10%;
 }
 
 #header-arrow {
-    position: absolute;
-    bottom: 1%;
+  position: absolute;
+  bottom: 1%;
 }
 
 #subheader {
-    text-align: center;
+  text-align: center;
 }
 
 #subheader {
-    padding-top: 5%;
-    text-align: center;
+  padding-top: 5%;
+  text-align: center;
 }
 
 #subheader-contents {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 3%
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3%
 }
 
 .gamemode-img {
-    border: solid black;
-    border-width: 1px;
+  border: solid black;
+  border-width: 1px;
 }
 
 .gamemode-text {
-    border: solid black;
-    border-width: 1px;
-    border-top-width: 0px;
-    background-color: gainsboro;
+  border: solid black;
+  border-width: 1px;
+  border-top-width: 0px;
+  background-color: gainsboro;
 }
 
 .feature-box {
-    padding: 5%;
-    text-align: center;
+  padding: 5%;
+  text-align: center;
 }
 
 #gamescreen {
-    display: none;
+  display: none;
 }
