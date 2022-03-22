@@ -53,4 +53,6 @@
 
 #gamescreen {
   display: none;
+  padding: 20px;
+  background-color: rgb(240, 240, 240);
 }

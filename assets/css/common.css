@@ -29,3 +29,11 @@ body {
   font-size: 150%;
   color: black;
 }
+
+.active {
+  font-weight: bold;
+}
+
+#navbar {
+  font-size: large;
+}
