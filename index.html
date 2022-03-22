@@ -18,7 +18,7 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -53,7 +53,7 @@
 
     <!-- header -->
     <div id="header">
-        <img src="assets/img/typing(3,2).jpg" class="img-fluid" width=90%>
+        <img src="assets/img/typing(3,2).jpg" width="100%">
         <div id="header-contents" class="container-fluid">
             <div class="row">
                 <div class="col text">
@@ -71,21 +71,21 @@
 
     <!-- gamescreen -->
     <div id="gamescreen">
-        
-        
 
-        <div id="moji_field">
-            <div class="c-clock">
-                <span class="c-clock__hour"></span> <!-- 時計 -->
-                <span class="c-clock__min"></span> <!-- 分針 -->
-                <span class="c-clock__sec"></span> <!-- 秒針 -->
-                <span class="c-clock__12">12</span> <!-- 時計文字 -->
-                <span class="c-clock__3">3</span> <!-- 時計文字 -->
-                <span class="c-clock__6">6</span> <!-- 時計文字 -->
-                <span class="c-clock__9">9</span> <!-- 時計文字 -->
-            </div>
-            
-            <div class="kokuban">
+        <!-- 時計 -->
+        <div class="c-clock">
+            <span class="c-clock__hour"></span> <!-- 時計 -->
+            <span class="c-clock__min"></span> <!-- 分針 -->
+            <span class="c-clock__sec"></span> <!-- 秒針 -->
+            <span class="c-clock__12">12</span> <!-- 時計文字 -->
+            <span class="c-clock__3">3</span> <!-- 時計文字 -->
+            <span class="c-clock__6">6</span> <!-- 時計文字 -->
+            <span class="c-clock__9">9</span> <!-- 時計文字 -->
+        </div>
+
+        <!-- 黒板 -->
+        <div class="kokuban">
+            <div id="moji_field">
                 <div id="kanzi_field"></div>
                 <div id="kana_field"></div>
                 <div id="rome_field">
@@ -97,10 +97,9 @@
                     </span>
                 </div>
             </div>
-            
-            
         </div>
 
+        <!-- キーボード -->
         <div class="keyboard">
             <div class="keyboard__row">
                 <div class="key--double" data-key="192">

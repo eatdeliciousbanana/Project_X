@@ -1,6 +1,6 @@
 #moji_field {
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 #typed {
@@ -16,7 +16,7 @@
     position: relative;
     margin: 0.3em auto;
     padding: 1em 1em 1em;
-    width: 90%;
+    max-width: 770px;
     /* ボックス幅 */
     background-color: #202020;
     /* ボックス背景色 */
