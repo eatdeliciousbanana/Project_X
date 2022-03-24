@@ -127,19 +127,18 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin: 0.3em auto;
-    padding: 0px 30px;
+    margin: 0.5em auto;
+    padding: 0px 10px;
 }
 
 .cbox {
     box-shadow: 0 0 5px #333;
-
     border: solid 3px #dcdcdc;
     vertical-align: middle;
     text-align: center;
     width: 18%;
-    height: 7em;
-    line-height: 300px;
+    height: 6em;
+    line-height: 100px;
 }
 
 .boxA {
