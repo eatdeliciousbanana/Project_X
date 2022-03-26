@@ -158,4 +158,15 @@
     position: absolute;
     top: 1em;
     left: 1em;
+    animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
+@keyframes zoomIn { 
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+  }
