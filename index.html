@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3" id="navbar">
         <div class="container-fluid">
@@ -69,23 +68,8 @@
         </div>
     </div>
 
-    <div id=select>
-        <div class="kakomi-tape3"><span class="title-tape3">モード選択</span>
-            ここは、画面切り替えのために作ったので美しい選択画面に変えて欲しいです
-            <select class="form-select" size="3" aria-label="size 3 select example">
-                <option value="1">選択しなくても進めます</option>
-                <option value="2">プルダウンとかラジオボタンとか、それとも別の方法がいいのか</option>
-                <option value="3">戻るボタンも必要ね（メモ）</option>
-            </select>
-            <div class="buttons">
-                <button type="button" class="btn btn-secondary" id="begin" onclick="begin()">スタート</button>
-            </div>
-        </div>
-    </div>
-
     <!-- gamescreen -->
     <div id="gamescreen">
-
         <!-- 時計 -->
         <div class="c-clock">
             <span class="c-clock__hour"></span> <!-- 時計 -->
@@ -105,7 +89,7 @@
             <!-- 黒板 -->
             <div class="kokuban">
                 <!-- ロード画面 -->
-                <div id="gamescreen_loading">
+                <div class="switch_screen" id="gamescreen_loading">
                     ロード中...
                     <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
@@ -113,14 +97,14 @@
                 </div>
 
                 <!-- タイトル画面 -->
-                <div id="gamescreen_title">
+                <div class="switch_screen" id="gamescreen_title">
                     <div id="gamescreen_title_title">タイピングゲーム</div>
-                    <div><button type="button" class="btn btn-light">スタート</button></div>
-                    <div><button type="button" class="btn btn-light">設定</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('mode')">スタート</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('config')">設定</button></div>
                 </div>
 
                 <!-- 設定画面 -->
-                <div id="gamescreen_config">
+                <div class="switch_screen" id="gamescreen_config">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -137,25 +121,25 @@
                     <div><label><input type="range">SE音量</label></div>
                     <div><label><input type="range">タイプ音量</label></div>
                     <div><label><input type="range">ミス音量</label></div>
-                    <div><button type="button" class="btn btn-light">戻る</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('title')">戻る</button></div>
                 </div>
 
                 <!-- モード選択画面 -->
-                <div id="gamescreen_mode">
+                <div class="switch_screen" id="gamescreen_mode">
                     <div id="gamescreen_title_title">モード選択</div>
-                    <div><button type="button" class="btn btn-light">初級</button></div>
-                    <div><button type="button" class="btn btn-light">中級</button></div>
-                    <div><button type="button" class="btn btn-light">上級</button></div>
-                    <div><button type="button" class="btn btn-light">戻る</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">初級</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">中級</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">上級</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('title')">戻る</button></div>
                 </div>
 
                 <!-- スペースキーを押して開始 -->
-                <div id="gamescreen_space">
+                <div class="switch_screen" id="gamescreen_space">
                     <div>スペースキーを押して開始</div>
                 </div>
 
                 <!-- プレイ画面 -->
-                <div id="gamescreen_playing">
+                <div class="switch_screen" id="gamescreen_playing">
                     <div id="moji_field">
                         <div id="kanzi_field"></div>
                         <div id="kana_field"></div>
@@ -165,12 +149,13 @@
                     </div>
                 </div>
 
-                <!-- 結果画面 -->
-                <div id="gamescreen_result">
-                    <img id=gamescreen_result_result src="assets/img/result.jpg" width="750px">
+                <!-- リザルト画面 -->
+                <div class="switch_screen" id="gamescreen_result">
+                    <img id=gamescreen_result_result src="assets/img/result.jpg" width="670px">
                     <div>
-                        <button type="button" class="btn btn-light">もう一度</button>
-                        <button type="button" class="btn btn-light">タイトルに戻る</button>
+                        <button type="button" class="btn btn-light" onclick="switchScreen('space')">もう一度</button>
+                        <button type="button" class="btn btn-light" onclick="switchScreen('mode')">モード選択</button>
+                        <button type="button" class="btn btn-light" onclick="switchScreen('title')">タイトルに戻る</button>
                     </div>
                 </div>
             </div>
@@ -335,9 +320,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <!-- subheader -->
     <div id="subheader" class="container-fluid">

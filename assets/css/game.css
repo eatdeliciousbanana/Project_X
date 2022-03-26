@@ -14,6 +14,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 #gamescreen_config {
@@ -32,6 +33,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 #gamescreen_space {
@@ -50,20 +52,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 #gamescreen_result {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-
-#moji_field {
     text-align: center;
-    font-size: 35px;
 }
 
 #typed {
@@ -203,10 +201,13 @@
 
 .boxA {
     background-color: rgb(187, 179, 140);
-    font-size: 35px;
+    height: 330px;
+    line-height: 330px;
+    font-size: xx-large;
 }
 
 .boxB {
     background-color: rgb(187, 179, 140);
-    font-size: 35px;
+    height: 330px;
+    font-size: xx-large;
 }
