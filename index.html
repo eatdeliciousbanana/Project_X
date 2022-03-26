@@ -69,6 +69,20 @@
         </div>
     </div>
 
+    <div id=select>
+        <div class="kakomi-tape3"><span class="title-tape3">モード選択</span>
+            ここは、画面切り替えのために作ったので美しい選択画面に変えて欲しいです
+            <select class="form-select" size="3" aria-label="size 3 select example">
+                <option value="1">選択しなくても進めます</option>
+                <option value="2">プルダウンとかラジオボタンとか</option>
+                <option value="3">それとも別の方法がいいのか</option>
+            </select>
+            <div class="buttons">
+                <button id="begin" onclick="begin()">スタート</button>
+            </div>
+        </div>
+    </div>
+
     <!-- gamescreen -->
     <div id="gamescreen">
 
@@ -84,7 +98,9 @@
         </div>
 
         <div class="pbox">
-            <div id = "boxA" class="cbox boxA"></div>
+            <div id="boxA" class="cbox boxA">
+                <p id="score"></p>
+            </div>
 
             <!-- 黒板 -->
             <div class="kokuban">
@@ -102,7 +118,12 @@
                 </div>
             </div>
 
-            <div id = "boxB" class="cbox boxB"></div>
+            <div id="boxB" class="cbox boxB">
+                <p id=time></p>
+                <div>
+                    <progress id="myProgress" value="0" max="20" style="width: 90% ;">0%</progress>
+                </div>
+            </div>
         </div>
 
         <!-- キーボード -->
