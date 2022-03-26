@@ -24,6 +24,7 @@ function typingGame() {
         $('#time').html('残り'  + count-- + '秒');
         if(count === -1){
       clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
+        $('#result-img').show(); //結果を表示する
        }
     } 
     countDown();
