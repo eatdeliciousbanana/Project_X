@@ -25,6 +25,7 @@ function typingGame() {
         if(count === -1){
       clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
         $('#result-img').show(); //結果を表示する
+        $('#play-btn').show();
        }
     } 
     countDown();
