@@ -18,10 +18,10 @@ function typingGame() {
     let lightKey = '';  // 点灯中のキー
 
     // カウントダウン処理
-    let count = 10;
+    let count = 20;
     countDown = () => {
         const timeoutId = setTimeout(countDown, 1000);
-        $('#boxB').html('残り'  + count-- + '秒');
+        $('#time').html('残り'  + count-- + '秒');
         if(count === -1){
       clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
        }
@@ -60,6 +60,33 @@ function typingGame() {
     });
     
     }
+
+    var val;
+  // 一定間隔で処理を行うintervalのIDを保持
+  var intervalID;
+
+  // ボタンを押した時に動く関数
+  function begin() {
+    val = 0;
+    // ボタンを無効にする(何回も押せないように)
+    document.getElementById("begin").disabled = true;
+    // 1000msおきにプログレスバーを更新する
+    intervalID = setInterval("updateProgress()", 1000);
+  }
+
+  // プログレスバーを更新する
+  function updateProgress() {
+    // プログレスバーの進捗値を更新し、プログレスバーに反映させる
+    val += 1;
+    document.getElementById("myProgress").value = val;
+    document.getElementById("myProgress").innerText = val + "%";
+
+    // 最大値まで達したら終了
+    if (val == 20) {
+      clearInterval(intervalID);
+      document.getElementById("begin").disabled = false;
+    }
+  }
     
 
     // 時計
@@ -117,7 +144,7 @@ function updateField(word, s) {
     $('#kana_field').html('（' + word['kana'] + '）');
     $('#untyped').html(word['rome']);
     $('#typed').html('');
-    $('#boxA').html('現在' + s + '点');
+    $('#score').html('現在' + s + '点');
 }
 
 
