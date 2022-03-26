@@ -150,3 +150,12 @@
     background-color: rgb(187, 179, 140);
     font-size: 35px;
 }
+
+#result-img{
+    display: none;
+    z-index: 10000;
+    width: 95%;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
