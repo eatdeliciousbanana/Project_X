@@ -100,22 +100,78 @@
         <div class="pbox">
             <div id="boxA" class="cbox boxA">
                 <p id="score"></p>
-                <img id=result-img src="assets/img/result.jpg">
             </div>
 
             <!-- 黒板 -->
             <div class="kokuban">
-                
-                <div id="moji_field">
-                    <div id="kanzi_field"></div>
-                    <div id="kana_field"></div>
-                    <div id="rome_field">
-                        <span id="typed"></span><span id="untyped">
-                            ロード中...
-                            <div class="spinner-border" role="status" id="loading_spinner">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </span>
+
+                <!-- ロード画面 -->
+                <div id="gamescreen_loading">
+                    ロード中...
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- タイトル画面 -->
+                <div id="gamescreen_title">
+                    <div id="gamescreen_title_title">タイピングゲーム</div>
+                    <div><button type="button" class="btn btn-light">スタート</button></div>
+                    <div><button type="button" class="btn btn-light">設定</button></div>
+                </div>
+
+                <!-- 設定画面 -->
+                <div id="gamescreen_config">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            ローマ字表示
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            ふりがな表示
+                        </label>
+                    </div>
+                    <div><label><input type="range">BGM音量</label></div>
+                    <div><label><input type="range">SE音量</label></div>
+                    <div><label><input type="range">タイプ音量</label></div>
+                    <div><label><input type="range">ミス音量</label></div>
+                    <div><button type="button" class="btn btn-light">戻る</button></div>
+                </div>
+
+                <!-- モード選択画面 -->
+                <div id="gamescreen_mode">
+                    <div id="gamescreen_title_title">モード選択</div>
+                    <div><button type="button" class="btn btn-light">初級</button></div>
+                    <div><button type="button" class="btn btn-light">中級</button></div>
+                    <div><button type="button" class="btn btn-light">上級</button></div>
+                    <div><button type="button" class="btn btn-light">戻る</button></div>
+                </div>
+
+                <!-- スペースキーを押して開始 -->
+                <div id="gamescreen_space">
+                    <div>スペースキーを押して開始</div>
+                </div>
+
+                <!-- プレイ画面 -->
+                <div id="gamescreen_playing">
+                    <div id="moji_field">
+                        <div id="kanzi_field"></div>
+                        <div id="kana_field"></div>
+                        <div id="rome_field">
+                            <span id="typed"></span><span id="untyped"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 結果画面 -->
+                <div id="gamescreen_result">
+                    <img id=gamescreen_result_result src="assets/img/result.jpg" width="750px">
+                    <div>
+                        <button type="button" class="btn btn-light">もう一度</button>
+                        <button type="button" class="btn btn-light">タイトルに戻る</button>
                     </div>
                 </div>
             </div>
@@ -132,43 +188,43 @@
         <div class="keyboard">
             <div class="keyboard__row">
                 <div class="key--double" data-key="192">
-                    <div class="vertical_align">~</div>
+                    <div class="keyboard_charAlign">~</div>
                 </div>
                 <div class="key--double" id="key_Digit1" data-key="49">
-                    <div class="vertical_align">1</div>
+                    <div class="keyboard_charAlign">1</div>
                 </div>
                 <div class="key--double" id="key_Digit2" data-key="50">
-                    <div class="vertical_align">2</div>
+                    <div class="keyboard_charAlign">2</div>
                 </div>
                 <div class="key--double" id="key_Digit3" data-key="51">
-                    <div class="vertical_align">3</div>
+                    <div class="keyboard_charAlign">3</div>
                 </div>
                 <div class="key--double" id="key_Digit4" data-key="52">
-                    <div class="vertical_align">4</div>
+                    <div class="keyboard_charAlign">4</div>
                 </div>
                 <div class="key--double" id="key_Digit5" data-key="53">
-                    <div class="vertical_align">5</div>
+                    <div class="keyboard_charAlign">5</div>
                 </div>
                 <div class="key--double" id="key_Digit6" data-key="54">
-                    <div class="vertical_align">6</div>
+                    <div class="keyboard_charAlign">6</div>
                 </div>
                 <div class="key--double" id="key_Digit7" data-key="55">
-                    <div class="vertical_align">7</div>
+                    <div class="keyboard_charAlign">7</div>
                 </div>
                 <div class="key--double" id="key_Digit8" data-key="56">
-                    <div class="vertical_align">8</div>
+                    <div class="keyboard_charAlign">8</div>
                 </div>
                 <div class="key--double" id="key_Digit9" data-key="57">
-                    <div class="vertical_align">9</div>
+                    <div class="keyboard_charAlign">9</div>
                 </div>
                 <div class="key--double" id="key_Digit0" data-key="48">
-                    <div class="vertical_align">0</div>
+                    <div class="keyboard_charAlign">0</div>
                 </div>
                 <div class="key--double" id="key_Minus" data-key="189">
-                    <div class="vertical_align">-</div>
+                    <div class="keyboard_charAlign">-</div>
                 </div>
                 <div class="key--double" id="key_Equal" data-key="187">
-                    <div class="vertical_align">=</div>
+                    <div class="keyboard_charAlign">=</div>
                 </div>
                 <div class="key--bottom-right key--word key--w4" id="key_Delete" data-key="8">
                     <span>delete</span>
@@ -189,13 +245,13 @@
                 <div class="key--letter" id="key_KeyO" data-char="O">O</div>
                 <div class="key--letter" id="key_KeyP" data-char="P">P</div>
                 <div class="key--double" data-key="219" data-char="{[">
-                    <div class="vertical_align">[</div>
+                    <div class="keyboard_charAlign">[</div>
                 </div>
                 <div class="key--double" data-key="221" data-char="}]">
-                    <div class="vertical_align">]</div>
+                    <div class="keyboard_charAlign">]</div>
                 </div>
                 <div class="key--double" data-key="220" data-char="|\">
-                    <div class="vertical_align">\</div>
+                    <div class="keyboard_charAlign">\</div>
                 </div>
             </div>
             <div class="keyboard__row">
@@ -212,10 +268,10 @@
                 <div class="key--letter" id="key_KeyK" data-char="K">K</div>
                 <div class="key--letter" id="key_KeyL" data-char="L">L</div>
                 <div class="key--double" id="key_Semicolon" data-key="186">
-                    <div class="vertical_align">;</div>
+                    <div class="keyboard_charAlign">;</div>
                 </div>
                 <div class="key--double" id="key_Quote" data-key="222">
-                    <div class="vertical_align">'</div>
+                    <div class="keyboard_charAlign">'</div>
                 </div>
                 <div class="key--bottom-right key--word key--w5" id="key_Enter" data-key="13">
                     <span>return</span>
@@ -233,13 +289,13 @@
                 <div class="key--letter" id="key_KeyN" data-char="N">N</div>
                 <div class="key--letter" id="key_KeyM" data-char="M">M</div>
                 <div class="key--double" id="key_Comma" data-key="188">
-                    <div class="vertical_align">,</div>
+                    <div class="keyboard_charAlign">,</div>
                 </div>
                 <div class="key--double" id="key_Period" data-key="190">
-                    <div class="vertical_align">.</div>
+                    <div class="keyboard_charAlign">.</div>
                 </div>
                 <div class="key--double" id="key_Slash" data-key="191">
-                    <div class="vertical_align">/</div>
+                    <div class="keyboard_charAlign">/</div>
                 </div>
                 <div class="key--bottom-right key--word key--w6" id="key_ShiftRight" data-key="16-R">
                     <span>shift</span>

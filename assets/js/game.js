@@ -21,29 +21,29 @@ function typingGame() {
     let count = 20;
     countDown = () => {
         const timeoutId = setTimeout(countDown, 1000);
-        $('#time').html('残り'  + count-- + '秒');
-        if(count === -1){
-      clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
-        $('#result-img').show(); //結果を表示する
-       }
-    } 
-    countDown();
+        $('#time').html('残り' + count-- + '秒');
+        if (count === -1) {
+            clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
+            $('#result-img').show(); //結果を表示する
+        }
+    }
+    // countDown();
 
     // キー入力したときの処理
-    
+
     document.addEventListener('keydown', function (event) {
 
         // キー点灯
         $('#key_' + lightKey).css('background-color', 'rgb(243, 243, 243)');
         lightKey = event.code;
         $('#key_' + lightKey).css('background-color', 'orange');
-    
+
         // 入力したキーが、打ってない文字の先頭であった場合
         if (event.key === untyped.charAt(0)) {
             // 打ってない文字の先頭を打った文字の末尾に追加
             typed += untyped.charAt(0);
             untyped = untyped.slice(1);
-    
+
             // 全部打ち終わったら新しい文字にする
             if (untyped === '') {
                 index = getRandom(0, words.length);
@@ -53,30 +53,30 @@ function typingGame() {
                 updateField(words[index], score);
                 return;
             }
-    
+
             // HTML要素に反映
             $('#untyped').html(untyped);
             $('#typed').html(typed);
         }
     });
-    
-    }
 
-    var val;
-  // 一定間隔で処理を行うintervalのIDを保持
-  var intervalID;
+}
 
-  // ボタンを押した時に動く関数
-  function begin() {
+var val;
+// 一定間隔で処理を行うintervalのIDを保持
+var intervalID;
+
+// ボタンを押した時に動く関数
+function begin() {
     val = 0;
     // ボタンを無効にする(何回も押せないように)
     document.getElementById("begin").disabled = true;
     // 1000msおきにプログレスバーを更新する
     intervalID = setInterval("updateProgress()", 1000);
-  }
+}
 
-  // プログレスバーを更新する
-  function updateProgress() {
+// プログレスバーを更新する
+function updateProgress() {
     // プログレスバーの進捗値を更新し、プログレスバーに反映させる
     val += 1;
     document.getElementById("myProgress").value = val;
@@ -84,35 +84,35 @@ function typingGame() {
 
     // 最大値まで達したら終了
     if (val == 20) {
-      clearInterval(intervalID);
-      document.getElementById("begin").disabled = false;
+        clearInterval(intervalID);
+        document.getElementById("begin").disabled = false;
     }
-  }
-    
+}
 
-    // 時計
-    setInterval(() => {
-        // 現在時間の取得
-        const now = new Date();
-        const h = now.getHours();
-        const m = now.getMinutes();
-        const s = now.getSeconds();
 
-        // 時、分、秒を元に角度を計算
-        const degH = h * (360 / 12) + m * (360 / 12 / 60);
-        const degM = m * (360 / 60);
-        const degS = s * (360 / 60);
+// 時計
+setInterval(() => {
+    // 現在時間の取得
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
 
-        // 各要素を取得
-        const elementH = document.querySelector(".c-clock__hour");
-        const elementM = document.querySelector(".c-clock__min");
-        const elementS = document.querySelector(".c-clock__sec");
+    // 時、分、秒を元に角度を計算
+    const degH = h * (360 / 12) + m * (360 / 12 / 60);
+    const degM = m * (360 / 60);
+    const degS = s * (360 / 60);
 
-        // styleを追加
-        elementH.style.transform = `rotate(${degH}deg)`;
-        elementM.style.transform = `rotate(${degM}deg)`;
-        elementS.style.transform = `rotate(${degS}deg)`;
-    }, 10);
+    // 各要素を取得
+    const elementH = document.querySelector(".c-clock__hour");
+    const elementM = document.querySelector(".c-clock__min");
+    const elementS = document.querySelector(".c-clock__sec");
+
+    // styleを追加
+    elementH.style.transform = `rotate(${degH}deg)`;
+    elementM.style.transform = `rotate(${degM}deg)`;
+    elementS.style.transform = `rotate(${degS}deg)`;
+}, 10);
 
 
 // jsonから文字のオブジェクトを取ってくる関数
