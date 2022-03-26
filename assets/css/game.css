@@ -170,3 +170,7 @@
         transform: scale(1);
       }
   }
+  
+#play-btn{
+    display: none;
+}

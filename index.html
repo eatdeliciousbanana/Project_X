@@ -8,7 +8,8 @@
     <title>タイピングゲーム</title>
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/game.css">
@@ -21,28 +22,33 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
                 SimpleTyping</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
-                            <img src="assets/img/house.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            <img src="assets/img/house.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./ranking.html">
-                            <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            <img src="assets/img/award.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
                             ランキング
                         </a>
                     </li>
                     <li clzzass="nav-item">
                         <a class="nav-link" href="./help.html">
-                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
                             ヘルプ
                         </a>
                     </li>
@@ -78,7 +84,7 @@
                 <option value="3">戻るボタンも必要ね（メモ）</option>
             </select>
             <div class="buttons">
-                <button id="begin" onclick="begin()">スタート</button>
+                <button type="button" class="btn btn-secondary" id="begin" onclick="begin()">スタート</button>
             </div>
         </div>
     </div>
@@ -105,7 +111,7 @@
 
             <!-- 黒板 -->
             <div class="kokuban">
-                
+
                 <div id="moji_field">
                     <div id="kanzi_field"></div>
                     <div id="kana_field"></div>
@@ -279,7 +285,17 @@
                 </div>
             </div>
         </div>
+        <div id="play-btn">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-outline-primary btn-lg">もう一度遊ぶ</button>
+                <button type="button" class="btn btn-outline-success btn-lg">モード選択画面に戻る</button>
+                <button type="button" class="btn btn-outline-dark btn-lg" onclick="location.href='./index.html'">ホーム画面に戻る</button>
+            </div>
+        </div>
     </div>
+
+    
+    
 
     <!-- subheader -->
     <div id="subheader" class="container-fluid">
@@ -343,10 +359,13 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <!-- JS file -->
     <script src="assets/js/game.js"></script>

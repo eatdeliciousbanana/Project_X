@@ -3,7 +3,7 @@ $(function () {
     $('#btn_gamestart').on('click', function () {
         $('#header').hide();
         $('#select').show();
-    });
+    });    
 
     // スタートボタンを押してゲーム開始
     $('#begin').on('click', function () {
