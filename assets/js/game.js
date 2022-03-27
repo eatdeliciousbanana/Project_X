@@ -1,3 +1,4 @@
+// グローバル変数
 let typingWords = [];  // 文字
 
 function typingGame() {
@@ -12,9 +13,12 @@ function typingGame() {
     getWords();  // jsonから文字取得
 
     // ゲーム読み込み完了
-    window.setTimeout(function () {
-        switchScreen('title');
-    }, 1000);
+    let intervalId = window.setInterval(function () {
+        if (typingWords.length) {
+            switchScreen('title');
+            window.clearInterval(intervalId);
+        }
+    }, 100);
 }
 
 
@@ -82,6 +86,7 @@ function loadKeyboard() {
         $('#key_' + lightKey).css('background-color', 'rgb(243, 243, 243)');
         lightKey = event.code;
         $('#key_' + lightKey).css('background-color', 'orange');
+        event.preventDefault();  // スペースキーを押したときのスクロールを無効化
     });
 }
 
@@ -122,7 +127,7 @@ function loadConfig() {
 }
 
 
-// モード画面
+// モード選択画面
 function loadMode() {
 
 }
@@ -214,7 +219,6 @@ function loadPlaying() {
         // 最大値まで達したら終了
         if (val == 20) {
             clearInterval(intervalID);
-            document.getElementById("begin").disabled = false;
         }
     }
 }
