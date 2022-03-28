@@ -139,6 +139,8 @@ function loadPlaying() {
     let untyped = '';  // 打ってない文字
     let typed = '';    // 打った文字
     let score = 0;     // 得点
+    let right_typeCount = 0;  // 正しくキーを押した回数
+    let renda_value;  // 連続して正しく打った文字数
 
     // 文字フィールドを初期化
     index = getRandom(0, typingWords.length);
@@ -151,10 +153,12 @@ function loadPlaying() {
 
     // キー入力したときの処理の関数
     function typeKey(event) {
-        let renda_value;  // 連続して正しく打った文字数
 
         // 入力したキーが、打ってない文字の先頭であった場合
         if (event.key === untyped.charAt(0)) {
+            // playメソッドでキー打鍵音を再生する
+            document.getElementById(`typing_sound${right_typeCount++ % 20}`).play();
+
             // 打ってない文字の先頭を打った文字の末尾に追加
             typed += untyped.charAt(0);
             untyped = untyped.slice(1);
