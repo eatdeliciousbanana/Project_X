@@ -8,8 +8,7 @@
     <title>タイピングゲーム</title>
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/game.css">
@@ -17,38 +16,32 @@
 </head>
 
 <body>
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24"
-                    class="d-inline-block align-text-top">
+                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 SimpleTyping</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
-                            <img src="assets/img/house.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
+                            <img src="assets/img/house.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./ranking.html">
-                            <img src="assets/img/award.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
+                            <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                             ランキング
                         </a>
                     </li>
                     <li clzzass="nav-item">
                         <a class="nav-link" href="./help.html">
-                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
+                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                             ヘルプ
                         </a>
                     </li>
@@ -75,23 +68,8 @@
         </div>
     </div>
 
-    <div id=select>
-        <div class="kakomi-tape3"><span class="title-tape3">モード選択</span>
-            ここは、画面切り替えのために作ったので美しい選択画面に変えて欲しいです
-            <select class="form-select" size="3" aria-label="size 3 select example">
-                <option value="1">選択しなくても進めます</option>
-                <option value="2">プルダウンとかラジオボタンとか、それとも別の方法がいいのか</option>
-                <option value="3">戻るボタンも必要ね（メモ）</option>
-            </select>
-            <div class="buttons">
-                <button type="button" class="btn btn-secondary" id="begin" onclick="begin()">スタート</button>
-            </div>
-        </div>
-    </div>
-
     <!-- gamescreen -->
     <div id="gamescreen">
-
         <!-- 時計 -->
         <div class="c-clock">
             <span class="c-clock__hour"></span> <!-- 時計 -->
@@ -106,22 +84,78 @@
         <div class="pbox">
             <div id="boxA" class="cbox boxA">
                 <p id="score"></p>
-                <img id=result-img src="assets/img/result.jpg">
             </div>
 
             <!-- 黒板 -->
             <div class="kokuban">
+                <!-- ロード画面 -->
+                <div class="switch_screen" id="gamescreen_loading">
+                    ロード中...
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
 
-                <div id="moji_field">
-                    <div id="kanzi_field"></div>
-                    <div id="kana_field"></div>
-                    <div id="rome_field">
-                        <span id="typed"></span><span id="untyped">
-                            ロード中...
-                            <div class="spinner-border" role="status" id="loading_spinner">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </span>
+                <!-- タイトル画面 -->
+                <div class="switch_screen" id="gamescreen_title">
+                    <div id="gamescreen_title_title">タイピングゲーム</div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('mode')">スタート</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('config')">設定</button></div>
+                </div>
+
+                <!-- 設定画面 -->
+                <div class="switch_screen" id="gamescreen_config">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            ローマ字表示
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            ふりがな表示
+                        </label>
+                    </div>
+                    <div><label><input type="range">BGM音量</label></div>
+                    <div><label><input type="range">SE音量</label></div>
+                    <div><label><input type="range">タイプ音量</label></div>
+                    <div><label><input type="range">ミス音量</label></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('title')">戻る</button></div>
+                </div>
+
+                <!-- モード選択画面 -->
+                <div class="switch_screen" id="gamescreen_mode">
+                    <div id="gamescreen_title_title">モード選択</div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">初級</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">中級</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">上級</button></div>
+                    <div><button type="button" class="btn btn-light" onclick="switchScreen('title')">戻る</button></div>
+                </div>
+
+                <!-- スペースキーを押して開始 -->
+                <div class="switch_screen" id="gamescreen_space">
+                    <div>スペースキーを押して開始</div>
+                </div>
+
+                <!-- プレイ画面 -->
+                <div class="switch_screen" id="gamescreen_playing">
+                    <div id="moji_field">
+                        <div id="kanzi_field"></div>
+                        <div id="kana_field"></div>
+                        <div id="rome_field">
+                            <span id="typed"></span><span id="untyped"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- リザルト画面 -->
+                <div class="switch_screen" id="gamescreen_result">
+                    <img id=gamescreen_result_result src="assets/img/result.jpg" width="670px">
+                    <div>
+                        <button type="button" class="btn btn-light" onclick="switchScreen('space')">もう一度</button>
+                        <button type="button" class="btn btn-light" onclick="switchScreen('mode')">モード選択</button>
+                        <button type="button" class="btn btn-light" onclick="switchScreen('title')">タイトルに戻る</button>
                     </div>
                 </div>
             </div>
@@ -138,43 +172,43 @@
         <div class="keyboard">
             <div class="keyboard__row">
                 <div class="key--double" data-key="192">
-                    <div class="vertical_align">~</div>
+                    <div class="keyboard_charAlign">~</div>
                 </div>
                 <div class="key--double" id="key_Digit1" data-key="49">
-                    <div class="vertical_align">1</div>
+                    <div class="keyboard_charAlign">1</div>
                 </div>
                 <div class="key--double" id="key_Digit2" data-key="50">
-                    <div class="vertical_align">2</div>
+                    <div class="keyboard_charAlign">2</div>
                 </div>
                 <div class="key--double" id="key_Digit3" data-key="51">
-                    <div class="vertical_align">3</div>
+                    <div class="keyboard_charAlign">3</div>
                 </div>
                 <div class="key--double" id="key_Digit4" data-key="52">
-                    <div class="vertical_align">4</div>
+                    <div class="keyboard_charAlign">4</div>
                 </div>
                 <div class="key--double" id="key_Digit5" data-key="53">
-                    <div class="vertical_align">5</div>
+                    <div class="keyboard_charAlign">5</div>
                 </div>
                 <div class="key--double" id="key_Digit6" data-key="54">
-                    <div class="vertical_align">6</div>
+                    <div class="keyboard_charAlign">6</div>
                 </div>
                 <div class="key--double" id="key_Digit7" data-key="55">
-                    <div class="vertical_align">7</div>
+                    <div class="keyboard_charAlign">7</div>
                 </div>
                 <div class="key--double" id="key_Digit8" data-key="56">
-                    <div class="vertical_align">8</div>
+                    <div class="keyboard_charAlign">8</div>
                 </div>
                 <div class="key--double" id="key_Digit9" data-key="57">
-                    <div class="vertical_align">9</div>
+                    <div class="keyboard_charAlign">9</div>
                 </div>
                 <div class="key--double" id="key_Digit0" data-key="48">
-                    <div class="vertical_align">0</div>
+                    <div class="keyboard_charAlign">0</div>
                 </div>
                 <div class="key--double" id="key_Minus" data-key="189">
-                    <div class="vertical_align">-</div>
+                    <div class="keyboard_charAlign">-</div>
                 </div>
                 <div class="key--double" id="key_Equal" data-key="187">
-                    <div class="vertical_align">=</div>
+                    <div class="keyboard_charAlign">=</div>
                 </div>
                 <div class="key--bottom-right key--word key--w4" id="key_Delete" data-key="8">
                     <span>delete</span>
@@ -195,13 +229,13 @@
                 <div class="key--letter" id="key_KeyO" data-char="O">O</div>
                 <div class="key--letter" id="key_KeyP" data-char="P">P</div>
                 <div class="key--double" data-key="219" data-char="{[">
-                    <div class="vertical_align">[</div>
+                    <div class="keyboard_charAlign">[</div>
                 </div>
                 <div class="key--double" data-key="221" data-char="}]">
-                    <div class="vertical_align">]</div>
+                    <div class="keyboard_charAlign">]</div>
                 </div>
                 <div class="key--double" data-key="220" data-char="|\">
-                    <div class="vertical_align">\</div>
+                    <div class="keyboard_charAlign">\</div>
                 </div>
             </div>
             <div class="keyboard__row">
@@ -218,10 +252,10 @@
                 <div class="key--letter" id="key_KeyK" data-char="K">K</div>
                 <div class="key--letter" id="key_KeyL" data-char="L">L</div>
                 <div class="key--double" id="key_Semicolon" data-key="186">
-                    <div class="vertical_align">;</div>
+                    <div class="keyboard_charAlign">;</div>
                 </div>
                 <div class="key--double" id="key_Quote" data-key="222">
-                    <div class="vertical_align">'</div>
+                    <div class="keyboard_charAlign">'</div>
                 </div>
                 <div class="key--bottom-right key--word key--w5" id="key_Enter" data-key="13">
                     <span>return</span>
@@ -239,13 +273,13 @@
                 <div class="key--letter" id="key_KeyN" data-char="N">N</div>
                 <div class="key--letter" id="key_KeyM" data-char="M">M</div>
                 <div class="key--double" id="key_Comma" data-key="188">
-                    <div class="vertical_align">,</div>
+                    <div class="keyboard_charAlign">,</div>
                 </div>
                 <div class="key--double" id="key_Period" data-key="190">
-                    <div class="vertical_align">.</div>
+                    <div class="keyboard_charAlign">.</div>
                 </div>
                 <div class="key--double" id="key_Slash" data-key="191">
-                    <div class="vertical_align">/</div>
+                    <div class="keyboard_charAlign">/</div>
                 </div>
                 <div class="key--bottom-right key--word key--w6" id="key_ShiftRight" data-key="16-R">
                     <span>shift</span>
@@ -285,17 +319,7 @@
                 </div>
             </div>
         </div>
-        <div id="play-btn">
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button type="button" class="btn btn-outline-primary btn-lg">もう一度遊ぶ</button>
-                <button type="button" class="btn btn-outline-success btn-lg">モード選択画面に戻る</button>
-                <button type="button" class="btn btn-outline-dark btn-lg" onclick="location.href='./index.html'">ホーム画面に戻る</button>
-            </div>
-        </div>
     </div>
-
-    
-    
 
     <!-- subheader -->
     <div id="subheader" class="container-fluid">
@@ -359,13 +383,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- JS file -->
     <script src="assets/js/game.js"></script>

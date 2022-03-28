@@ -1,14 +1,71 @@
-#moji_field {
+#gamescreen_loading {
+    display: none;
+    font-size: xx-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#gamescreen_title {
+    display: none;
+    font-size: xx-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 35px;
+}
+
+#gamescreen_config {
+    display: none;
+    font-size: x-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#gamescreen_mode {
+    display: none;
+    font-size: xx-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#gamescreen_space {
+    display: none;
+    font-size: xx-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#gamescreen_playing {
+    display: none;
+    font-size: xx-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#gamescreen_result {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 #typed {
     color: red;
-}
-
-#loading_spinner {
-    font-size: medium;
 }
 
 /* 黒板風 */
@@ -16,16 +73,17 @@
     position: relative;
     margin: 0 auto;
     padding: 1em 1em 1em;
-    width: 60%;
-    /* ボックス幅 */
-    background-color: #202020;
+    width: 800px;
+    height: 330px;
     /* ボックス背景色 */
-    color: #fff;
+    background-color: #202020;
     /* 文章色 */
-    border: 10px solid #8b4513;
+    color: #fff;
     /* 枠線 */
-    border-radius: 3px;
+    border: 10px solid #8b4513;
     /* 角の丸み */
+    border-radius: 3px;
+    /* 影 */
     box-shadow: 0 0 5px #333;
 }
 
@@ -143,34 +201,13 @@
 
 .boxA {
     background-color: rgb(187, 179, 140);
-    font-size: 35px;
+    height: 330px;
+    line-height: 330px;
+    font-size: xx-large;
 }
 
 .boxB {
     background-color: rgb(187, 179, 140);
-    font-size: 35px;
-}
-
-#result-img{
-    display: none;
-    z-index: 10000;
-    width: 95%;
-    position: absolute;
-    top: 1em;
-    left: 1em;
-    animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-}
-@keyframes zoomIn { 
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-  }
-  
-#play-btn{
-    display: none;
+    height: 330px;
+    font-size: xx-large;
 }
