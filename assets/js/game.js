@@ -89,6 +89,11 @@ function loadKeyboard() {
         event.preventDefault();  // スペースキーを押したときのスクロールを無効化
 
         document.getElementById("typing_sound").play();  // playメソッドで再生する
+        document.getElementById("typing_sound-2").play();
+        // setTimeout(function(){
+        //     document.getElementById("typing_sound").pause();  // pauseメソッドで停止する
+
+        // },100);
     });
 }
 
