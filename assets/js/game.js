@@ -143,7 +143,7 @@ function loadPlaying() {
     // 文字フィールドを初期化
     index = getRandom(0, typingWords.length);
     untyped = typingWords[index]['rome'];
-    updateField(typingWords[index], score);
+    updateField(typingWords[index]);
 
     // キー入力したときの処理
     document.addEventListener('keydown', typeKey);
@@ -151,6 +151,8 @@ function loadPlaying() {
 
     // キー入力したときの処理の関数
     function typeKey(event) {
+        let renda_value;  // 連続して正しく打った文字数
+
         // 入力したキーが、打ってない文字の先頭であった場合
         if (event.key === untyped.charAt(0)) {
             // 打ってない文字の先頭を打った文字の末尾に追加
@@ -162,25 +164,52 @@ function loadPlaying() {
                 index = getRandom(0, typingWords.length);
                 untyped = typingWords[index]['rome'];
                 typed = '';
-                score += 100;
-                updateField(typingWords[index], score);
+                // score += 100;
+                updateField(typingWords[index]);
                 return;
             }
 
             // HTML要素に反映
             $('#untyped').html(untyped);
             $('#typed').html(typed);
+
+            // プログレスバーを更新
+            renda_value = document.getElementById("myProgress").value;
+            renda_value++;
+            document.getElementById("myProgress").value = renda_value;
+
+            if (renda_value === 50) {
+                count += 100;
+            } else if (renda_value === 100) {
+                count += 100;
+            } else if (renda_value === 150) {
+                count += 2;
+            } else if (renda_value === 200) {
+                count += 3;
+                renda_value = 0;
+                document.getElementById("myProgress").value = renda_value;
+            }
+            score++;
+            updateScore(score);
+        } else {
+            renda_value = 0;
+            document.getElementById("myProgress").value = renda_value;
         }
     }
 
 
     // 文字フィールドに新たな文字を設定する関数
-    function updateField(word, s) {
+    function updateField(word) {
         $('#kanzi_field').html(word['kanzi']);
         $('#kana_field').html(word['kana']);
         $('#untyped').html(word['rome']);
         $('#typed').html('');
-        $('#score').html('現在' + s + '点');
+    }
+
+
+    // スコアを更新する関数
+    function updateScore(score) {
+        $('#score').html('現在' + score + '点');
     }
 
 
@@ -202,25 +231,6 @@ function loadPlaying() {
         }
     }
     countDown();
-
-
-    // 1000msおきにプログレスバーを更新する
-    let val = 0;
-    let intervalID;
-    intervalID = setInterval(updateProgress, 1000);
-
-    // プログレスバーを更新する
-    function updateProgress() {
-        // プログレスバーの進捗値を更新し、プログレスバーに反映させる
-        val += 1;
-        document.getElementById("myProgress").value = val;
-        document.getElementById("myProgress").innerText = val + "%";
-
-        // 最大値まで達したら終了
-        if (val == 20) {
-            clearInterval(intervalID);
-        }
-    }
 }
 
 
