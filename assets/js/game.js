@@ -87,6 +87,8 @@ function loadKeyboard() {
         lightKey = event.code;
         $('#key_' + lightKey).css('background-color', 'orange');
         event.preventDefault();  // スペースキーを押したときのスクロールを無効化
+
+        document.getElementById("typing_sound").play();  // playメソッドで再生する
     });
 }
 
