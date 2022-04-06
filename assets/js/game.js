@@ -85,7 +85,7 @@ function loadKeyboard() {
     document.addEventListener('keydown', function (event) {
         $('#key_' + lightKey).css('background-color', 'rgb(243, 243, 243)');
         lightKey = event.code;
-        $('#key_' + lightKey).css('background-color', 'orange');
+        $('#key_' + lightKey).css('background-color', 'rgb(220, 220, 220)');
         event.preventDefault();  // スペースキーを押したときのスクロールを無効化
     });
 }
@@ -146,6 +146,7 @@ function loadPlaying() {
     index = getRandom(0, typingWords.length);
     untyped = typingWords[index]['rome'];
     updateField(typingWords[index]);
+    lightUpNextKey(untyped.charAt(0));
 
     // キー入力したときの処理
     document.addEventListener('keydown', typeKey);
@@ -156,6 +157,9 @@ function loadPlaying() {
 
         // 入力したキーが、打ってない文字の先頭であった場合
         if (event.key === untyped.charAt(0)) {
+            // 前のキーを消灯する
+            lightDownPrevKey(event.key);
+
             // playメソッドでキー打鍵音を再生する
             document.getElementById(`typing_sound${right_typeCount++ % 20}`).play();
 
@@ -170,12 +174,14 @@ function loadPlaying() {
                 typed = '';
                 // score += 100;
                 updateField(typingWords[index]);
-                return;
             }
 
             // HTML要素に反映
             $('#untyped').html(untyped);
             $('#typed').html(typed);
+
+            // 次のキーを点灯する
+            lightUpNextKey(untyped.charAt(0));
 
             // プログレスバーを更新
             renda_value = document.getElementById("myProgress").value;
@@ -208,6 +214,34 @@ function loadPlaying() {
         $('#kana_field').html(word['kana']);
         $('#untyped').html(word['rome']);
         $('#typed').html('');
+    }
+
+
+    // 前に光っていたキーを消灯させる関数
+    function lightDownPrevKey(key) {
+        let target = '';
+        if (key === '-') {
+            target = 'Minus';
+        } else if ('0123456789'.includes(key)) {
+            target = 'Digit' + key;
+        } else {
+            target = 'Key' + key.toUpperCase();
+        }
+        $('#key_' + target).css('background-color', 'rgb(243, 243, 243)');
+    }
+
+
+    // 次に打つキーを点灯させる関数
+    function lightUpNextKey(key) {
+        let target = '';
+        if (key === '-') {
+            target = 'Minus';
+        } else if ('0123456789'.includes(key)) {
+            target = 'Digit' + key;
+        } else {
+            target = 'Key' + key.toUpperCase();
+        }
+        $('#key_' + target).css('background-color', 'orange');
     }
 
 
