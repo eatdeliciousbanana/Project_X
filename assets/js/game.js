@@ -140,6 +140,7 @@ function loadPlaying() {
     let typed = '';    // 打った文字
     let score = 0;     // 得点
     let right_typeCount = 0;  // 正しくキーを押した回数
+    let miss_typeCount = 0;  // 誤ったキーを押した回数
     let renda_value;  // 連続して正しく打った文字数
 
     // 文字フィールドを初期化
@@ -204,6 +205,9 @@ function loadPlaying() {
         } else {
             renda_value = 0;
             document.getElementById("myProgress").value = renda_value;
+
+            // playメソッドでミス音を再生する
+            document.getElementById(`typing_miss_sound${miss_typeCount++ % 20}`).play();
         }
     }
 
