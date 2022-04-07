@@ -99,8 +99,8 @@
                 <!-- タイトル画面 -->
                 <div class="switch_screen" id="gamescreen_title">
                     <div id="gamescreen_title_title">タイピングゲーム</div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('mode')">スタート</button></div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('config')">設定</button></div>
+                    <div><button type="button" class="btn btn-light" id="title_btnStart">スタート</button></div>
+                    <div><button type="button" class="btn btn-light" id="title_btnConfig">設定</button></div>
                 </div>
 
                 <!-- 設定画面 -->
@@ -121,16 +121,16 @@
                     <div><label><input type="range">SE音量</label></div>
                     <div><label><input type="range">タイプ音量</label></div>
                     <div><label><input type="range">ミス音量</label></div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('title')">戻る</button></div>
+                    <div><button type="button" class="btn btn-light" id="config_btnBack">戻る</button></div>
                 </div>
 
                 <!-- モード選択画面 -->
                 <div class="switch_screen" id="gamescreen_mode">
                     <div id="gamescreen_title_title">モード選択</div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">初級</button></div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">中級</button></div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('space')">上級</button></div>
-                    <div><button type="button" class="btn btn-light" onclick="switchScreen('title')">戻る</button></div>
+                    <div><button type="button" class="btn btn-light" id="mode_btnEasy">初級</button></div>
+                    <div><button type="button" class="btn btn-light" id="mode_btnNormal">中級</button></div>
+                    <div><button type="button" class="btn btn-light" id="mode_btnHard">上級</button></div>
+                    <div><button type="button" class="btn btn-light" id="mode_btnBack">戻る</button></div>
                 </div>
 
                 <!-- スペースキーを押して開始 -->
@@ -153,9 +153,9 @@
                 <div class="switch_screen" id="gamescreen_result">
                     <img id=gamescreen_result_result src="assets/img/result.jpg" width="670px">
                     <div>
-                        <button type="button" class="btn btn-light" onclick="switchScreen('space')">もう一度</button>
-                        <button type="button" class="btn btn-light" onclick="switchScreen('mode')">モード選択</button>
-                        <button type="button" class="btn btn-light" onclick="switchScreen('title')">タイトルに戻る</button>
+                        <button type="button" class="btn btn-light" id="result_btnAgain">もう一度</button>
+                        <button type="button" class="btn btn-light" id="result_btnMode">モード選択</button>
+                        <button type="button" class="btn btn-light" id="result_btnTitle">タイトルに戻る</button>
                     </div>
                 </div>
             </div>
