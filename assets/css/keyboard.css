@@ -10,6 +10,9 @@ h1 {
     font-size: 14px;
     font-family: sans-serif;
     margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 770px;
 }
 
 .keyboard__row {
