@@ -48,11 +48,6 @@
 #gamescreen_playing {
     display: none;
     font-size: xx-large;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
 }
 
 #gamescreen_result {
@@ -206,4 +201,18 @@
 .boxB {
     margin-left: 30px;
     font-size: xx-large;
+}
+
+#gamescreen_playing_btns {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
+#moji_field {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }

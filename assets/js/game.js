@@ -168,15 +168,20 @@ $(function () {
         updateField(typingWords[index]);
         lightKey(untyped.charAt(0), 'on');
 
-        // 連打メーターを初期化
-        progressBar.value = renda_typeCount;
-
         // キー入力したときの処理
         document.addEventListener('keydown', typeKey);
 
 
         // キー入力したときの処理の関数
         function typeKey(event) {
+
+            // エスケープキーが押されたらやり直し
+            if (event.key === 'Escape') {
+                endPlayingBeforeTimeLimit();
+                loadSpace();
+                switchScreen('space');
+                return;
+            }
 
             // 正しいキーを打った場合
             if (event.key === untyped.charAt(0)) {
@@ -238,8 +243,9 @@ $(function () {
 
         // カウントダウン処理
         let timeLimit = 30;
+        let timeoutId;
         function countDown() {
-            const timeoutId = setTimeout(countDown, 1000);
+            timeoutId = setTimeout(countDown, 1000);
             $('#time').html(`残り${timeLimit--}秒`);
             if (timeLimit === -1) {
                 clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
@@ -254,6 +260,18 @@ $(function () {
         function endPlaying() {
             document.removeEventListener('keydown', typeKey);
             lightKey(untyped.charAt(0), 'off');
+            updateScore(0);
+            progressBar.value = 0;
+            $('#playing_btnMode').off();
+            $('#playing_btnAgain').off();
+        }
+
+
+        // 時間切れになる前にプレイ画面を終了する関数
+        function endPlayingBeforeTimeLimit() {
+            clearTimeout(timeoutId);
+            timeLimit = 0;
+            countDown();
         }
 
 
@@ -294,6 +312,20 @@ $(function () {
                 $('#key_' + target).css('background-color', 'rgb(243, 243, 243)');
             }
         }
+
+
+        // モード選択ボタンが押されたときの処理
+        $('#playing_btnMode').on('click', function () {
+            endPlayingBeforeTimeLimit();
+            switchScreen('mode');
+        });
+
+        // やり直しボタンが押されたときの処理
+        $('#playing_btnAgain').on('click', function () {
+            endPlayingBeforeTimeLimit();
+            loadSpace();
+            switchScreen('space');
+        });
     }
 
 
