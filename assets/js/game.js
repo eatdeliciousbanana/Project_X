@@ -143,12 +143,28 @@ $(function () {
 
         function switchScreenAtSpace(event) {
             if (event.code === 'Space') {
-                loadPlaying();
-                switchScreen('playing');
+                loadMovie();
+                switchScreen('countDownMp4');
                 this.removeEventListener('keydown', switchScreenAtSpace);
             }
         }
     }
+
+    
+    // カウントダウン動画
+    function loadMovie() {
+        let movieTimeoutId=0;
+        movieTimeoutId = setTimeout(loadMovie, 1000);
+        // デバッグ用 
+        //console.log(movieTimeoutId);
+        // なぜか9秒から開始させる。原因を探求中。
+        if (movieTimeoutId === 12) {
+            clearTimeout(movieTimeoutId);
+            loadPlaying();
+            switchScreen('playing');
+            movieTimeoutId=0;
+        }
+    } 
 
 
     // プレイ画面
@@ -323,8 +339,8 @@ $(function () {
         // やり直しボタンが押されたときの処理
         $('#playing_btnAgain').on('click', function () {
             endPlayingBeforeTimeLimit();
-            loadSpace();
-            switchScreen('space');
+            loadMovie();
+            switchScreen('countDownMp4');
         });
     }
 

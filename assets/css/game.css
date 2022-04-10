@@ -7,6 +7,13 @@
     transform: translate(-50%, -50%);
 }
 
+#gamescreen_countDownMp4{
+    display: none;
+}
+#countDownMp4{
+    width: 100%;
+}
+
 #gamescreen_title {
     display: none;
     font-size: xx-large;
