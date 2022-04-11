@@ -150,21 +150,15 @@ $(function () {
         }
     }
 
-    
+
     // カウントダウン動画
     function loadMovie() {
-        let movieTimeoutId=0;
-        movieTimeoutId = setTimeout(loadMovie, 1000);
-        // デバッグ用 
-        //console.log(movieTimeoutId);
-        // なぜか9秒から開始させる。原因を探求中。
-        if (movieTimeoutId === 12) {
-            clearTimeout(movieTimeoutId);
+        document.getElementById('countDownMp4').play();
+        setTimeout(function () {
             loadPlaying();
             switchScreen('playing');
-            movieTimeoutId=0;
-        }
-    } 
+        }, 3000);
+    }
 
 
     // プレイ画面
@@ -339,8 +333,8 @@ $(function () {
         // やり直しボタンが押されたときの処理
         $('#playing_btnAgain').on('click', function () {
             endPlayingBeforeTimeLimit();
-            loadMovie();
-            switchScreen('countDownMp4');
+            loadSpace();
+            switchScreen('space');
         });
     }
 
