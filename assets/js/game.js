@@ -143,11 +143,20 @@ $(function () {
 
         function switchScreenAtSpace(event) {
             if (event.code === 'Space') {
-                loadPlaying();
-                switchScreen('playing');
+                loadCountDown();
+                switchScreen('countdown');
                 this.removeEventListener('keydown', switchScreenAtSpace);
             }
         }
+    }
+
+
+    // カウントダウン画面
+    function loadCountDown() {
+        setTimeout(function () {
+            loadPlaying();
+            switchScreen('playing');
+        }, 3000);
     }
 
 
@@ -340,3 +349,19 @@ $(function () {
         $('#result_btnTitle').on('click', function () { switchScreen('title') });
     }
 });
+
+
+// ゲーム画面のカウントダウン
+function setupFlip(tick) {
+    document.addEventListener('keydown', function (event) {
+        if (event.code === 'Space' && $('#gamescreen_space').css('display') === 'block') {
+            tick.value = 3;
+            const intervalId = setInterval(function () {
+                tick.value--;
+                if (tick.value === 0) {
+                    clearInterval(intervalId);
+                }
+            }, 1000);
+        }
+    });
+}

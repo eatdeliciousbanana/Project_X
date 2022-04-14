@@ -45,6 +45,16 @@
     transform: translate(-50%, -50%);
 }
 
+#gamescreen_countdown {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    font-weight: bold;
+}
+
 #gamescreen_playing {
     display: none;
     font-size: xx-large;

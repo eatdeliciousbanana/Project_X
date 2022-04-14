@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/keyboard.css">
+    <link rel="stylesheet" href="assets/css/flip.min.css">
 </head>
 
 <body>
@@ -136,6 +137,15 @@
                 <!-- スペースキーを押して開始 -->
                 <div class="switch_screen" id="gamescreen_space">
                     <div>スペースキーを押して開始</div>
+                </div>
+
+                <!-- カウントダウン画面 -->
+                <div class="switch_screen" id="gamescreen_countdown">
+                    <div class="tick" data-value="0" data-did-init="setupFlip">
+                        <div data-repeat="true" aria-hidden="true">
+                            <span data-view="flip"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- プレイ画面 -->
@@ -519,6 +529,7 @@
     <!-- JS file -->
     <script src="assets/js/game.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/flip.min.js"></script>
 </body>
 
 </html>
