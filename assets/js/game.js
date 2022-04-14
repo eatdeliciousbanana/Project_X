@@ -1,6 +1,10 @@
 $(function () {
     // グローバル変数
-    let typingWords = [];  // 文字
+    let globalWords = {};  // 文字
+    let mode = {           // モード
+        grade: 'elem',
+        subject: 'jpn'
+    };
 
     // ゲーム読み込み
     switchScreen('loading');
@@ -13,10 +17,10 @@ $(function () {
     getWords();  // jsonから文字取得
 
     // ゲーム読み込み完了
-    const intervalId = window.setInterval(function () {
-        if (typingWords.length) {
+    const intervalId = setInterval(function () {
+        if (Object.keys(globalWords).length === 3) {
             switchScreen('title');
-            window.clearInterval(intervalId);
+            clearInterval(intervalId);
         }
     }, 100);
 
@@ -90,9 +94,7 @@ $(function () {
                 function (json) {
                     let data_stringify = JSON.stringify(json);
                     let data_json = JSON.parse(data_stringify);
-                    data_json.forEach(function (word) {
-                        typingWords.push(word);
-                    });
+                    globalWords = data_json;
                 },
                 // エラー発生時
                 function () {
@@ -119,19 +121,18 @@ $(function () {
 
     // モード選択画面
     function loadMode() {
-        // ボタンをして画面遷移
-        $('#mode_btnEasy').on('click', function () {
-            loadSpace();
-            switchScreen('space');
+        // モード選択
+        $('.mode_select').each(function () {
+            $(this).on('click', function () {
+                const id = $(this).attr('id').split('_');
+                mode.grade = id[0];
+                mode.subject = id[1];
+                loadSpace();
+                switchScreen('space');
+            });
         });
-        $('#mode_btnNormal').on('click', function () {
-            loadSpace();
-            switchScreen('space');
-        });
-        $('#mode_btnHard').on('click', function () {
-            loadSpace();
-            switchScreen('space');
-        });
+
+        // 戻るボタン
         $('#mode_btnBack').on('click', function () { switchScreen('title') });
     }
 
@@ -162,6 +163,7 @@ $(function () {
 
     // プレイ画面
     function loadPlaying() {
+        const words = globalWords[mode.grade][mode.subject];
         let index = 0;     // 文字のインデックス
         let untyped = '';  // 打ってない文字
         let typed = '';    // 打った文字
@@ -172,9 +174,9 @@ $(function () {
         const progressBar = document.getElementById('myProgress');  // 連打メーター
 
         // 文字フィールドを初期化
-        index = getRandom(0, typingWords.length);
-        untyped = typingWords[index]['rome'];
-        updateField(typingWords[index]);
+        index = getRandom(0, words.length);
+        untyped = words[index]['rome'];
+        updateField(words[index]);
         lightKey(untyped.charAt(0), 'on');
 
         // キー入力したときの処理
@@ -206,10 +208,10 @@ $(function () {
 
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
-                    index = getRandom(0, typingWords.length);
-                    untyped = typingWords[index]['rome'];
+                    index = getRandom(0, words.length);
+                    untyped = words[index]['rome'];
                     typed = '';
-                    updateField(typingWords[index]);
+                    updateField(words[index]);
                 }
 
                 // 打った文字を画面に反映
