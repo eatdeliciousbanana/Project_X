@@ -127,10 +127,33 @@
 
                 <!-- モード選択画面 -->
                 <div class="switch_screen" id="gamescreen_mode">
-                    <div id="gamescreen_title_title">モード選択</div>
-                    <div><button type="button" class="btn btn-light" id="mode_btnEasy">初級</button></div>
-                    <div><button type="button" class="btn btn-light" id="mode_btnNormal">中級</button></div>
-                    <div><button type="button" class="btn btn-light" id="mode_btnHard">上級</button></div>
+                    <div id="gamescreen_mode_title">モード選択</div>
+                    <div>
+                        <div id="elem" class="mode_row">
+                            <span>小学校</span>
+                            <button type="button" class="btn btn-light mode_select" id="elem_jpn">国語</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_math">算数</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_sci">理科</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_social">社会</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_eng">英語</button>
+                        </div>
+                        <div id="mid" class="mode_row">
+                            <span>中学校</span>
+                            <button type="button" class="btn btn-light mode_select" id="mid_jpn">国語</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_math">数学</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_sci">理科</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_social">社会</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_eng">英語</button>
+                        </div>
+                        <div id="high" class="mode_row">
+                            <span>高　校</span>
+                            <button type="button" class="btn btn-light mode_select" id="high_jpn">国語</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_math">数学</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_sci">理科</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_social">社会</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_eng">英語</button>
+                        </div>
+                    </div>
                     <div><button type="button" class="btn btn-light" id="mode_btnBack">戻る</button></div>
                 </div>
 
@@ -141,7 +164,7 @@
 
                 <!-- カウントダウン画面 -->
                 <div class="switch_screen" id="gamescreen_countdown">
-                    <div class="tick" data-value="0" data-did-init="setupFlip">
+                    <div class="tick" data-value="0" data-did-init="setupFlip" data-credits="false">
                         <div data-repeat="true" aria-hidden="true">
                             <span data-view="flip"></span>
                         </div>

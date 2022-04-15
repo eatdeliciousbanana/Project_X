@@ -29,10 +29,6 @@
 #gamescreen_mode {
     display: none;
     font-size: xx-large;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -225,4 +221,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.mode_row {
+    display: inline-block;
+    margin: 4px 0;
 }
