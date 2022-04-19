@@ -206,7 +206,6 @@ $(function () {
     // プレイ画面
     function loadPlaying() {
         const words = globalWords[mode.grade][mode.subject];
-        let index = 0;     // 文字のインデックス
         let untyped = '';  // 打ってない文字
         let typed = '';    // 打った文字
         let score = 0;     // 得点
@@ -216,10 +215,8 @@ $(function () {
         const progressBar = document.getElementById('myProgress');  // 連打メーター
         let timeLimit = mode.time;  // 制限時間
 
-        // 文字フィールドを初期化
-        index = getRandom(0, words.length);
-        untyped = words[index]['rome'];
-        updateField(words[index]);
+        // 文字を初期化
+        updateWord();
         lightKey(untyped.charAt(0), 'on');
 
         // キー入力したときの処理
@@ -251,10 +248,7 @@ $(function () {
 
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
-                    index = getRandom(0, words.length);
-                    untyped = words[index]['rome'];
-                    typed = '';
-                    updateField(words[index]);
+                    updateWord();
                 }
 
                 // 打った文字を画面に反映
@@ -284,6 +278,16 @@ $(function () {
                 updateScore(++score);
 
             } else {  //間違ったキーを打った場合
+
+                // キー代替処理
+                let alter = '';
+                if (alter = checkTypeMiss(event.key, typed, untyped)) {
+                    untyped = alter;
+                    $('#untyped').html(untyped);
+                    document.dispatchEvent(new KeyboardEvent('keydown', { key: untyped.charAt(0) }));
+                    console.log(untyped);
+                    return;
+                }
 
                 // playメソッドでミス音を再生する
                 document.getElementById(`typing_miss_sound${miss_typeCount++ % 20}`).play();
@@ -334,11 +338,15 @@ $(function () {
         }
 
 
-        // 文字フィールドに新たな文字を設定する関数
-        function updateField(word) {
-            $('#kanzi_field').html(word['kanzi']);
-            $('#kana_field').html(word['kana']);
-            $('#untyped').html(word['rome']);
+        // 新たな文字を設定する関数
+        function updateWord() {
+            const index = getRandom(0, words.length);
+            const rome = kanaToRoman(words[index]['kana'], 'kunrei', { bmp: false, longSound: 'hyphen' });
+            untyped = rome;
+            typed = '';
+            $('#kanzi_field').html(words[index]['kanzi']);
+            $('#kana_field').html(words[index]['kana']);
+            $('#untyped').html(rome);
             $('#typed').html('');
         }
 
