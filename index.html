@@ -131,27 +131,27 @@
                     <div>
                         <div id="elem" class="mode_row">
                             <span>小学校</span>
-                            <button type="button" class="btn btn-light mode_select" id="elem_jpn">国語</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_math">算数</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_sci">理科</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_social">社会</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_eng">英語</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_jpn_60">国語</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_math_60">算数</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_sci_60">理科</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_social_60">社会</button>
+                            <button type="button" class="btn btn-light mode_select" id="elem_eng_60">英語</button>
                         </div>
                         <div id="mid" class="mode_row">
                             <span>中学校</span>
-                            <button type="button" class="btn btn-light mode_select" id="mid_jpn">国語</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_math">数学</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_sci">理科</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_social">社会</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_eng">英語</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_jpn_90">国語</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_math_90">数学</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_sci_90">理科</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_social_90">社会</button>
+                            <button type="button" class="btn btn-light mode_select" id="mid_eng_90">英語</button>
                         </div>
                         <div id="high" class="mode_row">
                             <span>高　校</span>
-                            <button type="button" class="btn btn-light mode_select" id="high_jpn">国語</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_math">数学</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_sci">理科</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_social">社会</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_eng">英語</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_jpn_120">国語</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_math_120">数学</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_sci_120">理科</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_social_120">社会</button>
+                            <button type="button" class="btn btn-light mode_select" id="high_eng_120">英語</button>
                         </div>
                     </div>
                     <div><button type="button" class="btn btn-light" id="mode_btnBack">戻る</button></div>
@@ -159,7 +159,9 @@
 
                 <!-- スペースキーを押して開始 -->
                 <div class="switch_screen" id="gamescreen_space">
-                    <div>スペースキーを押して開始</div>
+                    <div id="gamescreen_space_subject"></div>
+                    <div id="gamescreen_space_time"></div>
+                    <div>スペースキーを押して試験開始</div>
                 </div>
 
                 <!-- カウントダウン画面 -->
@@ -365,25 +367,25 @@
             <div class="col-3">
                 <div class="gamemode">
                     <img class="gamemode-img" src="assets/img/baby.svg">
-                    <p class="gamemode-text">共産党モード</p>
+                    <p class="gamemode-text">小学校モード</p>
                 </div>
             </div>
             <div class="col-3">
                 <div class="gamemode">
                     <img class="gamemode-img" src="assets/img/baby.svg">
-                    <p class="gamemode-text">共産党モード</p>
+                    <p class="gamemode-text">中学校モード</p>
                 </div>
             </div>
             <div class="col-3">
                 <div class="gamemode">
                     <img class="gamemode-img" src="assets/img/baby.svg">
-                    <p class="gamemode-text">共産党モード</p>
+                    <p class="gamemode-text">高校モード</p>
                 </div>
             </div>
             <div class="col-3">
                 <div class="gamemode">
                     <img class="gamemode-img" src="assets/img/baby.svg">
-                    <p class="gamemode-text">共産党モード</p>
+                    <p class="gamemode-text">モード</p>
                 </div>
             </div>
         </div>
@@ -550,9 +552,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- JS file -->
+    <script src="assets/js/flip.min.js"></script>
+    <script src="assets/js/kana_to_roman.js"></script>
+    <script src="assets/js/check_type_miss.js"></script>
     <script src="assets/js/game.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/flip.min.js"></script>
 </body>
 
 </html>

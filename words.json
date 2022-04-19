@@ -3,76 +3,63 @@
         "jpn": [
             {
                 "kanzi": "小学校国語の文章です",
-                "kana": "しょうがっこうこくごのぶんしょうです",
-                "rome": "syougakkoukokugonobunsyoudesu"
+                "kana": "しょうがっこうこくごのぶんしょうです"
             },
             {
                 "kanzi": "暗中模索",
-                "kana": "あんちゅうもさく",
-                "rome": "anntyuumosaku"
+                "kana": "あんちゅうもさく"
             },
             {
                 "kanzi": "一日千秋",
-                "kana": "いちじつせんしゅう",
-                "rome": "itijitusensyuu"
+                "kana": "いちじつせんしゅう"
             },
             {
                 "kanzi": "一石二鳥",
-                "kana": "いっせきにちょう",
-                "rome": "issekinityou"
+                "kana": "いっせきにちょう"
             },
             {
                 "kanzi": "一朝一夕",
-                "kana": "いっちょういっせき",
-                "rome": "ittyouisseki"
+                "kana": "いっちょういっせき"
             },
             {
                 "kanzi": "意味深長",
-                "kana": "いみしんちょう",
-                "rome": "imisintyou"
+                "kana": "いみしんちょう"
             },
             {
                 "kanzi": "栄枯盛衰",
-                "kana": "えいこせんすい",
-                "rome": "eikosensui"
+                "kana": "えいこせいすい"
             },
             {
                 "kanzi": "我田引水",
-                "kana": "がでんいんすい",
-                "rome": "gadenninnsui"
+                "kana": "がでんいんすい"
             },
             {
                 "kanzi": "疑心暗鬼",
-                "kana": "ぎしんあんき",
-                "rome": "gisinannki"
+                "kana": "ぎしんあんき"
             }
         ],
         "math": [
             {
                 "kanzi": "小学校算数の文章です",
-                "kana": "しょうがっこうさんすうのぶんしょうです",
-                "rome": "syougakkousansuunobunsyoudesu"
+                "kana": "しょうがっこうさんすうのぶんしょうです"
             }
         ],
         "sci": [
             {
                 "kanzi": "小学校理科の文章です",
-                "kana": "しょうがっこうりかのぶんしょうです",
-                "rome": "syougakkourikanobunsyoudesu"
+                "kana": "しょうがっこうりかのぶんしょうです"
             }
         ],
         "social": [
             {
                 "kanzi": "小学校社会の文章です",
-                "kana": "しょうがっこうしゃかいのぶんしょうです",
-                "rome": "syougakkousyakainobunsyoudesu"
+                "kana": "しょうがっこうしゃかいのぶんしょうです"
             }
         ],
         "eng": [
             {
                 "kanzi": "小学校英語の文章です",
-                "kana": "しょうがっこうえいごのぶんしょうです",
-                "rome": "syougakkoueigonobunsyoudesu"
+                "kana": "しょうがっこうえいごのぶんしょうです"
             }
         ]
     },
@@ -80,171 +67,139 @@
         "jpn": [
             {
                 "kanzi": "中学校国語の文章です",
-                "kana": "ちゅうがっこうこくごのぶんしょうです",
-                "rome": "tyuugakkoukokugonobunsyoudesu"
+                "kana": "ちゅうがっこうこくごのぶんしょうです"
             },
             {
                 "kanzi": "石の上にも三年",
-                "kana": "いしのうえにもさんねん",
-                "rome": "isinouenimosannen"
+                "kana": "いしのうえにもさんねん"
             },
             {
                 "kanzi": "急がば回れ",
-                "kana": "いそがばまわれ",
-                "rome": "isogabamaware"
+                "kana": "いそがばまわれ"
             },
             {
                 "kanzi": "井の中の蛙大海を知らず",
-                "kana": "いのなかのかわずたいかいをしらず",
-                "rome": "inonakanokawazutaigawosirazu"
+                "kana": "いのなかのかわずたいかいをしらず"
             },
             {
                 "kanzi": "石橋を叩いて渡る",
-                "kana": "いしばしをたたいてわたる",
-                "rome": "isibasiwotataitewataru"
+                "kana": "いしばしをたたいてわたる"
             },
             {
                 "kanzi": "一寸先は闇",
-                "kana": "いっすんさきはやみ",
-                "rome": "issunnsakihayami"
+                "kana": "いっすんさきはやみ"
             },
             {
                 "kanzi": "馬の耳に念仏",
-                "kana": "うまのみみにねんぶつ",
-                "rome": "umanomimininennbutu"
+                "kana": "うまのみみにねんぶつ"
             },
             {
                 "kanzi": "鬼に金棒",
-                "kana": "おににかなぼう",
-                "rome": "oninikanabou"
+                "kana": "おににかなぼう"
             },
             {
                 "kanzi": "帯に短し襷に長し",
-                "kana": "おびにみじかしたすきにながし",
-                "rome": "obinimijikasisukininagasi"
+                "kana": "おびにみじかしたすきにながし"
             },
             {
                 "kanzi": "悪銭身につかず",
-                "kana": "あくせんみにつかず",
-                "rome": "akusennminitukauz"
+                "kana": "あくせんみにつかず"
             }
         ],
         "math": [
             {
                 "kanzi": "中学校数学の文章です",
-                "kana": "ちゅうがっこうすうがくのぶんしょうです",
-                "rome": "tyuugakkousuugakunobunsyoudesu"
+                "kana": "ちゅうがっこうすうがくのぶんしょうです"
             }
         ],
         "sci": [
             {
                 "kanzi": "中学校理科の文章です",
-                "kana": "ちゅうがっこうりかのぶんしょうです",
-                "rome": "tyuugakkourikanobunsyoudesu"
+                "kana": "ちゅうがっこうりかのぶんしょうです"
             },
             {
                 "kanzi": "子房",
-                "kana": "しぼう",
-                "rome": "sibou"
+                "kana": "しぼう"
             },
             {
                 "kanzi": "胚珠",
-                "kana": "はいしゅ",
-                "rome": "haisyu"
+                "kana": "はいしゅ"
             },
             {
                 "kanzi": "離弁花",
-                "kana": "りべんか",
-                "rome": "ribennka"
+                "kana": "りべんか"
             },
             {
                 "kanzi": "陽イオン",
-                "kana": "よういおん",
-                "rome": "youionn"
+                "kana": "よういおん"
             },
             {
                 "kanzi": "陰イオン",
-                "kana": "いんいおん",
-                "rome": "innionn"
+                "kana": "いんいおん"
             },
             {
                 "kanzi": "二酸化炭素",
-                "kana": "にさんかたんそ",
-                "rome": "nisannkatannso"
+                "kana": "にさんかたんそ"
             },
             {
                 "kanzi": "酸化",
-                "kana": "さんか",
-                "rome": "sannka"
+                "kana": "さんか"
             },
             {
                 "kanzi": "還元",
-                "kana": "かんげん",
-                "rome": "kanngenn"
+                "kana": "かんげん"
             },
             {
                 "kanzi": "脊椎動物",
-                "kana": "せきついどうぶつ",
-                "rome": "sekituidoubutu"
+                "kana": "せきついどうぶつ"
             }
         ],
         "social": [
             {
                 "kanzi": "中学校社会の文章です",
-                "kana": "ちゅうがっこうしゃかいのぶんしょうです",
-                "rome": "tyuugakkousyakainobunsyoudesu"
+                "kana": "ちゅうがっこうしゃかいのぶんしょうです"
             },
             {
                 "kanzi": "フランシスコザビエル",
-                "kana": "ふらんしすこざびえる",
-                "rome": "hurannsisukozabieru"
+                "kana": "ふらんしすこざびえる"
             },
             {
                 "kanzi": "屯田兵",
-                "kana": "とんでんへい",
-                "rome": "tonndennhei"
+                "kana": "とんでんへい"
             },
             {
                 "kanzi": "サンフランシスコ平和条約",
-                "kana": "さんふらんしすこへいわじょうやく",
-                "rome": "sannhurannsisukoheiwajouyaku"
+                "kana": "さんふらんしすこへいわじょうやく"
             },
             {
                 "kanzi": "アパルトヘイト",
-                "kana": "あぱるとへいと",
-                "rome": "aparutoheito"
+                "kana": "あぱるとへいと"
             },
             {
                 "kanzi": "環境アセスメント",
-                "kana": "かんきょうアセスメント",
-                "rome": "kannkyouasesumennto"
+                "kana": "かんきょうアセスメント"
             },
             {
                 "kanzi": "生存権",
-                "kana": "せいぞんけん",
-                "rome": "seizonnkenn"
+                "kana": "せいぞんけん"
             },
             {
                 "kanzi": "直接請求権",
-                "kana": "ちょくせつせいきゅうけん",
-                "rome": "tyokusetuseikyuukenn"
+                "kana": "ちょくせつせいきゅうけん"
             },
             {
                 "kanzi": "大化の改新",
-                "kana": "たいかのかいしん",
-                "rome": "taikanokaisinn"
+                "kana": "たいかのかいしん"
             },
             {
                 "kanzi": "土偶",
-                "kana": "どぐう",
-                "rome": "doguu"
+                "kana": "どぐう"
             }
         ],
         "eng": [
             {
                 "kanzi": "中学校英語の文章です",
-                "kana": "ちゅうがっこうえいごのぶんしょうです",
-                "rome": "tyuugakkoueigonobunsyoudesu"
+                "kana": "ちゅうがっこうえいごのぶんしょうです"
             }
         ]
     },
@@ -252,216 +207,175 @@
         "jpn": [
             {
                 "kanzi": "高校国語の文章です",
-                "kana": "こうこうこくごのぶんしょうです",
-                "rome": "koukoukokugonobunsyoudesu"
+                "kana": "こうこうこくごのぶんしょうです"
             },
             {
                 "kanzi": "画竜点睛",
-                "kana": "がりょうてんせい",
-                "rome": "garyoutennsei"
+                "kana": "がりょうてんせい"
             },
             {
                 "kanzi": "玉石混淆",
-                "kana": "ぎょくせきこんこう",
-                "rome": "gyokusekikonnkou"
+                "kana": "ぎょくせきこんこう"
             },
             {
                 "kanzi": "夏炉冬扇",
-                "kana": "かろとうせん",
-                "rome": "karotousenn"
+                "kana": "かろとうせん"
             },
             {
                 "kanzi": "金科玉条",
-                "kana": "きんかぎょくじょう",
-                "rome": "kinnkagyokujou"
+                "kana": "きんかぎょくじょう"
             },
             {
                 "kanzi": "厚顔無恥",
-                "kana": "こうがんむち",
-                "rome": "kougannmuti"
+                "kana": "こうがんむち"
             },
             {
                 "kanzi": "五臓六腑",
-                "kana": "ごぞうろっぷ",
-                "rome": "gozouroppu"
+                "kana": "ごぞうろっぷ"
             },
             {
                 "kanzi": "枝葉末節",
-                "kana": "しようまっせつ",
-                "rome": "siyoumassetu"
+                "kana": "しようまっせつ"
             },
             {
                 "kanzi": "質実剛健",
-                "kana": "しつじつごうけん",
-                "rome": "situjitugoukenn"
+                "kana": "しつじつごうけん"
             },
             {
                 "kanzi": "馬耳東風",
-                "kana": "ばじとうふう",
-                "rome": "bazitouhuu"
+                "kana": "ばじとうふう"
             }
         ],
         "math": [
             {
                 "kanzi": "高校数学の文章です",
-                "kana": "こうこうすうがくのぶんしょうです",
-                "rome": "koukousuugakunobunsyoudesu"
+                "kana": "こうこうすうがくのぶんしょうです"
             },
             {
                 "kanzi": "円順列",
-                "kana": "えんじゅんれつ",
-                "rome": "ennjunnretu"
+                "kana": "えんじゅんれつ"
             },
             {
                 "kanzi": "加法定理",
-                "kana": "かほうていり",
-                "rome": "kahouteiri"
+                "kana": "かほうていり"
             },
             {
                 "kanzi": "互いに素である",
-                "kana": "たがいにそである",
-                "rome": "tagainisodearu"
+                "kana": "たがいにそである"
             },
             {
                 "kanzi": "ベクトル",
-                "kana": "べくとる",
-                "rome": "bekutoru"
+                "kana": "べくとる"
             },
             {
                 "kanzi": "等差数列",
-                "kana": "とうさすうれつ",
-                "rome": "tousasuuretu"
+                "kana": "とうさすうれつ"
             },
             {
                 "kanzi": "内積",
-                "kana": "ないせき",
-                "rome": "naiseki"
+                "kana": "ないせき"
             },
             {
                 "kanzi": "漸化式",
-                "kana": "ぜんかしき",
-                "rome": "zennkasiki"
+                "kana": "ぜんかしき"
             },
             {
                 "kanzi": "確率分布",
-                "kana": "かくりつぶんぷ",
-                "rome": "kakuritubunnpu"
+                "kana": "かくりつぶんぷ"
             },
             {
                 "kanzi": "指数関数",
-                "kana": "しすうかんすう",
-                "rome": "sisuukannsuu"
+                "kana": "しすうかんすう"
             }
         ],
         "sci": [
             {
                 "kanzi": "高校理科の文章です",
-                "kana": "こうこうりかのぶんしょうです",
-                "rome": "koukourikanobunsyoudesu"
+                "kana": "こうこうりかのぶんしょうです"
             },
             {
                 "kanzi": "セルロース",
-                "kana": "せるろーす",
-                "rome": "seruro-su"
+                "kana": "せるろーす"
             },
             {
                 "kanzi": "ペプチド結合",
-                "kana": "ぺぷちどけつごう",
-                "rome": "peputidoketugou"
+                "kana": "ぺぷちどけつごう"
             },
             {
                 "kanzi": "活性化エネルギー",
-                "kana": "かっせいかえねるぎー",
-                "rome": "kasseikaenerugi-"
+                "kana": "かっせいかえねるぎー"
             },
             {
                 "kanzi": "ファントホッフの浸透圧の法則",
-                "kana": "ふぁんとほっふのしんとうあつのほうそく",
-                "rome": "fantohohhunosinntouatunohousoku"
+                "kana": "ふぁんとほっふのしんとうあつのほうそく"
             },
             {
                 "kanzi": "分子コロイド",
-                "kana": "ぶんしころいど",
-                "rome": "bunnsikoroido"
+                "kana": "ぶんしころいど"
             },
             {
                 "kanzi": "平衡状態",
-                "kana": "へいこうじょうたい",
-                "rome": "heikoujoutai"
+                "kana": "へいこうじょうたい"
             },
             {
                 "kanzi": "水素結合",
-                "kana": "すいそけつごう",
-                "rome": "suisoketugou"
+                "kana": "すいそけつごう"
             },
             {
                 "kanzi": "ドップラー効果",
-                "kana": "どっぷらーこうか",
-                "rome": "doppura-kouka"
+                "kana": "どっぷらーこうか"
             },
             {
                 "kanzi": "電場の強さ",
-                "kana": "でんばのつよさ",
-                "rome": "dennbanotuyosa"
+                "kana": "でんばのつよさ"
             }
         ],
         "social": [
             {
                 "kanzi": "高校社会の文章です",
-                "kana": "こうこうしゃかいのぶんしょうです",
-                "rome": "koukousyakainobunsyoudesu"
+                "kana": "こうこうしゃかいのぶんしょうです"
             },
             {
                 "kanzi": "乾燥パンパ",
-                "kana": "かんそうぱんぱ",
-                "rome": "kannsoupannpa"
+                "kana": "かんそうぱんぱ"
             },
             {
                 "kanzi": "ガンジスデルタ",
-                "kana": "がんじすでるた",
-                "rome": "gannzisuderuta"
+                "kana": "がんじすでるた"
             },
             {
                 "kanzi": "サバナ気候",
-                "kana": "さばなきこう",
-                "rome": "sabanakikou"
+                "kana": "さばなきこう"
             },
             {
                 "kanzi": "日清戦争",
-                "kana": "にっしんせんそう",
-                "rome": "nissinnsennsou"
+                "kana": "にっしんせんそう"
             },
             {
                 "kanzi": "満州事変",
-                "kana": "まんしゅうじへん",
-                "rome": "mannsyuuzihenn"
+                "kana": "まんしゅうじへん"
             },
             {
                 "kanzi": "リアス式海岸",
-                "kana": "りあすしきかいがん",
-                "rome": "riasusikikaigann"
+                "kana": "りあすしきかいがん"
             },
             {
                 "kanzi": "ワルシャワ条約機構",
-                "kana": "わるしゃわじょうやくきこう",
-                "rome": "warusyawajouyakukikou"
+                "kana": "わるしゃわじょうやくきこう"
             },
             {
                 "kanzi": "猿人",
-                "kana": "えんじん",
-                "rome": "ennjinn"
+                "kana": "えんじん"
             },
             {
                 "kanzi": "ソロモン",
-                "kana": "そろもん",
-                "rome": "soromonn"
+                "kana": "そろもん"
             }
         ],
         "eng": [
             {
                 "kanzi": "高校英語の文章です",
-                "kana": "こうこうえいごのぶんしょうです",
-                "rome": "koukoueigonobunsyoudesu"
+                "kana": "こうこうえいごのぶんしょうです"
             }
         ]
     }
