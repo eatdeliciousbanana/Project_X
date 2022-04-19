@@ -2,8 +2,9 @@ $(function () {
     // グローバル変数
     let globalWords = {};  // 文字
     let mode = {           // モード
-        grade: 'elem',
-        subject: 'jpn'
+        grade: 'elem',   // 学年
+        subject: 'jpn',  // 教科
+        time: 60         // 制限時間
     };
 
     // ゲーム読み込み
@@ -127,6 +128,7 @@ $(function () {
                 const id = $(this).attr('id').split('_');
                 mode.grade = id[0];
                 mode.subject = id[1];
+                mode.time = parseInt(id[2]);
                 loadSpace();
                 switchScreen('space');
             });
@@ -172,6 +174,7 @@ $(function () {
         let miss_typeCount = 0;   // 誤ったキーを押した回数
         let renda_typeCount = 0;  // 連続して正しく打った文字数
         const progressBar = document.getElementById('myProgress');  // 連打メーター
+        let timeLimit = mode.time;  // 制限時間
 
         // 文字フィールドを初期化
         index = getRandom(0, words.length);
@@ -253,7 +256,6 @@ $(function () {
 
 
         // カウントダウン処理
-        let timeLimit = 30;
         let timeoutId;
         function countDown() {
             timeoutId = setTimeout(countDown, 1000);
