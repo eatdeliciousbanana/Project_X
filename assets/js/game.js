@@ -141,6 +141,46 @@ $(function () {
 
     // スペースキーを押して開始
     function loadSpace() {
+        let grade, subject;
+        switch (mode.grade) {
+            case 'elem':
+                grade = '小学校';
+                break;
+            case 'mid':
+                grade = '中学校';
+                break;
+            case 'high':
+                grade = '高校';
+                break;
+            default:
+                break;
+        }
+        switch (mode.subject) {
+            case 'jpn':
+                subject = '国語';
+                break;
+            case 'math':
+                if (mode.grade === 'elem') {
+                    subject = '算数';
+                } else {
+                    subject = '数学';
+                }
+                break;
+            case 'sci':
+                subject = '理科';
+                break;
+            case 'social':
+                subject = '社会';
+                break;
+            case 'eng':
+                subject = '英語';
+                break;
+            default:
+                break;
+        }
+        $('#gamescreen_space_subject').html(`科目：${grade}/${subject}`);
+        $('#gamescreen_space_time').html(`制限時間：${mode.time}秒`);
+
         // スペースキーを押してプレイ画面に遷移
         document.addEventListener('keydown', switchScreenAtSpace);
 
