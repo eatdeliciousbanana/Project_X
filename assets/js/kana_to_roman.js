@@ -59,7 +59,7 @@ var kanaToRoman = function (targetStr, type, options) {
         'ゐ': 'wi',
         'ゑ': 'we',
         'を': { hepburn: 'o', kunrei: 'wo' },
-        'ん': 'nn',
+        'ん': 'n*',
         'が': 'ga',
         'ぎ': 'gi',
         'ぐ': 'gu',
@@ -155,6 +155,9 @@ var kanaToRoman = function (targetStr, type, options) {
         'ぴゅ': 'pyu',
         'ぴぇ': 'pye',
         'ぴょ': 'pyo',
+        'りゃ': 'rya',
+        'りゅ': 'ryu',
+        'りょ': 'ryo',
         'ぁ': 'xa',
         'ぃ': 'xi',
         'ぅ': 'xu',
@@ -286,6 +289,22 @@ var kanaToRoman = function (targetStr, type, options) {
         }
 
         result += roman;
+    }
+
+    // 省略できる「n」を省略する
+    const check_length = result.length - 1;
+    for (let i = 0; i < check_length; i++) {
+        if (result.charAt(i) !== '*') {
+            continue;
+        }
+        if ('naiueo'.includes(result.charAt(i + 1))) {
+            let forward = result.slice(0, i);
+            let backward = result.slice(i + 1);
+            result = forward + 'n' + backward;
+        }
+    }
+    if (result.charAt(result.length - 1) === '*') {
+        result = result.slice(0, result.length - 1) + 'n';
     }
 
     return result;
