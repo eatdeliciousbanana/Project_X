@@ -252,8 +252,8 @@ $(function () {
                 }
 
                 // 打った文字を画面に反映
-                $('#untyped').html(untyped);
-                $('#typed').html(typed);
+                $('#untyped').html(untyped.replace(/\*/g, ''));
+                $('#typed').html(typed.replace(/\*/g, ''));
 
                 // 次のキーを点灯する
                 lightKey(untyped.charAt(0), 'on');
@@ -285,7 +285,7 @@ $(function () {
                     untyped = alter;
                     $('#untyped').html(untyped);
                     document.dispatchEvent(new KeyboardEvent('keydown', { key: untyped.charAt(0) }));
-                    console.log(untyped);
+                    console.log(typed);
                     return;
                 }
 
@@ -346,7 +346,7 @@ $(function () {
             typed = '';
             $('#kanzi_field').html(words[index]['kanzi']);
             $('#kana_field').html(words[index]['kana']);
-            $('#untyped').html(rome);
+            $('#untyped').html(rome.replace(/\*/g, ''));
             $('#typed').html('');
         }
 
