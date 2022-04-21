@@ -135,16 +135,16 @@ var kanaToRoman = function (targetStr, type, options) {
         'ぎゅ': 'gyu',
         'ぎぇ': 'gye',
         'ぎょ': 'gyo',
-        'じゃ': { hepburn: 'ja', kunrei: 'zya' },
+        'じゃ': { hepburn: 'zya', kunrei: 'ja' },
         'じぃ': 'zyi',
-        'じゅ': { hepburn: 'ju', kunrei: 'zyu' },
-        'じぇ': 'zye',
-        'じょ': { hepburn: 'jo', kunrei: 'zyo' },
-        'ぢゃ': { hepburn: 'dya', kunrei: 'zya' },
+        'じゅ': { hepburn: 'zyu', kunrei: 'ju' },
+        'じぇ': 'je',
+        'じょ': { hepburn: 'zyo', kunrei: 'jo' },
+        'ぢゃ': { hepburn: 'dya', kunrei: 'dya' },
         'ぢぃ': 'dyi',
-        'ぢゅ': { hepburn: 'dyu', kunrei: 'zya' },
+        'ぢゅ': { hepburn: 'dyu', kunrei: 'dyu' },
         'ぢぇ': 'dye',
-        'ぢょ': { hepburn: 'dyo', kunrei: 'zya' },
+        'ぢょ': { hepburn: 'dyo', kunrei: 'dyo' },
         'びゃ': 'bya',
         'びぃ': 'byi',
         'びゅ': 'byu',
@@ -303,8 +303,8 @@ var kanaToRoman = function (targetStr, type, options) {
             result = forward + 'n' + backward;
         }
     }
-    if (result.charAt(result.length - 1) === '*') {
-        result = result.slice(0, result.length - 1) + 'n';
+    if (result.slice(-1) === '*') {
+        result = result.slice(0, -1) + 'n';
     }
 
     return result;
