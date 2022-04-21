@@ -286,10 +286,14 @@ $(function () {
                 // キー代替処理
                 let alter = '';
                 if (alter = checkTypeMiss(event.key, typed, untyped)) {
+                    if (untyped.charAt(0) === '*') {
+                        lightKey(untyped.charAt(1), 'off');
+                    } else {
+                        lightKey(untyped.charAt(0), 'off');
+                    }
                     untyped = alter;
-                    $('#untyped').html(untyped);
+                    $('#untyped').html(untyped.replace(/\*/g, ''));
                     document.dispatchEvent(new KeyboardEvent('keydown', { key: untyped.charAt(0) }));
-                    console.log(typed);
                     return;
                 }
 
