@@ -29,6 +29,8 @@ function checkTypeMiss(key, typed, untyped) {
                 return 'ch' + untyped.slice(2);
             } else if (untyped.slice(0, 3) === '*ty') {
                 return 'ch' + untyped.slice(3);
+            } else if (untyped.slice(0, 3) === 'tty') {
+                return 'cch' + untyped.slice(3);
             }
             break;
         case 's':
@@ -48,6 +50,8 @@ function checkTypeMiss(key, typed, untyped) {
                 return 'j' + untyped.slice(1);
             } else if (untyped.slice(0, 3) === '*zi') {
                 return 'j' + untyped.slice(2);
+            } else if (untyped.slice(0, 3) === 'zzi') {
+                return 'jj' + untyped.slice(2);
             }
             break;
         case 'z':
