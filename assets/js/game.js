@@ -256,7 +256,11 @@ $(function () {
                 $('#typed').html(typed.replace(/\*/g, ''));
 
                 // 次のキーを点灯する
-                lightKey(untyped.charAt(0), 'on');
+                if (untyped.charAt(0) === '*') {
+                    lightKey(untyped.charAt(1), 'on');
+                } else {
+                    lightKey(untyped.charAt(0), 'on');
+                }
 
                 // 連打メーターを更新
                 renda_typeCount++;
