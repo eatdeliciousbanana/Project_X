@@ -31,6 +31,8 @@ function checkTypeMiss(key, typed, untyped) {
                 return 'ch' + untyped.slice(3);
             } else if (untyped.slice(0, 3) === 'tty') {
                 return 'cch' + untyped.slice(3);
+            } else if (untyped.slice(0, 4) === '*tty') {
+                return 'cch' + untyped.slice(4);
             }
             break;
         case 's':
@@ -43,6 +45,10 @@ function checkTypeMiss(key, typed, untyped) {
                 return 'f' + untyped.slice(1);
             } else if (untyped.slice(0, 3) === '*hu') {
                 return 'f' + untyped.slice(2);
+            } else if (untyped.slice(0, 3) === 'hhu') {
+                return 'ff' + untyped.slice(2);
+            } else if (untyped.slice(0, 4) === '*hhu') {
+                return 'ff' + untyped.slice(3);
             }
             break;
         case 'j':
@@ -52,6 +58,8 @@ function checkTypeMiss(key, typed, untyped) {
                 return 'j' + untyped.slice(2);
             } else if (untyped.slice(0, 3) === 'zzi') {
                 return 'jj' + untyped.slice(2);
+            } else if (untyped.slice(0, 4) === '*zzi') {
+                return 'jj' + untyped.slice(3);
             }
             break;
         case 'z':
@@ -59,6 +67,10 @@ function checkTypeMiss(key, typed, untyped) {
                 return 'zy' + untyped.slice(1);
             } else if (untyped.slice(0, 2) === '*j') {
                 return 'zy' + untyped.slice(2);
+            } else if (untyped.slice(0, 2) === 'jj') {
+                return 'zzy' + untyped.slice(2);
+            } else if (untyped.slice(0, 3) === '*jj') {
+                return 'zzy' + untyped.slice(3);
             }
             break;
         default:
