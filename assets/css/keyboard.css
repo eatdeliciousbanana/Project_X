@@ -6,13 +6,16 @@ h1 {
 }
 
 .keyboard {
+    position: relative;
     text-align: center;
     font-size: 14px;
     font-family: sans-serif;
-    margin: 25px;
+    margin: auto;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.384);
     width: 770px;
+    top: 0px;
 }
 
 .keyboard__row {
