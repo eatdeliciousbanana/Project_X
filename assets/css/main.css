@@ -53,6 +53,10 @@
 
 #gamescreen {
   display: none;
-  padding: 20px;
-  background-color: rgb(240, 240, 240);
+  position: relative;
+  width: 1020px;
+  height: 720px;
+  top: 0;
+  margin:auto;
+  background:url("../img/gamebackground\ \(1020\,720\).png")
 }
