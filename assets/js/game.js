@@ -267,13 +267,13 @@ $(function () {
                 progressBar.value = renda_typeCount;
 
                 if (renda_typeCount === 50) {
-                    timeLimit += 10;
+                    timeLimit += 1;
                 } else if (renda_typeCount === 100) {
-                    timeLimit += 10;
+                    timeLimit += 1;
                 } else if (renda_typeCount === 150) {
-                    timeLimit += 20;
+                    timeLimit += 2;
                 } else if (renda_typeCount === 200) {
-                    timeLimit += 30;
+                    timeLimit += 3;
                     renda_typeCount = 0;
                     progressBar.value = renda_typeCount;
                 }
@@ -292,7 +292,6 @@ $(function () {
                         lightKey(untyped.charAt(0), 'off');
                     }
                     untyped = alter;
-                    $('#untyped').html(untyped.replace(/\*/g, ''));
                     document.dispatchEvent(new KeyboardEvent('keydown', { key: untyped.charAt(0) }));
                     return;
                 }
