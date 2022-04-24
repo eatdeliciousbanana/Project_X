@@ -100,9 +100,9 @@
 
                 <!-- タイトル画面 -->
                 <div class="switch_screen" id="gamescreen_title">
-                    <div id="gamescreen_title_title">タイピングゲーム</div>
+                    <div id="gamescreen_title_title">タイピングゲーム<br>※このゲームは音が出ます</div>
                     <div><button type="button" class="btn btn-light" id="title_btnStart">スタート</button></div>
-                    <div><button type="button" class="btn btn-light" id="title_btnConfig">設定</button></div>
+                    <div><button type="button" class="btn btn-light" id="title_btnConfig">各種設定</button></div>
                 </div>
 
                 <!-- 設定画面 -->
@@ -119,10 +119,10 @@
                             ふりがな表示
                         </label>
                     </div>
-                    <div><label><input type="range">BGM音量</label></div>
-                    <div><label><input type="range">SE音量</label></div>
-                    <div><label><input type="range">タイプ音量</label></div>
-                    <div><label><input type="range">ミス音量</label></div>
+                    <div><label><input type="range" value="100" step="10" id="volumeSlider-BGM">BGM音量</label></div>
+                    <div><label><input type="range" value="100" step="10" id="volumeSlider-SE">SE音量</label></div>
+                    <div><label><input type="range" value="100" step="10" id="volumeSlider-type">タイプ音量</label></div>
+                    <div><label><input type="range" value="100" step="10" id="volumeSlider-miss">ミス音量</label></div>
                     <div><button type="button" class="btn btn-light" id="config_btnBack">戻る</button></div>
                 </div>
 
@@ -424,6 +424,9 @@
 
     <!-- サウンド -->
     <div id="sound_field">
+        <audio id="SE_sound" preload="auto">
+            <source src="assets/audio/tap.mp3" type="audio/mp3">
+        </audio>
         <audio id="typing_sound0" preload="auto">
             <source src="assets/audio/key_audio.mp3" type="audio/mp3">
         </audio>
@@ -543,6 +546,15 @@
         </audio>
         <audio id="typing_miss_sound19" preload="auto">
             <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="mode_select_sound" preload="auto">
+            <source src="assets/audio/school_bell.mp3" type="audio/mp3">
+        </audio>
+        <audio id="countDown_sound" preload="auto">
+            <source src="assets/audio/countDown.mp3" type="audio/mp3">
+        </audio>
+        <audio id="BGM_sound" preload="auto">
+            <source src="assets/audio/BGM.mp3" type="audio/mp3">
         </audio>
     </div>
 
