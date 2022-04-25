@@ -54,8 +54,10 @@
 #gamescreen {
   display: none;
   position: relative;
-  width: 1020px;
-  height: 720px;
+  /* 画面のサイズに合わせて動的に高さを変える仕様に変更しました（一時的） */
+  /*width: 1020px;
+  height: 720px;*/
+  background-size: cover;
   top: 0;
   margin:auto;
   background:url("../img/gamebackground\ \(1020\,720\).png")
