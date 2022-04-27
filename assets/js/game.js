@@ -1,4 +1,4 @@
-$(function () {
+function typingGame() {
     // グローバル変数
     let globalWords = {};  // 文字
     let mode = {           // モード
@@ -8,7 +8,6 @@ $(function () {
     };
 
     // ゲーム読み込み
-    switchScreen('loading');
     loadClock();
     loadKeyboard();
     loadTitle();
@@ -37,10 +36,23 @@ $(function () {
        リザルト画面: result
     */
     function switchScreen(screenName) {
+        if ($('#gamescreen_loading').css('display') === 'none' && screenName !== 'playing' && screenName !== 'result') {
+            gameSound('tap', 'play');
+        }
         $('.switch_screen').each(function () {
             $(this).hide();
         });
         $(`#gamescreen_${screenName}`).show();
+    }
+
+
+    // 音を再生する関数
+    function gameSound(name, play_or_pause) {
+        if (play_or_pause === 'play') {
+            document.getElementById('sound_' + name).play();
+        } else if (play_or_pause === 'pause') {
+            document.getElementById('sound_' + name).pause();
+        }
     }
 
 
@@ -109,8 +121,8 @@ $(function () {
     function loadTitle() {
         // ボタンをして画面遷移
         $('#title_btnStart').on('click', function () {
+            gameSound('chime', 'play');
             switchScreen('mode');
-            document.getElementById(`mode_select_sound`).play();
         });
         $('#title_btnConfig').on('click', function () { switchScreen('config') });
     }
@@ -118,36 +130,106 @@ $(function () {
 
     // 設定画面
     function loadConfig() {
-        var madia_BGM_1 = document.getElementById("mode_select_sound");
-        var madia_BGM_2 = document.getElementById("countDown_sound");
-        var madia_BGM_3 = document.getElementById("BGM_sound");
-        var madia_SE = document.getElementById("SE_sound");
-        // たくさんあるな！var madia_type = document.getElementById("BGM_sound");
-        // また今度考える！var madia_miss = document.getElementById("BGM_sound");
+        const kana_field = document.getElementById('kana_field');
+        const media_BGM = document.getElementById('sound_BGM');
+        const media_SE = document.getElementsByClassName('sound_SE');
+        const media_type = document.getElementsByClassName('sound_type');
+        const media_typeMiss = document.getElementsByClassName('sound_typeMiss');
 
-        function inputChange(){
-            // ID.media : 0 is min, 1.0 is max.
-            madia_BGM_1.volume=(volumeSlider_BGM.value)/100;
-            madia_BGM_2.volume=(volumeSlider_BGM.value)/100;
-            madia_BGM_3.volume=(volumeSlider_BGM.value)/100;
-            madia_SE.volume=(volumeSlider_SE.value)/100;
+        const hurigana_check = document.getElementById('hurigana_check');
+        const volumeSlider_BGM = document.getElementById('volumeSlider-BGM');
+        const volumeSlider_SE = document.getElementById('volumeSlider-SE');
+        const volumeSlider_type = document.getElementById('volumeSlider-type');
+        const volumeSlider_typeMiss = document.getElementById('volumeSlider-typeMiss');
+
+        // Cookie読み込み
+        function loadCookie() {
+            let cookie = document.cookie;
+            let index, value;
+
+            if ((index = cookie.indexOf('hurigana=')) !== -1) {
+                value = cookie.slice(index + 9, index + 14);
+                if (value.includes('true')) {
+                    kana_field.style.display = 'block';
+                    hurigana_check.checked = true;
+                } else if (value.includes('false')) {
+                    kana_field.style.display = 'none';
+                    hurigana_check.checked = false;
+                }
+            }
+            if ((index = cookie.indexOf('BGM=')) !== -1) {
+                value = parseInt(cookie.slice(index + 4));
+                media_BGM.volume = value / 100;
+                volumeSlider_BGM.value = value;
+            }
+            if ((index = cookie.indexOf('SE=')) !== -1) {
+                value = parseInt(cookie.slice(index + 3));
+                for (let i = 0; i < media_SE.length; i++) {
+                    media_SE.item(i).volume = value / 100;
+                }
+                volumeSlider_SE.value = value;
+            }
+            if ((index = cookie.indexOf('type=')) !== -1) {
+                value = parseInt(cookie.slice(index + 5));
+                for (let i = 0; i < media_type.length; i++) {
+                    media_type.item(i).volume = value / 100;
+                }
+                volumeSlider_type.value = value;
+            }
+            if ((index = cookie.indexOf('typeMiss=')) !== -1) {
+                value = parseInt(cookie.slice(index + 9));
+                for (let i = 0; i < media_typeMiss.length; i++) {
+                    media_typeMiss.item(i).volume = value / 100;
+                }
+                volumeSlider_typeMiss.value = value;
+            }
         }
+        loadCookie();
 
-        let volumeSlider_BGM = document.getElementById('volumeSlider-BGM');
-        let volumeSlider_SE = document.getElementById('volumeSlider-SE');
-        let volumeSlider_type = document.getElementById('volumeSlider-type');
-        let volumeSlider_miss = document.getElementById('volumeSlider-miss');
-        volumeSlider_BGM.addEventListener('input', inputChange);
-        volumeSlider_SE.addEventListener('input', inputChange);
-        volumeSlider_miss.addEventListener('input', inputChange);
-        volumeSlider_type.addEventListener('input', inputChange);
+        hurigana_check.addEventListener('change', function () {
+            if (hurigana_check.checked) {
+                kana_field.style.display = 'block';
+                document.cookie = 'hurigana=true';
+            } else {
+                kana_field.style.display = 'none';
+                document.cookie = 'hurigana=false';
+            }
+        });
+
+        // ID.media : 0 is min, 1.0 is max.
+        volumeSlider_BGM.addEventListener('change', function () {
+            media_BGM.volume = volumeSlider_BGM.value / 100;
+            document.cookie = 'BGM=' + volumeSlider_BGM.value;
+            gameSound('BGM', 'play');
+            setTimeout(function () { gameSound('BGM', 'pause') }, 1000);
+        });
+
+        volumeSlider_SE.addEventListener('change', function () {
+            for (let i = 0; i < media_SE.length; i++) {
+                media_SE.item(i).volume = volumeSlider_SE.value / 100;
+            }
+            document.cookie = 'SE=' + volumeSlider_SE.value;
+            gameSound('tap', 'play');
+        });
+
+        volumeSlider_type.addEventListener('change', function () {
+            for (let i = 0; i < media_type.length; i++) {
+                media_type.item(i).volume = volumeSlider_type.value / 100;
+            }
+            document.cookie = 'type=' + volumeSlider_type.value;
+            gameSound('type0', 'play');
+        });
+
+        volumeSlider_typeMiss.addEventListener('change', function () {
+            for (let i = 0; i < media_typeMiss.length; i++) {
+                media_typeMiss.item(i).volume = volumeSlider_typeMiss.value / 100;
+            }
+            document.cookie = 'typeMiss=' + volumeSlider_typeMiss.value;
+            gameSound('typeMiss0', 'play');
+        });
 
         // ボタンをして画面遷移
-        $('#config_btnBack').on('click', function () {
-            document.getElementById(`SE_sound`).play();
-            document.getElementById(`mode_select_sound`).pause();
-            switchScreen('title');
-        });
+        $('#config_btnBack').on('click', function () { switchScreen('title') });
     }
 
 
@@ -156,8 +238,6 @@ $(function () {
         // モード選択
         $('.mode_select').each(function () {
             $(this).on('click', function () {
-                document.getElementById(`mode_select_sound`).pause();
-                document.getElementById(`SE_sound`).play();                
                 const id = $(this).attr('id').split('_');
                 mode.grade = id[0];
                 mode.subject = id[1];
@@ -168,10 +248,7 @@ $(function () {
         });
 
         // 戻るボタン
-        $('#mode_btnBack').on('click', function () { 
-            document.getElementById(`SE_sound`).play();
-            document.getElementById(`mode_select_sound`).pause();
-            switchScreen('title'); });
+        $('#mode_btnBack').on('click', function () { switchScreen('title') });
     }
 
 
@@ -222,10 +299,10 @@ $(function () {
 
         function switchScreenAtSpace(event) {
             if (event.code === 'Space') {
-                document.getElementById(`countDown_sound`).play();
-                document.getElementById(`BGM_sound`).play();
                 loadCountDown();
                 switchScreen('countdown');
+                gameSound('countDown', 'play');
+                gameSound('BGM', 'play');
                 this.removeEventListener('keydown', switchScreenAtSpace);
             }
         }
@@ -277,8 +354,8 @@ $(function () {
                 // 前のキーを消灯する
                 lightKey(event.key, 'off');
 
-                // playメソッドでキー打鍵音を再生する
-                document.getElementById(`typing_sound${right_typeCount++ % 20}`).play();
+                // キー打鍵音を再生
+                gameSound(`type${right_typeCount++ % 20}`, 'play');
 
                 // 打ってない文字の先頭を打った文字の末尾に追加
                 typed += untyped.charAt(0);
@@ -334,8 +411,8 @@ $(function () {
                     return;
                 }
 
-                // playメソッドでミス音を再生する
-                document.getElementById(`typing_miss_sound${miss_typeCount++ % 20}`).play();
+                // ミス音を再生
+                gameSound(`typeMiss${miss_typeCount++ % 20}`, 'play');
 
                 // 連打メーターをリセット
                 renda_typeCount = 0;
@@ -360,7 +437,7 @@ $(function () {
 
         // プレイ画面を終了する関数
         function endPlaying() {
-            document.getElementById(`BGM_sound`).pause();
+            gameSound('BGM', 'pause');
             document.removeEventListener('keydown', typeKey);
             lightKey(untyped.charAt(0), 'off');
             updateScore(0);
@@ -423,16 +500,12 @@ $(function () {
 
         // モード選択ボタンが押されたときの処理
         $('#playing_btnMode').on('click', function () {
-            document.getElementById(`BGM_sound`).pause();
-            document.getElementById(`SE_sound`).play();
             endPlayingBeforeTimeLimit();
             switchScreen('mode');
         });
 
         // やり直しボタンが押されたときの処理
         $('#playing_btnAgain').on('click', function () {
-            document.getElementById(`BGM_sound`).pause();
-            document.getElementById(`SE_sound`).play();
             endPlayingBeforeTimeLimit();
             loadSpace();
             switchScreen('space');
@@ -444,21 +517,13 @@ $(function () {
     function loadResult() {
         // ボタンをして画面遷移
         $('#result_btnAgain').on('click', function () {
-            document.getElementById(`BGM_sound`).pause();
-            document.getElementById(`SE_sound`).play();
             loadSpace();
             switchScreen('space');
         });
-        $('#result_btnMode').on('click', function () { 
-            document.getElementById(`BGM_sound`).pause();
-            document.getElementById(`SE_sound`).play();
-            switchScreen('mode'); });
-        $('#result_btnTitle').on('click', function () { 
-            document.getElementById(`BGM_sound`).pause();
-            document.getElementById(`SE_sound`).play();
-            switchScreen('title'); });
+        $('#result_btnMode').on('click', function () { switchScreen('mode') });
+        $('#result_btnTitle').on('click', function () { switchScreen('title') });
     }
-});
+}
 
 
 // ゲーム画面のカウントダウン

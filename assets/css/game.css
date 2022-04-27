@@ -1,5 +1,4 @@
 #gamescreen_loading {
-    display: none;
     font-size: xx-large;
     position: absolute;
     top: 50%;
@@ -70,7 +69,7 @@
 }
 
 /* ゲーム背景画像(1020px,720px) */
-.game_background{
+.game_background {
     position: absolute;
     margin: auto;
     z-index: -1;
@@ -93,7 +92,7 @@
     /* 影 */
     box-shadow: 0 0 5px #333;
 
-    top:10px;
+    top: 10px;
 }
 
 .kokuban::before,
@@ -128,7 +127,7 @@
     border: 1px solid #333;
     border-radius: 50%;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
-    4px 4px 4px rgba(0, 0, 0, 0.25) inset;
+        4px 4px 4px rgba(0, 0, 0, 0.25) inset;
     top: 15px;
 }
 

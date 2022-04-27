@@ -60,6 +60,7 @@
                     <h1 id="game-title" class="text-white">シンプルタイピングゲーム</h1>
                     <p class="text-white opacity">今すぐ腕試し！</p>
                     <button type="submit" class="btn bg-white text-dark" id="btn_gamestart">Let's start!</button>
+                    <button type="submit" class="btn bg-white text-dark" id="btn_gamestart_silent">音無しでスタート</button>
                 </div>
             </div>
         </div>
@@ -100,7 +101,7 @@
 
                 <!-- タイトル画面 -->
                 <div class="switch_screen" id="gamescreen_title">
-                    <div id="gamescreen_title_title">タイピングゲーム<br>※このゲームは音が出ます</div>
+                    <div id="gamescreen_title_title">タイピングゲーム</div>
                     <div><button type="button" class="btn btn-light" id="title_btnStart">スタート</button></div>
                     <div><button type="button" class="btn btn-light" id="title_btnConfig">各種設定</button></div>
                 </div>
@@ -108,21 +109,15 @@
                 <!-- 設定画面 -->
                 <div class="switch_screen" id="gamescreen_config">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            ローマ字表示
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <input class="form-check-input" type="checkbox" id="hurigana_check" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                             ふりがな表示
                         </label>
                     </div>
-                    <div><label><input type="range" value="100" step="10" id="volumeSlider-BGM">BGM音量</label></div>
-                    <div><label><input type="range" value="100" step="10" id="volumeSlider-SE">SE音量</label></div>
-                    <div><label><input type="range" value="100" step="10" id="volumeSlider-type">タイプ音量</label></div>
-                    <div><label><input type="range" value="100" step="10" id="volumeSlider-miss">ミス音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-BGM">BGM音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-SE">SE音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-type">タイプ音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-typeMiss">ミス音量</label></div>
                     <div><button type="button" class="btn btn-light" id="config_btnBack">戻る</button></div>
                 </div>
 
@@ -424,136 +419,136 @@
 
     <!-- サウンド -->
     <div id="sound_field">
-        <audio id="SE_sound" preload="auto">
+        <audio id="sound_type0" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type1" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type2" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type3" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type4" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type5" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type6" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type7" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type8" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type9" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type10" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type11" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type12" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type13" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type14" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type15" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type16" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type17" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type18" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_type19" class="sound_type" preload="auto">
+            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss0" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss1" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss2" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss3" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss4" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss5" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss6" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss7" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss8" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss9" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss10" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss11" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss12" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss13" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss14" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss15" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss16" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss17" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss18" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_typeMiss19" class="sound_typeMiss" preload="auto">
+            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
+        </audio>
+        <audio id="sound_tap" class="sound_SE" preload="auto">
             <source src="assets/audio/tap.mp3" type="audio/mp3">
         </audio>
-        <audio id="typing_sound0" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound1" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound2" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound3" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound4" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound5" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound6" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound7" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound8" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound9" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound10" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound11" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound12" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound13" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound14" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound15" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound16" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound17" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound18" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_sound19" preload="auto">
-            <source src="assets/audio/key_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound0" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound1" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound2" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound3" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound4" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound5" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound6" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound7" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound8" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound9" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound10" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound11" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound12" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound13" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound14" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound15" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound16" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound17" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound18" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="typing_miss_sound19" preload="auto">
-            <source src="assets/audio/miss_audio.mp3" type="audio/mp3">
-        </audio>
-        <audio id="mode_select_sound" preload="auto">
+        <audio id="sound_chime" class="sound_SE" preload="auto">
             <source src="assets/audio/school_bell.mp3" type="audio/mp3">
         </audio>
-        <audio id="countDown_sound" preload="auto">
+        <audio id="sound_countDown" class="sound_SE" preload="auto">
             <source src="assets/audio/countDown.mp3" type="audio/mp3">
         </audio>
-        <audio id="BGM_sound" preload="auto">
+        <audio id="sound_BGM" preload="auto">
             <source src="assets/audio/BGM.mp3" type="audio/mp3">
         </audio>
     </div>
