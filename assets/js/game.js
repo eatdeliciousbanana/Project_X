@@ -520,6 +520,10 @@ function typingGame() {
             loadSpace();
             switchScreen('space');
         });
+        $('#result_btnDetailResult').on('click', function () {
+            scrollTo(0, 700);
+            $('#detail-result-parent').show()
+        });
         $('#result_btnMode').on('click', function () { switchScreen('mode') });
         $('#result_btnTitle').on('click', function () { switchScreen('title') });
     }
