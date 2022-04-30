@@ -62,7 +62,7 @@
 }
 
 #detail-result-parent{
-  
+  display: none;
   position: relative;
   border:solid 2px black;
   margin: 50px auto 0px auto;
