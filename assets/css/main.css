@@ -61,11 +61,14 @@
   background:url("../img/gamebackground\ \(1020\,720\).png")
 }
 
-#detail-result-parent{
+#detail_result_parent{
   display: none;
   position: relative;
   border:solid 2px black;
   margin: 50px auto 0px auto;
   height: 470px;
   width: 1200px;
+}
+#ranking_registration_modal{
+  display: none;
 }
