@@ -520,6 +520,12 @@ function typingGame() {
             loadSpace();
             switchScreen('space');
         });
+        $('#result_btnDetailResult').on('click', function () {
+            scrollTo(0, 700);
+            // そのあとに表示されっぱなしになるのを後で改善
+            $('#detail_result_parent').show()
+            $('#ranking_registration_modal').show()
+        });
         $('#result_btnMode').on('click', function () { switchScreen('mode') });
         $('#result_btnTitle').on('click', function () { switchScreen('title') });
     }

@@ -16,4 +16,16 @@ $(function () {
         $('#header').hide();
         $('#gamescreen').show();
     });
+
+    $(document).ready(function () {
+        hsize = $(window).height()-75;
+        $("#header").css("height", hsize + "px");
+        $("#header-img").css("height", hsize + "px");
+        });
+        $(window).resize(function () {
+        hsize = $(window).height()-75;
+        $("#header").css("height", hsize + "px");
+        $("#header-img").css("height", hsize + "px");
+        });
+        
 }); 
