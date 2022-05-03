@@ -476,7 +476,7 @@ function typingGame() {
 
         // スコアを更新する関数
         function updateScore(score) {
-            $('#score').html(`現在${score}点`);
+            $('#score').html(`${score}点`);
         }
 
 
@@ -546,3 +546,4 @@ function setupFlip(tick) {
         }
     });
 }
+Splitting();

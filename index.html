@@ -8,12 +8,14 @@
     <title>タイピングゲーム</title>
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/keyboard.css">
     <link rel="stylesheet" href="assets/css/flip.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 
 <body>
@@ -21,28 +23,33 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="assets/img/banana_icon.svg" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
                 SimpleTyping</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
-                            <img src="assets/img/house.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            <img src="assets/img/house.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./ranking.html">
-                            <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            <img src="assets/img/award.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
                             ランキング
                         </a>
                     </li>
                     <li clzzass="nav-item">
                         <a class="nav-link" href="./help.html">
-                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                            <img src="assets/img/question-diamond.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
                             ヘルプ
                         </a>
                     </li>
@@ -69,7 +76,7 @@
             <img src="assets/img/arrow_to_bottom.svg" width="30">
         </div>
     </div>
-    
+
     <!-- gamescreen -->
     <div id="gamescreen">
 
@@ -86,7 +93,10 @@
 
         <div class="pbox">
             <div id="boxA" class="cbox boxA">
+                <h3><span class="fun_font" data-splitting>Your Score</span></h3>
                 <p id="score"></p>
+
+                <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
             </div>
 
             <!-- 黒板 -->
@@ -114,10 +124,14 @@
                             ふりがな表示
                         </label>
                     </div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-BGM">BGM音量</label></div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-SE">SE音量</label></div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-type">タイプ音量</label></div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-typeMiss">ミス音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1"
+                                id="volumeSlider-BGM">BGM音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1"
+                                id="volumeSlider-SE">SE音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1"
+                                id="volumeSlider-type">タイプ音量</label></div>
+                    <div><label><input type="range" value="50" min="0" max="100" step="1"
+                                id="volumeSlider-typeMiss">ミス音量</label></div>
                     <div><button type="button" class="btn btn-light" id="config_btnBack">戻る</button></div>
                 </div>
 
@@ -359,86 +373,226 @@
 
     <div id="detail_result_parent">
         <div id="detail-result">
-            <div style="position:absolute;top:0.68in;left:5.71in;width:1.45in;line-height:0.47in;"><span style="font-style:normal;font-weight:bold;font-size:24pt;font-family:MS Mincho;color:#000000">通知表</span><span style="font-style:normal;font-weight:bold;font-size:24pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.11in;left:10.60in;width:1.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">評価</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">（S</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">・</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">A</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">・</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">B）</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.22in;left:5.67in;width:0.33in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.94in;left:5.67in;width:0.33in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.66in;left:5.67in;width:0.33in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.38in;left:5.67in;width:0.33in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:1.82in;left:3.15in;width:1.00in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">行動の記録</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.10in;left:0.99in;width:0.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">項目</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.38in;left:0.91in;width:0.67in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">向上心</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.66in;left:0.83in;width:0.84in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">思いやり</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.94in;left:0.74in;width:1.00in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">公平・公正</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.79in;left:0.99in;width:0.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">年度</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:4.08in;left:0.87in;width:0.76in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">令和</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">4</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">年</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.79in;left:3.81in;width:0.84in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">コメント</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:4.08in;left:2.14in;width:4.17in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">大変よくできています</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">。</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">このまま頑張ってください</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">。</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.10in;left:8in;width:0.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">項目</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.38in;left:7.41in;width:1.66in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">タイピングワード数</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.66in;left:8in;width:0.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">速さ</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.94in;left:7.58in;width:1.33in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">ミスタイプの数</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.22in;left:7.66in;width:1.16in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">ミスタイプ率</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.10in;left:5in;width:1.67in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">評価</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">（◎、○、△）</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.10in;left:3.17in;width:0.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">内容</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.38in;left:2.20in;width:2.67in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">向上心を持って取り組めてたか</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.66in;left:2.51in;width:1.84in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">思いやりのある行動か</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.94in;left:2.42in;width:2.01in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">不正をせず取り組んだか</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.22in;left:2.25in;width:2.34in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">選ぶサイトはセンスがあるか</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.22in;left:0.91in;width:0.67in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">センス</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.51in;left:11.21in;width:0.28in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">A</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.51in;left:7.83in;width:0.84in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">総合評価</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.10in;left:9.60in;width:0.50in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">数値</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.38in;left:9.72in;width:0.26in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">1</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.66in;left:9.72in;width:0.26in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">2</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.94in;left:9.72in;width:0.26in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">3</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.22in;left:9.72in;width:0.26in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">4</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.51in;left:9.72in;width:0.26in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">5</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:1.82in;left:9.24in;width:1.00in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">成績の記録</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.38in;left:11.22in;width:0.27in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">S</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.66in;left:11.21in;width:0.28in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">A</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:2.94in;left:11.21in;width:0.28in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">B</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<div style="position:absolute;top:3.22in;left:11.22in;width:0.27in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">S</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
-<img style="position:absolute;top:0.60in;left:0.60in;width:11.37in;height:2.90in" src="assets/img/vi_1.png" />
-<img style="position:absolute;top:1.77in;left:0.57in;width:11.40in;height:2.01in" src="assets/img/vi_2.png" />
-<img style="position:absolute;top:0.60in;left:0.57in;width:11.40in;height:3.75in" src="assets/img/vi_3.png" />
-<img style="position:absolute;top:1.77in;left:0.60in;width:11.37in;height:2.58in" src="assets/img/vi_4.png" />
-<img style="position:absolute;top:0.46in;left:0.62in;width:1.49in;height:1.08in" src="assets/img/ri_1.png" />
-<div style="position:absolute;top:0.98in;left:11.15in;width:0.43in;line-height:0.27in;"><span style="font-style:normal;font-weight:normal;font-size:14pt;font-family:MS Mincho;color:#000000">印</span><span style="font-style:normal;font-weight:normal;font-size:14pt;font-family:Yu Gothic;color:#000000"></span><br/></SPAN></div>
+            <div style="position:absolute;top:0.68in;left:5.71in;width:1.45in;line-height:0.47in;"><span
+                    style="font-style:normal;font-weight:bold;font-size:24pt;font-family:MS Mincho;color:#000000">通知表</span><span
+                    style="font-style:normal;font-weight:bold;font-size:24pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.11in;left:10.60in;width:1.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">評価</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">（S</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">・</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">A</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">・</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">B）</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.22in;left:5.67in;width:0.33in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.94in;left:5.67in;width:0.33in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.66in;left:5.67in;width:0.33in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.38in;left:5.67in;width:0.33in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">◎</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:1.82in;left:3.15in;width:1.00in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">行動の記録</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.10in;left:0.99in;width:0.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">項目</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.38in;left:0.91in;width:0.67in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">向上心</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.66in;left:0.83in;width:0.84in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">思いやり</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.94in;left:0.74in;width:1.00in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">公平・公正</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.79in;left:0.99in;width:0.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">年度</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:4.08in;left:0.87in;width:0.76in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">令和</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">4</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">年</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.79in;left:3.81in;width:0.84in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">コメント</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:4.08in;left:2.14in;width:4.17in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">大変よくできています</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">。</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">このまま頑張ってください</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">。</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.10in;left:8in;width:0.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">項目</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.38in;left:7.41in;width:1.66in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">タイピングワード数</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.66in;left:8in;width:0.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">速さ</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.94in;left:7.58in;width:1.33in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">ミスタイプの数</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.22in;left:7.66in;width:1.16in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">ミスタイプ率</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.10in;left:5in;width:1.67in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">評価</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">（◎、○、△）</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.10in;left:3.17in;width:0.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">内容</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.38in;left:2.20in;width:2.67in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">向上心を持って取り組めてたか</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.66in;left:2.51in;width:1.84in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">思いやりのある行動か</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.94in;left:2.42in;width:2.01in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">不正をせず取り組んだか</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.22in;left:2.25in;width:2.34in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">選ぶサイトはセンスがあるか</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.22in;left:0.91in;width:0.67in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">センス</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.51in;left:11.21in;width:0.28in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">A</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.51in;left:7.83in;width:0.84in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">総合評価</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.10in;left:9.60in;width:0.50in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">数値</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.38in;left:9.72in;width:0.26in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">1</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.66in;left:9.72in;width:0.26in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">2</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.94in;left:9.72in;width:0.26in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">3</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.22in;left:9.72in;width:0.26in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">4</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.51in;left:9.72in;width:0.26in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">5</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:1.82in;left:9.24in;width:1.00in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">成績の記録</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.38in;left:11.22in;width:0.27in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">S</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.66in;left:11.21in;width:0.28in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">A</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:2.94in;left:11.21in;width:0.28in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">B</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <div style="position:absolute;top:3.22in;left:11.22in;width:0.27in;line-height:0.22in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000">S</span><span
+                    style="font-style:normal;font-weight:normal;font-size:11pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
+            <img style="position:absolute;top:0.60in;left:0.60in;width:11.37in;height:2.90in"
+                src="assets/img/vi_1.png" />
+            <img style="position:absolute;top:1.77in;left:0.57in;width:11.40in;height:2.01in"
+                src="assets/img/vi_2.png" />
+            <img style="position:absolute;top:0.60in;left:0.57in;width:11.40in;height:3.75in"
+                src="assets/img/vi_3.png" />
+            <img style="position:absolute;top:1.77in;left:0.60in;width:11.37in;height:2.58in"
+                src="assets/img/vi_4.png" />
+            <img style="position:absolute;top:0.46in;left:0.62in;width:1.49in;height:1.08in"
+                src="assets/img/ri_1.png" />
+            <div style="position:absolute;top:0.98in;left:11.15in;width:0.43in;line-height:0.27in;"><span
+                    style="font-style:normal;font-weight:normal;font-size:14pt;font-family:MS Mincho;color:#000000">印</span><span
+                    style="font-style:normal;font-weight:normal;font-size:14pt;font-family:Yu Gothic;color:#000000"></span><br /></SPAN>
+            </div>
 
         </div>
     </div>
 
-<div id="ranking_registration_modal" align="center">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">校内順位一覧に登録する</button>
+    <div id="ranking_registration_modal" align="center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">校内順位一覧に登録する</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">順位登録画面</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">ニックネーム：</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <!-- <div class="mb-3">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">順位登録画面</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">ニックネーム：</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <!-- <div class="mb-3">
             <label for="message-text" class="col-form-label">Message:</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div> -->
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">やめる</button>
-        <button type="button" class="btn btn-primary">登録</button>
-      </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">やめる</button>
+                        <button type="button" class="btn btn-primary">登録</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
 
 
     <!-- subheader -->
@@ -639,10 +793,13 @@
     </div>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <!-- JS file -->
     <script src="assets/js/flip.min.js"></script>
