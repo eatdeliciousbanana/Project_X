@@ -17,15 +17,12 @@ $(function () {
         $('#gamescreen').show();
     });
 
-    $(document).ready(function () {
-        hsize = $(window).height()-75;
-        $("#header").css("height", hsize + "px");
-        $("#header-img").css("height", hsize + "px");
-        });
-        $(window).resize(function () {
-        hsize = $(window).height()-75;
-        $("#header").css("height", hsize + "px");
-        $("#header-img").css("height", hsize + "px");
-        });
-        
+    function adjustHeader() {
+        const hsize_after = parseInt($(window).height() - 75);
+        $("#header").css("height", hsize_after + "px");
+        $("#header-img").css("height", hsize_after + "px");
+    }
+
+    adjustHeader();
+    $(window).resize(adjustHeader);
 }); 
