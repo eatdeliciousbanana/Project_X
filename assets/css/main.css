@@ -1,6 +1,11 @@
 #header {
   position: relative;
   text-align: center;
+  width: auto;
+}
+
+#header-img {
+  object-fit: cover;
 }
 
 #header-contents {
@@ -57,18 +62,19 @@
   width: 1020px;
   height: 720px;
   top: 0;
-  margin:auto;
-  background:url("../img/gamebackground\ \(1020\,720\).png")
+  margin: auto;
+  background: url("../img/gamebackground\ \(1020\,720\).png")
 }
 
-#detail_result_parent{
+#detail_result_parent {
   display: none;
   position: relative;
-  border:solid 2px black;
+  border: solid 2px black;
   margin: 50px auto 0px auto;
   height: 470px;
   width: 1200px;
 }
-#ranking_registration_modal{
+
+#ranking_registration_modal {
   display: none;
 }
