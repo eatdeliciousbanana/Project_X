@@ -1,4 +1,4 @@
-function typingGame() {
+function typingGame(silent_mode) {
     // グローバル変数
     let globalWords = {};  // 文字
     let mode = {           // モード
@@ -185,6 +185,23 @@ function typingGame() {
             }
         }
         loadCookie();
+
+        if (silent_mode) {
+            media_BGM.volume = 0;
+            for (let i = 0; i < media_SE.length; i++) {
+                media_SE.item(i).volume = 0;
+            }
+            for (let i = 0; i < media_type.length; i++) {
+                media_type.item(i).volume = 0;
+            }
+            for (let i = 0; i < media_typeMiss.length; i++) {
+                media_typeMiss.item(i).volume = 0;
+            }
+            volumeSlider_BGM.value = 0;
+            volumeSlider_SE.value = 0;
+            volumeSlider_type.value = 0;
+            volumeSlider_typeMiss.value = 0;
+        }
 
         hurigana_check.addEventListener('change', function () {
             if (hurigana_check.checked) {

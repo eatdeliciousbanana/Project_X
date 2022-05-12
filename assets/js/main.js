@@ -1,28 +1,24 @@
 $(function () {
     // Lets's start!!を押してスタート
     $('#btn_gamestart').on('click', function () {
-        typingGame();
+        typingGame(false);
         $('#header').hide();
         $('#gamescreen').show();
     });
 
     // サイレント
     $('#btn_gamestart_silent').on('click', function () {
-        document.cookie = 'BGM=0';
-        document.cookie = 'SE=0';
-        document.cookie = 'type=0';
-        document.cookie = 'typeMiss=0';
-        typingGame();
+        typingGame(true);
         $('#header').hide();
         $('#gamescreen').show();
     });
 
     function adjustHeader() {
-        const hsize_after = parseInt($(window).height() - 75);
-        $("#header").css("height", hsize_after + "px");
-        $("#header-img").css("height", hsize_after + "px");
+        const hsize = $(window).height() - 75;
+        $("#header").css("height", hsize + "px");
+        $("#header-img").css("height", hsize + "px");
     }
 
     adjustHeader();
-    $(window).resize(adjustHeader);
+    window.onresize = adjustHeader;
 }); 
