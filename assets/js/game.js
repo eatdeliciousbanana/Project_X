@@ -90,7 +90,9 @@ function typingGame(silent_mode) {
             $('#key_' + lightKey).css('background-color', 'rgb(243, 243, 243)');
             lightKey = event.code;
             $('#key_' + lightKey).css('background-color', 'rgb(220, 220, 220)');
-            event.preventDefault();  // スペースキーを押したときのスクロールを無効化
+            if (event.code === 'Space') {
+                event.preventDefault();  // スペースキーを押したときのスクロールを無効化
+            }
         });
     }
 
