@@ -57,10 +57,6 @@
 
 #gamescreen_result {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -252,23 +248,24 @@
     font-stretch: 75% 100%;
     font-style: oblique 0deg 12deg;
     font-weight: 100 900;
-  }
-  * {
+}
+
+* {
     box-sizing: border-box;
-  }
-  
-  :root {
+}
+
+:root {
     --text-weight: 500;
     --text-width: 100;
     --text-slant: 0;
-  }
+}
 
-  .fun_font {
+.fun_font {
     color: white;
     display: block;
-  }
-  
-  .splitting {
+}
+
+.splitting {
     --text-weight-min: 100;
     --text-weight-max: 900;
     --text-slant-min: 1;
@@ -283,9 +280,9 @@
     --delay: 0;
     --duration: 3s;
     --percent: 0;
-  }
-  
-  .char {
+}
+
+.char {
     font-stretch: var(--text-width);
     font-style: oblique var(--text-slant);
     font-weight: var(--text-weight);
@@ -294,19 +291,21 @@
     --percent: calc(var(--char-index) / var(--char-total));
     --delay: calc(var(--percent) * var(--duration));
     --glow-hue: calc(var(--percent) * 510);
-  }
-  
-  @keyframes wave {
+}
+
+@keyframes wave {
     0% {
-      font-variation-settings: "wght" var(--text-weight-min), "wdth" var(--text-width-min), "slnt" var(--text-slant-min);
-      text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
+        font-variation-settings: "wght"var(--text-weight-min), "wdth"var(--text-width-min), "slnt"var(--text-slant-min);
+        text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
     }
+
     50% {
-      font-variation-settings: "wght" var(--text-weight-max), "wdth" var(--text-width-max), "slnt" var(--text-slant-max);
-      text-shadow: 0 0 calc(var(--glow-size-max) * 1px) hsla(calc(var(--glow-hue) + 255), 100%, var(--glow-lightness), 1);
+        font-variation-settings: "wght"var(--text-weight-max), "wdth"var(--text-width-max), "slnt"var(--text-slant-max);
+        text-shadow: 0 0 calc(var(--glow-size-max) * 1px) hsla(calc(var(--glow-hue) + 255), 100%, var(--glow-lightness), 1);
     }
+
     100% {
-      font-variation-settings: "wght" var(--text-weight-min), "wdth" var(--text-width-min), "slnt" var(--text-slant-min);
-      text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
+        font-variation-settings: "wght"var(--text-weight-min), "wdth"var(--text-width-min), "slnt"var(--text-slant-min);
+        text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
     }
-  }  
+}

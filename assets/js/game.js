@@ -90,7 +90,9 @@ function typingGame(silent_mode) {
             $('#key_' + lightKey).css('background-color', 'rgb(243, 243, 243)');
             lightKey = event.code;
             $('#key_' + lightKey).css('background-color', 'rgb(220, 220, 220)');
-            event.preventDefault();  // スペースキーを押したときのスクロールを無効化
+            if (event.code === 'Space') {
+                event.preventDefault();  // スペースキーを押したときのスクロールを無効化
+            }
         });
     }
 
@@ -271,6 +273,27 @@ function typingGame(silent_mode) {
 
     // スペースキーを押して開始
     function loadSpace() {
+        let ret = mode2str();
+        $('#gamescreen_space_subject').html(`科目：${ret[0]}/${ret[1]}`);
+        $('#gamescreen_space_time').html(`制限時間：${mode.time}秒`);
+
+        // スペースキーを押してプレイ画面に遷移
+        document.addEventListener('keydown', switchScreenAtSpace);
+
+        function switchScreenAtSpace(event) {
+            if (event.code === 'Space') {
+                loadCountDown();
+                switchScreen('countdown');
+                gameSound('countDown', 'play');
+                gameSound('BGM', 'play');
+                this.removeEventListener('keydown', switchScreenAtSpace);
+            }
+        }
+    }
+
+
+    // モードの学年と教科の文字を取得する関数
+    function mode2str() {
         let grade, subject;
         switch (mode.grade) {
             case 'elem':
@@ -308,21 +331,7 @@ function typingGame(silent_mode) {
             default:
                 break;
         }
-        $('#gamescreen_space_subject').html(`科目：${grade}/${subject}`);
-        $('#gamescreen_space_time').html(`制限時間：${mode.time}秒`);
-
-        // スペースキーを押してプレイ画面に遷移
-        document.addEventListener('keydown', switchScreenAtSpace);
-
-        function switchScreenAtSpace(event) {
-            if (event.code === 'Space') {
-                loadCountDown();
-                switchScreen('countdown');
-                gameSound('countDown', 'play');
-                gameSound('BGM', 'play');
-                this.removeEventListener('keydown', switchScreenAtSpace);
-            }
-        }
+        return [grade, subject];
     }
 
 
@@ -341,6 +350,7 @@ function typingGame(silent_mode) {
         let untyped = '';  // 打ってない文字
         let typed = '';    // 打った文字
         let score = 0;     // 得点
+        let word_count = 0;       // 打ったワード数
         let right_typeCount = 0;  // 正しくキーを押した回数
         let miss_typeCount = 0;   // 誤ったキーを押した回数
         let renda_typeCount = 0;  // 連続して正しく打った文字数
@@ -380,6 +390,7 @@ function typingGame(silent_mode) {
 
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
+                    word_count++;
                     updateWord();
                 }
 
@@ -446,7 +457,6 @@ function typingGame(silent_mode) {
             if (timeLimit === -1) {
                 clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
                 endPlaying();
-                switchScreen('result');  //結果を表示する
             }
         }
         countDown();
@@ -461,6 +471,8 @@ function typingGame(silent_mode) {
             progressBar.value = 0;
             $('#playing_btnMode').off();
             $('#playing_btnAgain').off();
+            switchScreen('result');
+            prepareResult();
         }
 
 
@@ -469,6 +481,31 @@ function typingGame(silent_mode) {
             clearTimeout(timeoutId);
             timeLimit = 0;
             countDown();
+        }
+
+
+        // リザルト画面と成績表の準備をする関数
+        function prepareResult() {
+            $('#result_score').html(score + '点');
+            $('#result_type').html(right_typeCount + '回');
+            $('#result_average').html((right_typeCount / mode.time).toFixed(1) + '回/秒');
+            $('#result_misstype').html(miss_typeCount + '回');
+
+            $('#tuuchi_score_value').html(score + '点');
+            $('#tuuchi_word_value').html(word_count + 'ワード');
+            $('#tuuchi_type_value').html(right_typeCount + '回');
+            $('#tuuchi_average_value').html((right_typeCount / mode.time).toFixed(1) + '回/秒');
+            $('#tuuchi_misstype_value').html(miss_typeCount + '回');
+            $('#tuuchi_missratio_value').html((100 * miss_typeCount / (miss_typeCount + right_typeCount)).toFixed(2) + '%');
+
+            let ret = mode2str();
+            $('#tuuchi_subject').html(`教科：${ret[0]}/${ret[1]}`);
+
+            $('#result_block1').hide().fadeIn(1000);
+            $('#result_block2').hide();
+            setTimeout(function () {
+                $('#result_block2').fadeIn(1000);
+            }, 500);
         }
 
 
@@ -536,12 +573,6 @@ function typingGame(silent_mode) {
         $('#result_btnAgain').on('click', function () {
             loadSpace();
             switchScreen('space');
-        });
-        $('#result_btnDetailResult').on('click', function () {
-            scrollTo(0, 700);
-            // そのあとに表示されっぱなしになるのを後で改善
-            $('#detail_result_parent').show()
-            $('#ranking_registration_modal').show()
         });
         $('#result_btnMode').on('click', function () { switchScreen('mode') });
         $('#result_btnTitle').on('click', function () { switchScreen('title') });
