@@ -328,6 +328,27 @@ function typingGame(silent_mode) {
             case 'eng':
                 subject = '英語';
                 break;
+            case 'physics':
+                subject = '物理';
+                break;
+            case 'chem':
+                subject = '化学';
+                break;
+            case 'bio':
+                subject = '生物';
+                break;
+            case 'geology':
+                subject = '地学';
+                break;
+            case 'japanhis':
+                subject = '日本史';
+                break;
+            case 'worldhis':
+                subject = '世界史';
+                break;
+            case 'geography':
+                subject = '地理';
+                break;
             default:
                 break;
         }
