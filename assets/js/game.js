@@ -144,6 +144,8 @@ function typingGame(silent_mode) {
         const volumeSlider_type = document.getElementById('volumeSlider-type');
         const volumeSlider_typeMiss = document.getElementById('volumeSlider-typeMiss');
 
+        const expires = 60 * 60 * 24 * 365;  // Cookieの有効期限（1年）
+
         // Cookie読み込み
         function loadCookie() {
             let cookie = document.cookie;
@@ -208,17 +210,17 @@ function typingGame(silent_mode) {
         hurigana_check.addEventListener('change', function () {
             if (hurigana_check.checked) {
                 kana_field.style.display = 'block';
-                document.cookie = 'hurigana=true';
+                document.cookie = `hurigana=true; Max-Age=${expires}`;
             } else {
                 kana_field.style.display = 'none';
-                document.cookie = 'hurigana=false';
+                document.cookie = `hurigana=false; Max-Age=${expires}`;
             }
         });
 
         // ID.media : 0 is min, 1.0 is max.
         volumeSlider_BGM.addEventListener('change', function () {
             media_BGM.volume = volumeSlider_BGM.value / 100;
-            document.cookie = 'BGM=' + volumeSlider_BGM.value;
+            document.cookie = `BGM=${volumeSlider_BGM.value}; Max-Age=${expires}`;
             gameSound('BGM', 'play');
             setTimeout(function () { gameSound('BGM', 'pause') }, 1000);
         });
@@ -227,7 +229,7 @@ function typingGame(silent_mode) {
             for (let i = 0; i < media_SE.length; i++) {
                 media_SE.item(i).volume = volumeSlider_SE.value / 100;
             }
-            document.cookie = 'SE=' + volumeSlider_SE.value;
+            document.cookie = `SE=${volumeSlider_SE.value}; Max-Age=${expires}`;
             gameSound('tap', 'play');
         });
 
@@ -235,7 +237,7 @@ function typingGame(silent_mode) {
             for (let i = 0; i < media_type.length; i++) {
                 media_type.item(i).volume = volumeSlider_type.value / 100;
             }
-            document.cookie = 'type=' + volumeSlider_type.value;
+            document.cookie = `type=${volumeSlider_type.value}; Max-Age=${expires}`;
             gameSound('type0', 'play');
         });
 
@@ -243,7 +245,7 @@ function typingGame(silent_mode) {
             for (let i = 0; i < media_typeMiss.length; i++) {
                 media_typeMiss.item(i).volume = volumeSlider_typeMiss.value / 100;
             }
-            document.cookie = 'typeMiss=' + volumeSlider_typeMiss.value;
+            document.cookie = `typeMiss=${volumeSlider_typeMiss.value}; Max-Age=${expires}`;
             gameSound('typeMiss0', 'play');
         });
 
