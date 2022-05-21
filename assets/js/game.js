@@ -431,6 +431,18 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     word_count++;
+                    switch(mode.grade){
+                        case 'elem':
+                            score+=Math.round(typed.length/2);
+                            break;
+                        case 'mid':
+                            score+=Math.round(typed.length/4);
+                            break;
+                        case 'high':
+                            score+=Math.round(typed.length/6);
+                            break;
+                    }                    
+                    updateScore(score);
                     updateWord();
                 }
 
@@ -462,7 +474,7 @@ function typingGame(silent_mode) {
                 }
 
                 // スコアを更新
-                updateScore(++score);
+                //updateScore(++score);
 
             } else {  //間違ったキーを打った場合
 
