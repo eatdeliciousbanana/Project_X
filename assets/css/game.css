@@ -55,13 +55,17 @@
     font-size: xx-large;
 }
 
-#gamescreen_result {
-    display: none;
-    text-align: center;
+#kana_field {
+    font-size: x-large;
 }
 
 #typed {
     color: red;
+}
+
+#gamescreen_result {
+    display: none;
+    text-align: center;
 }
 
 /* ゲーム背景画像(1020px,720px) */
