@@ -292,9 +292,13 @@ function typingGame(silent_mode) {
 
     // スペースキーを押して開始
     function loadSpace() {
+        // 学年と科目を表示
         let ret = mode2str();
         $('#gamescreen_space_subject').html(`科目：${ret[0]}/${ret[1]}`);
         $('#gamescreen_space_time').html(`制限時間：${mode.time}秒`);
+
+        // 制限時間セット
+        time_tick.value = mode.time;
 
         // スペースキーを押してプレイ画面に遷移
         document.addEventListener('keydown', switchScreenAtSpace);
@@ -377,6 +381,14 @@ function typingGame(silent_mode) {
 
     // カウントダウン画面
     function loadCountDown() {
+        countdown_tick.value = 3;
+        const intervalId = setInterval(function () {
+            countdown_tick.value--;
+            if (countdown_tick.value === 0) {
+                clearInterval(intervalId);
+            }
+        }, 1000);
+
         setTimeout(function () {
             loadPlaying();
             switchScreen('playing');
@@ -430,7 +442,7 @@ function typingGame(silent_mode) {
 
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
-                    word_count++;
+                    wordcount_tick.value = ++word_count;
                     updateWord();
                 }
 
@@ -451,12 +463,16 @@ function typingGame(silent_mode) {
 
                 if (renda_typeCount === 50) {
                     timeLimit += 1;
+                    time_tick.value = timeLimit;
                 } else if (renda_typeCount === 100) {
                     timeLimit += 1;
+                    time_tick.value = timeLimit;
                 } else if (renda_typeCount === 150) {
                     timeLimit += 2;
+                    time_tick.value = timeLimit;
                 } else if (renda_typeCount === 200) {
                     timeLimit += 3;
+                    time_tick.value = timeLimit;
                     renda_typeCount = 0;
                     progressBar.value = renda_typeCount;
                 }
@@ -493,7 +509,7 @@ function typingGame(silent_mode) {
         let timeoutId;
         function countDown() {
             timeoutId = setTimeout(countDown, 1000);
-            $('#time').html(`残り${timeLimit--}秒`);
+            time_tick.value = timeLimit--;
             if (timeLimit === -1) {
                 clearTimeout(timeoutId);  //timeoutIdをclearTimeoutで指定している
                 endPlaying();
@@ -507,7 +523,6 @@ function typingGame(silent_mode) {
             gameSound('BGM', 'pause');
             document.removeEventListener('keydown', typeKey);
             lightKey(untyped.charAt(0), 'off');
-            updateScore(0);
             progressBar.value = 0;
             $('#playing_btnMode').off();
             $('#playing_btnAgain').off();
@@ -518,6 +533,8 @@ function typingGame(silent_mode) {
 
         // 時間切れになる前にプレイ画面を終了する関数
         function endPlayingBeforeTimeLimit() {
+            updateScore(0);
+            wordcount_tick.value = 0;
             clearTimeout(timeoutId);
             timeLimit = 0;
             countDown();
@@ -570,7 +587,7 @@ function typingGame(silent_mode) {
 
         // スコアを更新する関数
         function updateScore(score) {
-            $('#score').html(`${score}点`);
+            score_tick.value = score;
         }
 
 
@@ -611,27 +628,44 @@ function typingGame(silent_mode) {
     function loadResult() {
         // ボタンをして画面遷移
         $('#result_btnAgain').on('click', function () {
+            score_tick.value = 0;
+            wordcount_tick.value = 0;
             loadSpace();
             switchScreen('space');
         });
-        $('#result_btnMode').on('click', function () { switchScreen('mode') });
-        $('#result_btnTitle').on('click', function () { switchScreen('title') });
+        $('#result_btnMode').on('click', function () {
+            score_tick.value = 0;
+            wordcount_tick.value = 0;
+            switchScreen('mode');
+        });
+        $('#result_btnTitle').on('click', function () {
+            score_tick.value = 0;
+            wordcount_tick.value = 0;
+            switchScreen('title');
+        });
     }
 }
 
 
-// ゲーム画面のカウントダウン
-function setupFlip(tick) {
-    document.addEventListener('keydown', function (event) {
-        if (event.code === 'Space' && $('#gamescreen_space').css('display') === 'block') {
-            tick.value = 3;
-            const intervalId = setInterval(function () {
-                tick.value--;
-                if (tick.value === 0) {
-                    clearInterval(intervalId);
-                }
-            }, 1000);
-        }
-    });
+// カウントダウンのフリップ
+function setupCountDown(tick) {
+    window.countdown_tick = tick;
 }
+
+// 得点のフリップ
+function setupScore(tick) {
+    window.score_tick = tick;
+}
+
+// ワード数のフリップ
+function setupWordCount(tick) {
+    window.wordcount_tick = tick;
+}
+
+// 残り時間のフリップ
+function setupTime(tick) {
+    window.time_tick = tick;
+}
+
+// 文字アニメーション
 Splitting();

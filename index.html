@@ -87,10 +87,22 @@
 
         <div class="pbox">
             <div id="boxA" class="cbox boxA">
-                <h3><span class="fun_font" data-splitting>Your Score</span></h3>
-                <p id="score"></p>
-
-                <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+                <div style="position:relative;top:35px;">
+                    <h3><span class="fun_font" data-splitting>Your Score</span></h3>
+                    <div class="tick" data-value="0" data-did-init="setupScore" data-credits="false">
+                        <div data-repeat="true" aria-hidden="true">
+                            <span data-view="flip"></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="position:relative;top:60px;">
+                    <h3><span class="fun_font" data-splitting>Word Count</span></h3>
+                    <div class="tick" data-value="0" data-did-init="setupWordCount" data-credits="false">
+                        <div data-repeat="true" aria-hidden="true">
+                            <span data-view="flip"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 黒板 -->
@@ -179,7 +191,7 @@
 
                 <!-- カウントダウン画面 -->
                 <div class="switch_screen" id="gamescreen_countdown">
-                    <div class="tick" data-value="0" data-did-init="setupFlip" data-credits="false">
+                    <div class="tick" data-value="0" data-did-init="setupCountDown" data-credits="false">
                         <div data-repeat="true" aria-hidden="true">
                             <span data-view="flip"></span>
                         </div>
@@ -243,9 +255,16 @@
             </div>
 
             <div id="boxB" class="cbox boxB">
-                <p id=time></p>
-                <div>
-                    <progress id="myProgress" value="0" max="200" style="width: 85% ;"></progress>
+                <div style="position:relative;top:35px;">
+                    <h3><span class="fun_font" data-splitting>Time</span></h3>
+                    <div class="tick" data-value="0" data-did-init="setupTime" data-credits="false">
+                        <div data-repeat="true" aria-hidden="true">
+                            <span data-view="flip"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <progress id="myProgress" value="0" max="200" style="width: 85% ;"></progress>
+                    </div>
                 </div>
             </div>
         </div>
@@ -656,6 +675,7 @@
 
     <!-- JS file -->
     <script src="assets/js/flip.min.js"></script>
+    <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
     <script src="assets/js/kana_to_roman.js"></script>
     <script src="assets/js/check_type_miss.js"></script>
     <script src="assets/js/game.js"></script>

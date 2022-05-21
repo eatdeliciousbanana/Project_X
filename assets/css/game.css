@@ -211,18 +211,17 @@
     text-align: center;
     width: 260px;
     height: 290px;
-    line-height: 100px;
     top: 10px;
 }
 
 .boxA {
     font-family: "Roboto VF", sans-serif;
-    display: flex;
     margin-left: 20px;
     font-size: xx-large;
 }
 
 .boxB {
+    font-family: "Roboto VF", sans-serif;
     margin-right: 20px;
     font-size: xx-large;
 }
