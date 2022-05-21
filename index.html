@@ -127,34 +127,39 @@
 
                 <!-- モード選択画面 -->
                 <div class="switch_screen" id="gamescreen_mode">
-                    <div id="gamescreen_mode_title">モード選択</div>
+                    <div>モード選択</div>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="background-color:white;border-radius:8%;">
+                        <input type="radio" class="btn-check" name="btn_mode" id="btn_elem" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="btn_elem">小学校</label>
+
+                        <input type="radio" class="btn-check" name="btn_mode" id="btn_mid" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btn_mid">中学校</label>
+
+                        <input type="radio" class="btn-check" name="btn_mode" id="btn_high" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btn_high">高校</label>
+                    </div>
                     <div>
-                        <div id="elem" class="mode_row">
-                            <span>小学校</span>
+                        <div id="mode_elem">
                             <button type="button" class="btn btn-light mode_select" id="elem_math_60">算数</button>
                             <button type="button" class="btn btn-light mode_select" id="elem_jpn_60">国語</button>
                             <button type="button" class="btn btn-light mode_select" id="elem_eng_60">英語</button>
                             <button type="button" class="btn btn-light mode_select" id="elem_sci_60">理科</button>
                             <button type="button" class="btn btn-light mode_select" id="elem_social_60">社会</button>
                         </div>
-                        <div id="mid" class="mode_row">
-                            <span>中学校</span>
+                        <div id="mode_mid" style="display:none;">
                             <button type="button" class="btn btn-light mode_select" id="mid_math_90">数学</button>
                             <button type="button" class="btn btn-light mode_select" id="mid_jpn_90">国語</button>
                             <button type="button" class="btn btn-light mode_select" id="mid_eng_90">英語</button>
                             <button type="button" class="btn btn-light mode_select" id="mid_sci_90">理科</button>
                             <button type="button" class="btn btn-light mode_select" id="mid_social_90">社会</button>
                         </div>
-                        <div id="high" class="mode_row">
-                            <span>高　校</span>
+                        <div id="mode_high" style="display:none;">
                             <button type="button" class="btn btn-light mode_select" id="high_math_120">数学</button>
                             <button type="button" class="btn btn-light mode_select" id="high_jpn_120">国語</button>
                             <button type="button" class="btn btn-light mode_select" id="high_eng_120">英語</button>
                             <button type="button" class="btn btn-light mode_select" id="high_physics_120">物理</button>
                             <button type="button" class="btn btn-light mode_select" id="high_chem_120">化学</button>
-                        </div>
-                        <div id="high" class="mode_row">
-                            <span>高　校</span>
+                            <br>
                             <button type="button" class="btn btn-light mode_select" id="high_bio_120">生物</button>
                             <button type="button" class="btn btn-light mode_select" id="high_geology_120">地学</button>
                             <button type="button" class="btn btn-light mode_select" id="high_japanhis_120">日本史</button>

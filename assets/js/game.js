@@ -256,7 +256,24 @@ function typingGame(silent_mode) {
 
     // モード選択画面
     function loadMode() {
-        // モード選択
+        // 学年選択
+        $('#btn_elem').on('change', function () {
+            $('#mode_elem').show();
+            $('#mode_mid').hide();
+            $('#mode_high').hide();
+        });
+        $('#btn_mid').on('change', function () {
+            $('#mode_elem').hide();
+            $('#mode_mid').show();
+            $('#mode_high').hide();
+        });
+        $('#btn_high').on('change', function () {
+            $('#mode_elem').hide();
+            $('#mode_mid').hide();
+            $('#mode_high').show();
+        });
+
+        // 科目選択
         $('.mode_select').each(function () {
             $(this).on('click', function () {
                 const id = $(this).attr('id').split('_');

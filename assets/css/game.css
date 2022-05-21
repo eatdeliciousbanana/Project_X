@@ -237,11 +237,6 @@
     text-align: center;
 }
 
-.mode_row {
-    display: inline-block;
-    margin: 4px 0;
-}
-
 @font-face {
     font-family: "Roboto VF";
     src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57225/Roboto-VF.woff2") format("woff2-variations");
