@@ -262,9 +262,13 @@
                             <span data-view="flip"></span>
                         </div>
                     </div>
-                    <div>
-                        <progress id="myProgress" value="0" max="200" style="width: 85% ;"></progress>
-                    </div>
+                </div>
+                <div id="meter_msg"></div>
+                <div style="position:relative;top:55px;">
+                    <div id="fluid-meter-0"></div>
+                    <div id="fluid-meter-1" style="display:none;"></div>
+                    <div id="fluid-meter-2" style="display:none;"></div>
+                    <div id="fluid-meter-3" style="display:none;"></div>
                 </div>
             </div>
         </div>
@@ -675,7 +679,8 @@
 
     <!-- JS file -->
     <script src="assets/js/flip.min.js"></script>
-    <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="assets/js/fluid_meter.js"></script>
     <script src="assets/js/kana_to_roman.js"></script>
     <script src="assets/js/check_type_miss.js"></script>
     <script src="assets/js/game.js"></script>

@@ -226,6 +226,19 @@
     font-size: xx-large;
 }
 
+#meter_msg {
+    position: absolute;
+    top: 182px;
+    left: 57px;
+    z-index: 100;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 0 #262626, -2px -2px 0 #262626,
+        -2px 2px 0 #262626, 2px -2px 0 #262626,
+        0px 2px 0 #262626, 0-2px 0 #262626,
+        -2px 0 0 #262626, 2px 0 0 #262626;
+}
+
 #gamescreen_playing_btns {
     position: absolute;
     right: 10px;

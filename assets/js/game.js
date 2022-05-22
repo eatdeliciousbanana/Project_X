@@ -406,12 +406,18 @@ function typingGame(silent_mode) {
         let right_typeCount = 0;  // 正しくキーを押した回数
         let miss_typeCount = 0;   // 誤ったキーを押した回数
         let renda_typeCount = 0;  // 連続して正しく打った文字数
-        const progressBar = document.getElementById('myProgress');  // 連打メーター
         let timeLimit = mode.time;  // 制限時間
+        let additional_time = 0;    // 追加時間の合計
+        let bonus_state = 0;        // 時間追加ボーナスの段階（0,1,2,3の4段階）
+        const bonus_time = [1, 1, 2, 3];     // 時間追加ボーナス（1秒,1秒,2秒,3秒）
+        const meters = [fm0, fm1, fm2, fm3];  // 液体メーター
 
         // 文字を初期化
         updateWord();
         lightKey(untyped.charAt(0), 'on');
+
+        // メーターの文字を初期化
+        $('#meter_msg').html(`+${bonus_time[bonus_state]}sec`);
 
         // キー入力したときの処理
         document.addEventListener('keydown', typeKey);
@@ -458,23 +464,14 @@ function typingGame(silent_mode) {
                 }
 
                 // 連打メーターを更新
-                renda_typeCount++;
-                progressBar.value = renda_typeCount;
-
-                if (renda_typeCount === 50) {
-                    timeLimit += 1;
+                if (++renda_typeCount === 50) {
+                    timeLimit += bonus_time[bonus_state];
                     time_tick.value = timeLimit;
-                } else if (renda_typeCount === 100) {
-                    timeLimit += 1;
-                    time_tick.value = timeLimit;
-                } else if (renda_typeCount === 150) {
-                    timeLimit += 2;
-                    time_tick.value = timeLimit;
-                } else if (renda_typeCount === 200) {
-                    timeLimit += 3;
-                    time_tick.value = timeLimit;
+                    meters[bonus_state].setPercentage(0);
+                    switchBonusState();
                     renda_typeCount = 0;
-                    progressBar.value = renda_typeCount;
+                } else {
+                    meters[bonus_state].setPercentage(renda_typeCount * 2);
                 }
 
                 // スコアを更新
@@ -500,7 +497,7 @@ function typingGame(silent_mode) {
 
                 // 連打メーターをリセット
                 renda_typeCount = 0;
-                progressBar.value = renda_typeCount;
+                meters[bonus_state].setPercentage(0);
             }
         }
 
@@ -522,8 +519,13 @@ function typingGame(silent_mode) {
         function endPlaying() {
             gameSound('BGM', 'pause');
             document.removeEventListener('keydown', typeKey);
-            lightKey(untyped.charAt(0), 'off');
-            progressBar.value = 0;
+            if (untyped.charAt(0) === '*') {
+                lightKey(untyped.charAt(1), 'off');
+            } else {
+                lightKey(untyped.charAt(0), 'off');
+            }
+            meters[bonus_state].setPercentage(0);
+            switchBonusState(true);
             $('#playing_btnMode').off();
             $('#playing_btnAgain').off();
             switchScreen('result');
@@ -605,6 +607,25 @@ function typingGame(silent_mode) {
                 $('#key_' + target).css('background-color', 'orange');
             } else if (on_or_off === 'off') {
                 $('#key_' + target).css('background-color', 'rgb(243, 243, 243)');
+            }
+        }
+
+
+        // 時間追加ボーナスの段階を切り替える関数
+        function switchBonusState(reset = false) {
+            if (reset) {
+                $(`#fluid-meter-${bonus_state}`).hide();
+                $('#fluid-meter-0').show();
+                $('#meter_msg').html('');
+            } else {
+                $(`#fluid-meter-${bonus_state}`).hide();
+                bonus_state = (bonus_state + 1) % 4;
+                $(`#fluid-meter-${bonus_state}`).show();
+                $('#meter_msg').animate({ fontSize: '30px' }, 200, 'swing', function () {
+                    $('#meter_msg').animate({ fontSize: '25px' }, 200, 'swing', function () {
+                        $('#meter_msg').html(`+${bonus_time[bonus_state]}sec`);
+                    });
+                });
             }
         }
 
