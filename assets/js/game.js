@@ -396,7 +396,8 @@ function typingGame(silent_mode) {
         let renda_typeCount = 0;  // 連続して正しく打った文字数
         const progressBar = document.getElementById('myProgress');  // 連打メーター
         let timeLimit = mode.time;  // 制限時間
-
+        let div_num = 2;// 得点調整（得点＝打った語数 / div_num）
+        
         // 文字を初期化
         updateWord();
         lightKey(untyped.charAt(0), 'on');
@@ -404,6 +405,17 @@ function typingGame(silent_mode) {
         // キー入力したときの処理
         document.addEventListener('keydown', typeKey);
 
+        // 割る数を設定
+        switch(mode.grade){
+            case 'elem':
+                break;
+            case 'mid':
+                div_num*=2;
+                break;
+            case 'high':
+                div_num*=3;
+                break;
+        }       
 
         // キー入力したときの処理の関数
         function typeKey(event) {
@@ -431,17 +443,7 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     word_count++;
-                    switch(mode.grade){
-                        case 'elem':
-                            score+=Math.round(typed.length/2);
-                            break;
-                        case 'mid':
-                            score+=Math.round(typed.length/4);
-                            break;
-                        case 'high':
-                            score+=Math.round(typed.length/6);
-                            break;
-                    }                    
+                    score+=Math.round(typed.length/div_num);                    
                     updateScore(score);
                     updateWord();
                 }
