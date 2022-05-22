@@ -621,6 +621,7 @@ function typingGame(silent_mode) {
                 $(`#fluid-meter-${bonus_state}`).hide();
                 bonus_state = (bonus_state + 1) % 4;
                 $(`#fluid-meter-${bonus_state}`).show();
+                gameSound('bonusTime', 'play');
                 $('#meter_msg').animate({ fontSize: '30px' }, 200, 'swing', function () {
                     $('#meter_msg').animate({ fontSize: '25px' }, 200, 'swing', function () {
                         $('#meter_msg').html(`+${bonus_time[bonus_state]}sec`);
