@@ -467,6 +467,7 @@ function typingGame(silent_mode) {
                 if (++renda_typeCount === 50) {
                     timeLimit += bonus_time[bonus_state];
                     time_tick.value = timeLimit;
+                    additional_time += bonus_time[bonus_state];
                     meters[bonus_state].setPercentage(0);
                     switchBonusState();
                     renda_typeCount = 0;
@@ -547,13 +548,13 @@ function typingGame(silent_mode) {
         function prepareResult() {
             $('#result_score').html(score + '点');
             $('#result_type').html(right_typeCount + '回');
-            $('#result_average').html((right_typeCount / mode.time).toFixed(1) + '回/秒');
+            $('#result_average').html((right_typeCount / (mode.time + additional_time)).toFixed(1) + '回/秒');
             $('#result_misstype').html(miss_typeCount + '回');
 
             $('#tuuchi_score_value').html(score + '点');
             $('#tuuchi_word_value').html(word_count + 'ワード');
             $('#tuuchi_type_value').html(right_typeCount + '回');
-            $('#tuuchi_average_value').html((right_typeCount / mode.time).toFixed(1) + '回/秒');
+            $('#tuuchi_average_value').html((right_typeCount / (mode.time + additional_time)).toFixed(1) + '回/秒');
             $('#tuuchi_misstype_value').html(miss_typeCount + '回');
             $('#tuuchi_missratio_value').html((100 * miss_typeCount / (miss_typeCount + right_typeCount)).toFixed(2) + '%');
 
