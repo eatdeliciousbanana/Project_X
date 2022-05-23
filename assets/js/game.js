@@ -453,8 +453,8 @@ function typingGame(silent_mode) {
                 }
 
                 // 打った文字を画面に反映
-                $('#untyped').html(untyped.replace(/\*/g, ''));
-                $('#typed').html(typed.replace(/\*/g, ''));
+                $('#untyped').html(untyped.replace(/\*/g, '').replace(/ /g, '_'));
+                $('#typed').html(typed.replace(/\*/g, '').replace(/ /g, '_'));
 
                 // 次のキーを点灯する
                 if (untyped.charAt(0) === '*') {
@@ -481,16 +481,18 @@ function typingGame(silent_mode) {
             } else {  //間違ったキーを打った場合
 
                 // キー代替処理
-                let alter = '';
-                if (alter = checkTypeMiss(event.key, typed, untyped)) {
-                    if (untyped.charAt(0) === '*') {
-                        lightKey(untyped.charAt(1), 'off');
-                    } else {
-                        lightKey(untyped.charAt(0), 'off');
+                if (mode.subject !== 'eng') {
+                    let alter = '';
+                    if (alter = checkTypeMiss(event.key, typed, untyped)) {
+                        if (untyped.charAt(0) === '*') {
+                            lightKey(untyped.charAt(1), 'off');
+                        } else {
+                            lightKey(untyped.charAt(0), 'off');
+                        }
+                        untyped = alter;
+                        document.dispatchEvent(new KeyboardEvent('keydown', { key: untyped.charAt(0) }));
+                        return;
                     }
-                    untyped = alter;
-                    document.dispatchEvent(new KeyboardEvent('keydown', { key: untyped.charAt(0) }));
-                    return;
                 }
 
                 // ミス音を再生
@@ -577,13 +579,18 @@ function typingGame(silent_mode) {
 
         // 新たな文字を設定する関数
         function updateWord() {
-            const index = getRandom(0, words.length);
-            const rome = kanaToRoman(words[index]['kana'], 'kunrei', { bmp: false, longSound: 'hyphen' });
+            let index = getRandom(0, words.length);
+            let rome = '';
+            if (mode.subject === 'eng') {
+                rome = words[index]['kana'].toLowerCase();
+            } else {
+                rome = kanaToRoman(words[index]['kana'], 'kunrei', { bmp: false, longSound: 'hyphen' });
+            }
             untyped = rome;
             typed = '';
             $('#kanzi_field').html(words[index]['kanzi']);
             $('#kana_field').html(words[index]['kana']);
-            $('#untyped').html(rome.replace(/\*/g, ''));
+            $('#untyped').html(rome.replace(/\*/g, '').replace(/ /g, '_'));
             $('#typed').html('');
         }
 
@@ -599,6 +606,8 @@ function typingGame(silent_mode) {
             let target = '';
             if (key === '-') {
                 target = 'Minus';
+            } else if (key === ' ') {
+                target = 'Space';
             } else if ('0123456789'.includes(key)) {
                 target = 'Digit' + key;
             } else {
