@@ -14,8 +14,1160 @@
         ],
         "eng": [
             {
-                "kanzi": "小学校英語",
-                "kana": "しょうがっこうえいご"
+                "kanzi": "住所",
+                "kana": "address"
+            },
+            {
+                "kanzi": "冒険",
+                "kana": "adventure"
+            },
+            {
+                "kanzi": "午後",
+                "kana": "afternoon"
+            },
+            {
+                "kanzi": "アメリカ合衆国",
+                "kana": "America"
+            },
+            {
+                "kanzi": "動物",
+                "kana": "animal"
+            },
+            {
+                "kanzi": "アニメ",
+                "kana": "anime"
+            },
+            {
+                "kanzi": "答え",
+                "kana": "answer"
+            },
+            {
+                "kanzi": "リンゴ",
+                "kana": "apple"
+            },
+            {
+                "kanzi": "4月",
+                "kana": "April"
+            },
+            {
+                "kanzi": "8月",
+                "kana": "August"
+            },
+            {
+                "kanzi": "オーストラリア",
+                "kana": "Australia"
+            },
+            {
+                "kanzi": "裏の・後ろの",
+                "kana": "back"
+            },
+            {
+                "kanzi": "かばん",
+                "kana": "bag"
+            },
+            {
+                "kanzi": "ボール",
+                "kana": "ball"
+            },
+            {
+                "kanzi": "野球",
+                "kana": "baseball"
+            },
+            {
+                "kanzi": "バスケットボール",
+                "kana": "basketball"
+            },
+            {
+                "kanzi": "ベッド",
+                "kana": "bed"
+            },
+            {
+                "kanzi": "自転車",
+                "kana": "bike"
+            },
+            {
+                "kanzi": "誕生日",
+                "kana": "birthday"
+            },
+            {
+                "kanzi": "退屈な・うんざりする",
+                "kana": "boring"
+            },
+            {
+                "kanzi": "勇敢な",
+                "kana": "brave"
+            },
+            {
+                "kanzi": "朝食・朝ごはん",
+                "kana": "breakfast"
+            },
+            {
+                "kanzi": "兄・弟",
+                "kana": "brother"
+            },
+            {
+                "kanzi": "バス",
+                "kana": "bus"
+            },
+            {
+                "kanzi": "仕事",
+                "kana": "business"
+            },
+            {
+                "kanzi": "鳥かご・おり",
+                "kana": "cage"
+            },
+            {
+                "kanzi": "カレンダー",
+                "kana": "calendar"
+            },
+            {
+                "kanzi": "カメラ",
+                "kana": "camera"
+            },
+            {
+                "kanzi": "カン",
+                "kana": "can"
+            },
+            {
+                "kanzi": "帽子",
+                "kana": "cap"
+            },
+            {
+                "kanzi": "船長",
+                "kana": "captain"
+            },
+            {
+                "kanzi": "車",
+                "kana": "car"
+            },
+            {
+                "kanzi": "猫",
+                "kana": "cat"
+            },
+            {
+                "kanzi": "祝う",
+                "kana": "celebrate"
+            },
+            {
+                "kanzi": "センチメートル",
+                "kana": "centimeter"
+            },
+            {
+                "kanzi": "中心の",
+                "kana": "central"
+            },
+            {
+                "kanzi": "いす",
+                "kana": "chair"
+            },
+            {
+                "kanzi": "偶然・チャンス",
+                "kana": "chance"
+            },
+            {
+                "kanzi": "こどもの日",
+                "kana": "Children's Day"
+            },
+            {
+                "kanzi": "選択する・選ぶ",
+                "kana": "choose"
+            },
+            {
+                "kanzi": "市・都市",
+                "kana": "city"
+            },
+            {
+                "kanzi": "クラス・授業",
+                "kana": "class"
+            },
+            {
+                "kanzi": "晴れた・明るい",
+                "kana": "clear"
+            },
+            {
+                "kanzi": "布・生地",
+                "kana": "cloth"
+            },
+            {
+                "kanzi": "収集する",
+                "kana": "collect"
+            },
+            {
+                "kanzi": "漫画",
+                "kana": "comic"
+            },
+            {
+                "kanzi": "コンピューター",
+                "kana": "computer"
+            },
+            {
+                "kanzi": "続ける・持続する・継続する",
+                "kana": "continue"
+            },
+            {
+                "kanzi": "複製・コピー",
+                "kana": "copy"
+            },
+            {
+                "kanzi": "模写する",
+                "kana": "copy"
+            },
+            {
+                "kanzi": "国",
+                "kana": "country"
+            },
+            {
+                "kanzi": "おおう・包む・かぶせる",
+                "kana": "cover"
+            },
+            {
+                "kanzi": "気の狂った",
+                "kana": "crazy"
+            },
+            {
+                "kanzi": "暗い",
+                "kana": "dark"
+            },
+            {
+                "kanzi": "デートする",
+                "kana": "date"
+            },
+            {
+                "kanzi": "日",
+                "kana": "day"
+            },
+            {
+                "kanzi": "死んだ・死んでいる",
+                "kana": "dead"
+            },
+            {
+                "kanzi": "12月",
+                "kana": "December"
+            },
+            {
+                "kanzi": "おいしい",
+                "kana": "delicious"
+            },
+            {
+                "kanzi": "設計者・デザイナー",
+                "kana": "designer"
+            },
+            {
+                "kanzi": "机",
+                "kana": "desk"
+            },
+            {
+                "kanzi": "夕食・晩ごはん",
+                "kana": "dinner"
+            },
+            {
+                "kanzi": "犬",
+                "kana": "dog"
+            },
+            {
+                "kanzi": "ドア",
+                "kana": "door"
+            },
+            {
+                "kanzi": "下に",
+                "kana": "down"
+            },
+            {
+                "kanzi": "運転手",
+                "kana": "driver"
+            },
+            {
+                "kanzi": "地球",
+                "kana": "earth"
+            },
+            {
+                "kanzi": "卵",
+                "kana": "egg"
+            },
+            {
+                "kanzi": "１８番目の",
+                "kana": "eighteenth"
+            },
+            {
+                "kanzi": "8番目の",
+                "kana": "eighth"
+            },
+            {
+                "kanzi": "選ぶ",
+                "kana": "elect"
+            },
+            {
+                "kanzi": "11番目の",
+                "kana": "eleventh"
+            },
+            {
+                "kanzi": "エンジニア",
+                "kana": "engineer"
+            },
+            {
+                "kanzi": "英語",
+                "kana": "English"
+            },
+            {
+                "kanzi": "夕方",
+                "kana": "evening"
+            },
+            {
+                "kanzi": "興奮した",
+                "kana": "excited"
+            },
+            {
+                "kanzi": "興奮させる",
+                "kana": "exciting"
+            },
+            {
+                "kanzi": "練習する・鍛える",
+                "kana": "exercise"
+            },
+            {
+                "kanzi": "秋",
+                "kana": "fall"
+            },
+            {
+                "kanzi": "家族",
+                "kana": "family"
+            },
+            {
+                "kanzi": "父",
+                "kana": "father"
+            },
+            {
+                "kanzi": "2月",
+                "kana": "February"
+            },
+            {
+                "kanzi": "１５番目の",
+                "kana": "fifteenth"
+            },
+            {
+                "kanzi": "5番目の",
+                "kana": "fifth"
+            },
+            {
+                "kanzi": "５０番目の",
+                "kana": "fiftieth"
+            },
+            {
+                "kanzi": "戦う",
+                "kana": "fight"
+            },
+            {
+                "kanzi": "最後の",
+                "kana": "final"
+            },
+            {
+                "kanzi": "うまく",
+                "kana": "fine"
+            },
+            {
+                "kanzi": "1番目の",
+                "kana": "first"
+            },
+            {
+                "kanzi": "魚釣り",
+                "kana": "fishing"
+            },
+            {
+                "kanzi": "旗",
+                "kana": "flag"
+            },
+            {
+                "kanzi": "平らな",
+                "kana": "flat"
+            },
+            {
+                "kanzi": "飛行",
+                "kana": "flight"
+            },
+            {
+                "kanzi": "床",
+                "kana": "floor"
+            },
+            {
+                "kanzi": "4番目の",
+                "kana": "forth"
+            },
+            {
+                "kanzi": "４０番目の",
+                "kana": "fortieth"
+            },
+            {
+                "kanzi": "１４番目の",
+                "kana": "fourteenth"
+            },
+            {
+                "kanzi": "新鮮な",
+                "kana": "fresh"
+            },
+            {
+                "kanzi": "金曜日",
+                "kana": "Friday"
+            },
+            {
+                "kanzi": "友人",
+                "kana": "friend"
+            },
+            {
+                "kanzi": "好意的な",
+                "kana": "friendly"
+            },
+            {
+                "kanzi": "庭",
+                "kana": "garden"
+            },
+            {
+                "kanzi": "ガス",
+                "kana": "gas"
+            },
+            {
+                "kanzi": "神",
+                "kana": "god"
+            },
+            {
+                "kanzi": "グラム",
+                "kana": "gram"
+            },
+            {
+                "kanzi": "ブドウ",
+                "kana": "grape"
+            },
+            {
+                "kanzi": "ギター",
+                "kana": "guitar"
+            },
+            {
+                "kanzi": "彼は",
+                "kana": "he"
+            },
+            {
+                "kanzi": "健康な",
+                "kana": "healthy"
+            },
+            {
+                "kanzi": "英雄・ヒーロー",
+                "kana": "hero"
+            },
+            {
+                "kanzi": "ホームラン",
+                "kana": "home run"
+            },
+            {
+                "kanzi": "家",
+                "kana": "house"
+            },
+            {
+                "kanzi": "抱き締める・ハグする",
+                "kana": "hug"
+            },
+            {
+                "kanzi": "１００番目の",
+                "kana": "hundredth"
+            },
+            {
+                "kanzi": "私は",
+                "kana": "I"
+            },
+            {
+                "kanzi": "1月",
+                "kana": "January"
+            },
+            {
+                "kanzi": "日本",
+                "kana": "Japan"
+            },
+            {
+                "kanzi": "日本語",
+                "kana": "Japanese"
+            },
+            {
+                "kanzi": "冗談・笑い話",
+                "kana": "joke"
+            },
+            {
+                "kanzi": "喜び",
+                "kana": "joy"
+            },
+            {
+                "kanzi": "裁判官・判事",
+                "kana": "judge"
+            },
+            {
+                "kanzi": "7月",
+                "kana": "July"
+            },
+            {
+                "kanzi": "6月",
+                "kana": "June"
+            },
+            {
+                "kanzi": "～をける・け飛ばす",
+                "kana": "kick"
+            },
+            {
+                "kanzi": "キロメートル",
+                "kana": "kilometer"
+            },
+            {
+                "kanzi": "キスをする",
+                "kana": "kiss"
+            },
+            {
+                "kanzi": "台所",
+                "kana": "kitchen"
+            },
+            {
+                "kanzi": "ノックする",
+                "kana": "knock"
+            },
+            {
+                "kanzi": "韓国",
+                "kana": "Korea"
+            },
+            {
+                "kanzi": "ランプ",
+                "kana": "lamp"
+            },
+            {
+                "kanzi": "最後の",
+                "kana": "last"
+            },
+            {
+                "kanzi": "地元の",
+                "kana": "local"
+            },
+            {
+                "kanzi": "淋しい・孤独な",
+                "kana": "lonely"
+            },
+            {
+                "kanzi": "長く",
+                "kana": "long"
+            },
+            {
+                "kanzi": "道に迷った",
+                "kana": "lost"
+            },
+            {
+                "kanzi": "愛らしい・かわいい",
+                "kana": "lovely"
+            },
+            {
+                "kanzi": "運",
+                "kana": "luck"
+            },
+            {
+                "kanzi": "運のよい",
+                "kana": "lucky"
+            },
+            {
+                "kanzi": "昼食・昼ごはん",
+                "kana": "lunch"
+            },
+            {
+                "kanzi": "魔法",
+                "kana": "magic"
+            },
+            {
+                "kanzi": "作る人・メーカー",
+                "kana": "maker"
+            },
+            {
+                "kanzi": "男性",
+                "kana": "man"
+            },
+            {
+                "kanzi": "マンガ",
+                "kana": "manga"
+            },
+            {
+                "kanzi": "マナー・作法",
+                "kana": "manner"
+            },
+            {
+                "kanzi": "地図",
+                "kana": "map"
+            },
+            {
+                "kanzi": "3月",
+                "kana": "March"
+            },
+            {
+                "kanzi": "印",
+                "kana": "mark"
+            },
+            {
+                "kanzi": "結婚する・一緒になる",
+                "kana": "marry"
+            },
+            {
+                "kanzi": "数学",
+                "kana": "math"
+            },
+            {
+                "kanzi": "5月",
+                "kana": "May"
+            },
+            {
+                "kanzi": "記憶・記憶力",
+                "kana": "memory"
+            },
+            {
+                "kanzi": "分",
+                "kana": "minute"
+            },
+            {
+                "kanzi": "みそ汁",
+                "kana": "miso soup"
+            },
+            {
+                "kanzi": "間違う・いなくてさみしく思う",
+                "kana": "miss"
+            },
+            {
+                "kanzi": "モデル・模型",
+                "kana": "model"
+            },
+            {
+                "kanzi": "現代的な",
+                "kana": "modern"
+            },
+            {
+                "kanzi": "月曜日",
+                "kana": "Monday"
+            },
+            {
+                "kanzi": "月",
+                "kana": "month"
+            },
+            {
+                "kanzi": "午前・朝",
+                "kana": "morning"
+            },
+            {
+                "kanzi": "母",
+                "kana": "mother"
+            },
+            {
+                "kanzi": "音楽",
+                "kana": "music"
+            },
+            {
+                "kanzi": "音楽の",
+                "kana": "musical"
+            },
+            {
+                "kanzi": "自然の",
+                "kana": "natural"
+            },
+            {
+                "kanzi": "網",
+                "kana": "net"
+            },
+            {
+                "kanzi": "大みそか",
+                "kana": "New Year’s Eve"
+            },
+            {
+                "kanzi": "夜",
+                "kana": "night"
+            },
+            {
+                "kanzi": "１９番目の",
+                "kana": "nineteenth"
+            },
+            {
+                "kanzi": "9番目の",
+                "kana": "ninth"
+            },
+            {
+                "kanzi": "騒がしい",
+                "kana": "noisy"
+            },
+            {
+                "kanzi": "ノート",
+                "kana": "notebook"
+            },
+            {
+                "kanzi": "11月",
+                "kana": "November"
+            },
+            {
+                "kanzi": "10月",
+                "kana": "October"
+            },
+            {
+                "kanzi": "開いている",
+                "kana": "open"
+            },
+            {
+                "kanzi": "オレンジ",
+                "kana": "orange"
+            },
+            {
+                "kanzi": "オルガン",
+                "kana": "organ"
+            },
+            {
+                "kanzi": "打ち勝つ・圧倒する",
+                "kana": "overcome"
+            },
+            {
+                "kanzi": "公園",
+                "kana": "park"
+            },
+            {
+                "kanzi": "パートナー",
+                "kana": "partner"
+            },
+            {
+                "kanzi": "特許",
+                "kana": "patent"
+            },
+            {
+                "kanzi": "平和",
+                "kana": "peace"
+            },
+            {
+                "kanzi": "ペン",
+                "kana": "pen"
+            },
+            {
+                "kanzi": "人々",
+                "kana": "people"
+            },
+            {
+                "kanzi": "ピアノ",
+                "kana": "piano"
+            },
+            {
+                "kanzi": "絵・写真",
+                "kana": "picture"
+            },
+            {
+                "kanzi": "ピン",
+                "kana": "pin"
+            },
+            {
+                "kanzi": "点",
+                "kana": "point"
+            },
+            {
+                "kanzi": "貧乏な・貧しい",
+                "kana": "poor"
+            },
+            {
+                "kanzi": "位置・地位",
+                "kana": "position"
+            },
+            {
+                "kanzi": "確かな・肯定的な",
+                "kana": "positive"
+            },
+            {
+                "kanzi": "力",
+                "kana": "power"
+            },
+            {
+                "kanzi": "王子",
+                "kana": "prince"
+            },
+            {
+                "kanzi": "王女",
+                "kana": "princess"
+            },
+            {
+                "kanzi": "速い",
+                "kana": "quick"
+            },
+            {
+                "kanzi": "やめる・中止する",
+                "kana": "quit"
+            },
+            {
+                "kanzi": "ラジオ",
+                "kana": "radio"
+            },
+            {
+                "kanzi": "鉄道",
+                "kana": "railway"
+            },
+            {
+                "kanzi": "着く・届く",
+                "kana": "reach"
+            },
+            {
+                "kanzi": "再利用する",
+                "kana": "recycle"
+            },
+            {
+                "kanzi": "修理する",
+                "kana": "repair"
+            },
+            {
+                "kanzi": "レストラン",
+                "kana": "restaurant"
+            },
+            {
+                "kanzi": "再使用する・再生する",
+                "kana": "reuse"
+            },
+            {
+                "kanzi": "ロボット",
+                "kana": "robot"
+            },
+            {
+                "kanzi": "部屋",
+                "kana": "room"
+            },
+            {
+                "kanzi": "ランナー",
+                "kana": "runner"
+            },
+            {
+                "kanzi": "サラダ",
+                "kana": "salad"
+            },
+            {
+                "kanzi": "土曜日",
+                "kana": "Saturday"
+            },
+            {
+                "kanzi": "救う・とっておく・節約する",
+                "kana": "save"
+            },
+            {
+                "kanzi": "風景・現場・場所",
+                "kana": "scene"
+            },
+            {
+                "kanzi": "学校",
+                "kana": "school"
+            },
+            {
+                "kanzi": "科学者",
+                "kana": "scientist"
+            },
+            {
+                "kanzi": "2番目の",
+                "kana": "second"
+            },
+            {
+                "kanzi": "売る",
+                "kana": "sell"
+            },
+            {
+                "kanzi": "感覚・感じ",
+                "kana": "sense"
+            },
+            {
+                "kanzi": "9月",
+                "kana": "September"
+            },
+            {
+                "kanzi": "仕える・役に立つ",
+                "kana": "serve"
+            },
+            {
+                "kanzi": "１７番目の",
+                "kana": "seventeenth"
+            },
+            {
+                "kanzi": "7番目の",
+                "kana": "seventh"
+            },
+            {
+                "kanzi": "いくつかの",
+                "kana": "several"
+            },
+            {
+                "kanzi": "分け合う",
+                "kana": "share"
+            },
+            {
+                "kanzi": "彼女は",
+                "kana": "she"
+            },
+            {
+                "kanzi": "内気な",
+                "kana": "shy"
+            },
+            {
+                "kanzi": "簡単な",
+                "kana": "simple"
+            },
+            {
+                "kanzi": "姉・妹",
+                "kana": "sister"
+            },
+            {
+                "kanzi": "１６番目の",
+                "kana": "sixteenth"
+            },
+            {
+                "kanzi": "6番目の",
+                "kana": "sixth"
+            },
+            {
+                "kanzi": "眠い",
+                "kana": "sleepy"
+            },
+            {
+                "kanzi": "雪の降る",
+                "kana": "snowy"
+            },
+            {
+                "kanzi": "サッカー",
+                "kana": "soccer"
+            },
+            {
+                "kanzi": "社会",
+                "kana": "society"
+            },
+            {
+                "kanzi": "ソファー",
+                "kana": "sofa"
+            },
+            {
+                "kanzi": "土",
+                "kana": "soil"
+            },
+            {
+                "kanzi": "スポーツ",
+                "kana": "sport"
+            },
+            {
+                "kanzi": "春",
+                "kana": "spring"
+            },
+            {
+                "kanzi": "生徒",
+                "kana": "student"
+            },
+            {
+                "kanzi": "成功した",
+                "kana": "successful"
+            },
+            {
+                "kanzi": "夏",
+                "kana": "summer"
+            },
+            {
+                "kanzi": "日曜日",
+                "kana": "Sunday"
+            },
+            {
+                "kanzi": "支える",
+                "kana": "support"
+            },
+            {
+                "kanzi": "驚いた・びっくりした",
+                "kana": "surprised"
+            },
+            {
+                "kanzi": "生き残る・残存する",
+                "kana": "survive"
+            },
+            {
+                "kanzi": "水泳",
+                "kana": "swimming"
+            },
+            {
+                "kanzi": "象徴",
+                "kana": "symbol"
+            },
+            {
+                "kanzi": "テーブル",
+                "kana": "table"
+            },
+            {
+                "kanzi": "先生",
+                "kana": "teacher"
+            },
+            {
+                "kanzi": "テニス",
+                "kana": "tennis"
+            },
+            {
+                "kanzi": "テント",
+                "kana": "tent"
+            },
+            {
+                "kanzi": "10番目の",
+                "kana": "tenth"
+            },
+            {
+                "kanzi": "あれは",
+                "kana": "that"
+            },
+            {
+                "kanzi": "テーマ",
+                "kana": "theme"
+            },
+            {
+                "kanzi": "彼らは",
+                "kana": "they"
+            },
+            {
+                "kanzi": "3番目の",
+                "kana": "third"
+            },
+            {
+                "kanzi": "１３番目の",
+                "kana": "thirteenth"
+            },
+            {
+                "kanzi": "３０番目の",
+                "kana": "thirtieth"
+            },
+            {
+                "kanzi": "これは",
+                "kana": "this"
+            },
+            {
+                "kanzi": "木曜日",
+                "kana": "Thursday"
+            },
+            {
+                "kanzi": "切符",
+                "kana": "ticket"
+            },
+            {
+                "kanzi": "時間・時",
+                "kana": "time"
+            },
+            {
+                "kanzi": "タイトル",
+                "kana": "title"
+            },
+            {
+                "kanzi": "トースト",
+                "kana": "toast"
+            },
+            {
+                "kanzi": "今夜",
+                "kana": "tonight"
+            },
+            {
+                "kanzi": "町",
+                "kana": "town"
+            },
+            {
+                "kanzi": "おもちゃ",
+                "kana": "toy"
+            },
+            {
+                "kanzi": "列車・電車",
+                "kana": "train"
+            },
+            {
+                "kanzi": "訓練する",
+                "kana": "train"
+            },
+            {
+                "kanzi": "木",
+                "kana": "tree"
+            },
+            {
+                "kanzi": "手品",
+                "kana": "trick"
+            },
+            {
+                "kanzi": "火曜日",
+                "kana": "Tuesday"
+            },
+            {
+                "kanzi": "１２番目の",
+                "kana": "twelfth"
+            },
+            {
+                "kanzi": "２０番目の",
+                "kana": "twentieth"
+            },
+            {
+                "kanzi": "型",
+                "kana": "type"
+            },
+            {
+                "kanzi": "かさ",
+                "kana": "umbrella"
+            },
+            {
+                "kanzi": "不公平な,",
+                "kana": "unfair"
+            },
+            {
+                "kanzi": "使用",
+                "kana": "use"
+            },
+            {
+                "kanzi": "勝利",
+                "kana": "victory"
+            },
+            {
+                "kanzi": "ボランティア",
+                "kana": "volunteer"
+            },
+            {
+                "kanzi": "むだに使う・浪費する",
+                "kana": "waste"
+            },
+            {
+                "kanzi": "私たちは",
+                "kana": "we"
+            },
+            {
+                "kanzi": "水曜日",
+                "kana": "Wednesday"
+            },
+            {
+                "kanzi": "週",
+                "kana": "week"
+            },
+            {
+                "kanzi": "すべての",
+                "kana": "whole"
+            },
+            {
+                "kanzi": "窓",
+                "kana": "window"
+            },
+            {
+                "kanzi": "勝利者",
+                "kana": "winner"
+            },
+            {
+                "kanzi": "冬",
+                "kana": "winter"
+            },
+            {
+                "kanzi": "女性",
+                "kana": "woman"
+            },
+            {
+                "kanzi": "レスラー",
+                "kana": "wrestler"
+            },
+            {
+                "kanzi": "誤った",
+                "kana": "wrong"
+            },
+            {
+                "kanzi": "年",
+                "kana": "year"
+            },
+            {
+                "kanzi": "日本円",
+                "kana": "yen"
+            },
+            {
+                "kanzi": "あなたは・あなたたちは",
+                "kana": "you"
             }
         ],
         "sci": [
