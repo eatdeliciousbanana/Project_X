@@ -1,0 +1,434 @@
+.board{
+    width: 1000px;
+    height: 1960px;
+    background: url("../img/cork02-p-green.png");
+    background-repeat: repeat;
+    background-size: 80px;
+    background-position: center center;
+    border: 20px solid;
+    border-color: rgba(217,217,217,1);
+    opacity: 1;
+    position: relative;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+.title {
+    width: 700px;
+    height: 166px;
+    background: url("../img/paper_shadow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 50px;
+    left: 130px;
+    overflow: hidden;
+  }
+.title_text_outside {
+    width: 695px;
+    height: 80px;
+    opacity: 1;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    overflow: hidden;
+    font-family: HGSGyoshotai;
+    font-size: 64px;
+    opacity: 1;
+    text-align: center;
+  }
+.title_pin1 {
+    width: 25px;
+    height: 25px;
+    background: url("../img/pin_red.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    overflow: hidden;
+  }
+.title_pin2 {
+    width: 25px;
+    height: 25px;
+    background: url("../img/pin_red.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    overflow: hidden;
+  }
+.ranking_list {
+    width: 900px;
+    height: 1466px;
+    position: absolute;
+    top: 400px;
+    left: 30px;
+    overflow: hidden;
+  }
+.ranking_list_jme {
+    width: 900px;
+    height: 409px;
+    position: absolute;
+    top: 551px;
+    left: 0px;
+    overflow: hidden;
+  }
+    /* english */
+.english {
+    width: 280px;
+    height: 409px;
+    position: absolute;
+    top: 0px;
+    left: 620px;
+    overflow: hidden;
+  }
+    /* 賞状(タテ) */
+.paper_tate {
+    width: 280px;
+    height: 395px;
+    background: url("../img/syojo_tate.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+.tate_pin1 {
+    width: 25px;
+    height: 25px;
+    background: url("../img/pin_red.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    overflow: hidden;
+  }
+.tate_pin2 {
+  width: 25px;
+  height: 25px;
+  background: url("../img/pin_red.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  overflow: hidden;
+  }
+.english_text {
+    width: 123px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 60px;
+    left: 77px;
+    font-family: HGSeikaishotai;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+    /* math */
+.math {
+    width: 280px;
+    height: 409px;
+    position: absolute;
+    top: 0px;
+    left: 310px;
+    overflow: hidden;
+  }
+
+.math_text {
+    width: 123px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 60px;
+    left: 77px;
+    font-family: HGSeikaishotai;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+    /* \0 math */
+    /* japanese */
+.japanese {
+    width: 280px;
+    height: 409px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+.japanese_text {
+    width: 123px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 60px;
+    left: 77px;
+    font-family: HGSeikaishotai;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+    /* \0 japanese */
+.ranking_list_ss {
+    width: 590px;
+    height: 409px;
+    position: absolute;
+    top: 1057px;
+    left: 155px;
+    overflow: hidden;
+  }
+    /* social */
+.social {
+    width: 280px;
+    height: 409px;
+    position: absolute;
+    top: 0px;
+    left: 310px;
+    overflow: hidden;
+  }
+.social_text {
+    width: 123px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 60px;
+    left: 77px;
+    font-family: HGSeikaishotai;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+    /* \0 social */
+    /* science */
+.science {
+    width: 280px;
+    height: 409px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+.science_text {
+    width: 123px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 60px;
+    left: 77px;
+    font-family: HGSeikaishotai;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+.sogo {
+    width: 700px;
+    height: 511px;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    overflow: hidden;
+  }
+.paper_yoko {
+    width: 700px;
+    height: 511px;
+    background: url("../img/syojo_yoko.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 700px;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+.sogo_text {
+    width: 150px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 87px;
+    left: 275px;
+    font-family: HGSeikaishotai;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: center;
+  }
+.ranking_banner {
+    width: 803px;
+    height: 136px;
+    position: absolute;
+    top: 230px;
+    left: 110px;
+    overflow: hidden;
+  }
+.tag_pink{
+    width: 181px;
+    height: 68px;
+    background: url("../img/pink_tag.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.high_school {
+    width: 181px;
+    height: 68px;
+    position: absolute;
+    top: 0px;
+    left: 527px;
+    overflow: hidden;
+  }
+.high_school_text {
+    width: 114px;
+    color: rgba(66,55,55,1);
+    position: absolute;
+    top: 15px;
+    left: 21px;
+    font-family: UD Digi Kyokasho N-B;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+  }
+.tag_pin_yellow {
+    width: 30px;
+    height: 30px;
+    background: url("../img/pin_yellow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 21px;
+    left: 1px;
+    overflow: hidden;
+  }
+.junior_high_school {
+    width: 181px;
+    height: 68px;
+    opacity: 1;
+    position: absolute;
+    top: 68px;
+    left: 622px;
+    overflow: hidden;
+  }
+.junior_high_school_text {
+    width: 114px;
+    color: rgba(67,56,56,1);
+    position: absolute;
+    top: 15px;
+    left: 21px;
+    font-family: UD Digi Kyokasho N-B;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+  }
+.elementary_school {
+    width: 181px;
+    height: 68px;
+    position: absolute;
+    top: 67px;
+    left: 412px;
+    overflow: hidden;
+  }
+.elementary_school_text {
+    width: 114px;
+    color: rgba(66,55,55,1);
+    position: absolute;
+    top: 15px;
+    left: 21px;
+    font-family: UD Digi Kyokasho N-B;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+  }
+.tag_yellow{
+    width: 319px;
+    height: 68px;
+    background: url("../img/yellow_tag.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.year {
+    width: 319px;
+    height: 68px;
+    position: absolute;
+    top: 0px;
+    left: 62px;
+    overflow: hidden;
+  }
+.year_text {
+    width: 240px;
+    color: rgba(66,55,55,1);
+    position: absolute;
+    top: 15px;
+    left: 33px;
+    font-family: UD Digi Kyokasho N-B;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+  }
+.tag_pin_blue {
+    width: 30px;
+    height: 30px;
+    background: url("../img/pin_blue.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 21px;
+    left: 2px;
+    overflow: hidden;
+  }
+.month {
+    width: 319px;
+    height: 68px;
+    position: absolute;
+    top: 67px;
+    left: 0px;
+    overflow: hidden;
+  }
+.month_text {
+    width: 240px;
+    color: rgba(66,55,55,1);
+    position: absolute;
+    top: 15px;
+    left: 33px;
+    font-family: UD Digi Kyokasho N-B;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+  }
