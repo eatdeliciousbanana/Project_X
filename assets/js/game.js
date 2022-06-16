@@ -4,7 +4,8 @@ function typingGame(silent_mode) {
     let mode = {           // モード
         grade: 'elem',   // 学年
         subject: 'jpn',  // 教科
-        time: 60         // 制限時間
+        time: 60 ,        // 制限時間
+        div_num:5        //タイプ文字数を割る数
     };
 
     // ゲーム読み込み
@@ -280,6 +281,7 @@ function typingGame(silent_mode) {
                 mode.grade = id[0];
                 mode.subject = id[1];
                 mode.time = parseInt(id[2]);
+                mode.div_num=parseInt(id[3]);
                 loadSpace();
                 switchScreen('space');
             });
@@ -449,6 +451,8 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     wordcount_tick.value = ++word_count;
+                    score+=Math.round(typed.length/mode.div_num);
+                    updateScore(score);
                     updateWord();
                 }
 
@@ -476,7 +480,7 @@ function typingGame(silent_mode) {
                 }
 
                 // スコアを更新
-                updateScore(++score);
+                //updateScore(++score);
 
             } else {  //間違ったキーを打った場合
 
