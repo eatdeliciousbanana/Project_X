@@ -560,9 +560,15 @@ function typingGame(silent_mode) {
             $('#tuuchi_score_value').html(score + '点');
             $('#tuuchi_word_value').html(word_count + 'ワード');
             $('#tuuchi_type_value').html(right_typeCount + '回');
-            $('#tuuchi_average_value').html((right_typeCount / (mode.time + additional_time)).toFixed(1) + '回/秒');
+
+            let average_value=right_typeCount / (mode.time + additional_time);
+            $('#tuuchi_average_value').html(average_value.toFixed(1) + '回/秒');
             $('#tuuchi_misstype_value').html(miss_typeCount + '回');
-            $('#tuuchi_missratio_value').html((100 * miss_typeCount / (miss_typeCount + right_typeCount)).toFixed(2) + '%');
+
+            let missratio_value=100 * miss_typeCount / (miss_typeCount + right_typeCount);
+            $('#tuuchi_missratio_value').html(missratio_value.toFixed(2) + '%');
+            
+            set_Evaluation(average_value,missratio_value);
 
             let ret = mode2str();
             $('#tuuchi_subject').html(`教科：${ret[0]}/${ret[1]}`);
@@ -573,6 +579,52 @@ function typingGame(silent_mode) {
                 $('#result_block2').fadeIn(1000);
             }, 500);
         }
+
+        function set_Evaluation(average_value,missratio_value){
+            let rank,ave_rank,miss_rank;
+
+            // Set score,word and type evaluation
+            if(score>=80){
+                rank='A';
+            }
+            else if(score>=50){
+                rank='B';
+            }
+            else{
+                rank='C';
+            }
+            $('#tuuchi_score_eval').html(rank);
+            $('#tuuchi_word_eval').html(rank);
+            $('#tuuchi_type_eval').html(rank);
+
+            // Set average evaluation
+            // 値は適当です
+            if(average_value>=10){
+                ave_rank='A';
+            }
+            else if(average_value>=5){
+                ave_rank='B';
+            }
+            else{
+                ave_rank='C';
+            }
+            $('#tuuchi_average_eval').html(ave_rank);
+
+            // Set score,word and type evaluation
+            // 値は適当です
+            if(missratio_value>=5){
+                miss_rank='C';
+            }
+            else if(missratio_value>=3){
+                miss_rank='B';
+            }
+            else{
+                miss_rank='A';
+            }
+            $('#tuuchi_misstype_eval').html(miss_rank);
+            $('#tuuchi_missratio_eval').html(miss_rank);
+        }
+
 
 
         // m以上n未満のランダムな整数を返す関数
