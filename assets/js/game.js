@@ -676,6 +676,26 @@ function typingGame(silent_mode) {
             switchScreen('title');
         });
     }
+
+
+    // 1教科のランキングを取得する関数
+    function getRanking(grade, subject) {
+        $.ajax({
+            type: 'GET',
+            url: '../../backend/get_ranking.php',
+            data: { grade: grade, subject: subject },
+            dataType: 'json'
+        }).then(
+            // 成功時
+            function (data) {
+                console.log(data);
+            },
+            // エラー発生時
+            function () {
+                alert('ajaxのエラー');
+            }
+        );
+    }
 }
 
 
