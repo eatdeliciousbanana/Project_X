@@ -7,6 +7,7 @@ function typingGame(silent_mode) {
         time: 60         // 制限時間
     };
     let ranking = {};  // ランキング
+    let score = 0;     // ゲームの得点
 
     // ゲーム読み込み
     loadClock();
@@ -435,7 +436,7 @@ function typingGame(silent_mode) {
         const words = globalWords[mode.grade][mode.subject];
         let untyped = '';  // 打ってない文字
         let typed = '';    // 打った文字
-        let score = 0;     // 得点
+        score = 0;         // 得点
         let word_count = 0;       // 打ったワード数
         let right_typeCount = 0;  // 正しくキーを押した回数
         let miss_typeCount = 0;   // 誤ったキーを押した回数
@@ -597,6 +598,29 @@ function typingGame(silent_mode) {
             let ret = mode2str();
             $('#tuuchi_subject').html(`教科：${ret[0]}/${ret[1]}`);
 
+            let records = ranking[`${mode.grade}_${mode.subject}`];
+            let i;
+            for (i = 0; i < records.length; i++) {
+                if (score > records[i].score) {
+                    break;
+                }
+            }
+            if (i < 100) {
+                $('#tuuchi_rank').html(`${i + 1}位`);
+                $('#tuuchi_btnRegister').html('登録');
+                $('#tuuchi_btnRegister').prop('disabled', false);
+                $('#tuuchi_ranking_name').val('');
+                $('#tuuchi_ranking_name').prop('disabled', false);
+                $('#tuuchi_ranking_name').prop('placeholder', 'ランキング表示名を入力');
+            } else {
+                $('#tuuchi_rank').html('圏外');
+                $('#tuuchi_btnRegister').html('登録');
+                $('#tuuchi_btnRegister').prop('disabled', true);
+                $('#tuuchi_ranking_name').val('');
+                $('#tuuchi_ranking_name').prop('disabled', true);
+                $('#tuuchi_ranking_name').prop('placeholder', `入賞まであと${records[i - 1].score - score + 1}点`);
+            }
+
             $('#result_block1').hide().fadeIn(1000);
             $('#result_block2').hide();
             setTimeout(function () {
@@ -709,6 +733,39 @@ function typingGame(silent_mode) {
             wordcount_tick.value = 0;
             switchScreen('title');
         });
+
+        // 登録ボタンを押してランキングに登録
+        $('#tuuchi_btnRegister').on('click', function () {
+            let name = $('#tuuchi_ranking_name').val();
+            if (name === '') {
+                alert('ランキング表示名を入力してください');
+            } else if (name.length > 20) {
+                alert('ランキング表示名は1文字以上20文字以内で入力してください');
+            } else {
+                $('#tuuchi_btnRegister').html('完了');
+                $('#tuuchi_btnRegister').prop('disabled', true);
+                $('#tuuchi_ranking_name').prop('disabled', true);
+                insertRanking(name, score);
+            }
+        });
+
+        // 名前とスコアをランキングに登録する関数
+        function insertRanking(name, score) {
+            $.ajax({
+                type: 'POST',
+                url: '/backend/insert_ranking.php',
+                data: { name: name, score: score }
+            }).then(
+                // 成功時
+                function (data, textStatus, jqXHR) {
+
+                },
+                // エラー発生時
+                function (jqXHR, textStatus, errorThrown) {
+
+                }
+            );
+        }
     }
 }
 
