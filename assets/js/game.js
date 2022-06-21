@@ -6,6 +6,7 @@ function typingGame(silent_mode) {
         subject: 'jpn',  // 教科
         time: 60         // 制限時間
     };
+    let ranking = {};  // ランキング
 
     // ゲーム読み込み
     loadClock();
@@ -15,6 +16,7 @@ function typingGame(silent_mode) {
     loadMode();
     loadResult();
     getWords();  // jsonから文字取得
+    getRanking();  // ランキング取得
 
     // ゲーム読み込み完了
     const intervalId = setInterval(function () {
@@ -117,7 +119,7 @@ function typingGame(silent_mode) {
         );
     }
 
-    getRanking();
+
     // 全教科のランキングを取得する関数
     function getRanking() {
         $.ajax({
@@ -126,11 +128,26 @@ function typingGame(silent_mode) {
         }).then(
             // 成功時
             function (data, textStatus, jqXHR) {
-                console.log(data);
+                if (typeof data !== 'object') {
+                    alert('ランキングの読み込みに失敗しました');
+                    return;
+                }
+                for (let table in data) {
+                    data[table].sort(function (first, second) {
+                        if (first.score > second.score) {
+                            return -1;
+                        } else if (first.score < second.score) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    });
+                }
+                ranking = data;
             },
             // エラー発生時
             function (jqXHR, textStatus, errorThrown) {
-                alert('エラー');
+                alert('ランキングの読み込みに失敗しました');
             }
         );
     }
