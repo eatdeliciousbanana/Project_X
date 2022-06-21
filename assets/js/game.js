@@ -103,19 +103,36 @@ function typingGame(silent_mode) {
             type: 'GET',
             url: './words.json',
             dataType: 'json'
-        })
-            .then(
-                // 取得成功時
-                function (json) {
-                    let data_stringify = JSON.stringify(json);
-                    let data_json = JSON.parse(data_stringify);
-                    globalWords = data_json;
-                },
-                // エラー発生時
-                function () {
-                    alert('jsonの読み込みに失敗しました');
-                }
-            );
+        }).then(
+            // 取得成功時
+            function (json) {
+                let data_stringify = JSON.stringify(json);
+                let data_json = JSON.parse(data_stringify);
+                globalWords = data_json;
+            },
+            // エラー発生時
+            function () {
+                alert('ワードの読み込みに失敗しました');
+            }
+        );
+    }
+
+    getRanking();
+    // 全教科のランキングを取得する関数
+    function getRanking() {
+        $.ajax({
+            type: 'GET',
+            url: '/backend/get_ranking.php'
+        }).then(
+            // 成功時
+            function (data, textStatus, jqXHR) {
+                console.log(data);
+            },
+            // エラー発生時
+            function (jqXHR, textStatus, errorThrown) {
+                alert('エラー');
+            }
+        );
     }
 
 
@@ -675,26 +692,6 @@ function typingGame(silent_mode) {
             wordcount_tick.value = 0;
             switchScreen('title');
         });
-    }
-
-
-    // 1教科のランキングを取得する関数
-    function getRanking(grade, subject) {
-        $.ajax({
-            type: 'GET',
-            url: '../../backend/get_ranking.php',
-            data: { grade: grade, subject: subject },
-            dataType: 'json'
-        }).then(
-            // 成功時
-            function (data) {
-                console.log(data);
-            },
-            // エラー発生時
-            function () {
-                alert('ajaxのエラー');
-            }
-        );
     }
 }
 
