@@ -1,3 +1,12 @@
+@font-face{
+  font-family: 'HGSGyoshotai';
+  src: url('../fonts/HGRGY.TTC') format('truetype');
+}
+@font-face{
+  font-family: 'HGSeikaishotai';
+  src: url('../fonts/HGRSK.TTC') format('truetype');
+}
+
 .board{
     width: 1000px;
     height: 1960px;
