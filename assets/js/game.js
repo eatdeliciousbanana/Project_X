@@ -4,9 +4,11 @@ function typingGame(silent_mode) {
     let mode = {           // モード
         grade: 'elem',   // 学年
         subject: 'jpn',  // 教科
-        time: 60 ,        // 制限時間
-        div_num:5        //タイプ文字数を割る数
+        time: 60,        // 制限時間
+        div_num: 5        //タイプ文字数を割る数
     };
+    let ranking = {};  // ランキング
+    let score = 0;     // ゲームの得点
 
     // ゲーム読み込み
     loadClock();
@@ -16,6 +18,7 @@ function typingGame(silent_mode) {
     loadMode();
     loadResult();
     getWords();  // jsonから文字取得
+    getRanking();  // ランキング取得
 
     // ゲーム読み込み完了
     const intervalId = setInterval(function () {
@@ -104,19 +107,52 @@ function typingGame(silent_mode) {
             type: 'GET',
             url: './words.json',
             dataType: 'json'
-        })
-            .then(
-                // 取得成功時
-                function (json) {
-                    let data_stringify = JSON.stringify(json);
-                    let data_json = JSON.parse(data_stringify);
-                    globalWords = data_json;
-                },
-                // エラー発生時
-                function () {
-                    alert('jsonの読み込みに失敗しました');
+        }).then(
+            // 取得成功時
+            function (json) {
+                let data_stringify = JSON.stringify(json);
+                let data_json = JSON.parse(data_stringify);
+                globalWords = data_json;
+            },
+            // エラー発生時
+            function () {
+                alert('ワードの読み込みに失敗しました');
+            }
+        );
+    }
+
+
+    // 全教科のランキングを取得する関数
+    function getRanking() {
+        $.ajax({
+            type: 'GET',
+            url: '/backend/get_ranking.php'
+        }).then(
+            // 成功時
+            function (data, textStatus, jqXHR) {
+                if (typeof data !== 'object') {
+                    console.log(data);
+                    alert('ランキングの読み込みに失敗しました');
+                    return;
                 }
-            );
+                for (let table in data) {
+                    data[table].sort(function (first, second) {
+                        if (first.score > second.score) {
+                            return -1;
+                        } else if (first.score < second.score) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    });
+                }
+                ranking = data;
+            },
+            // エラー発生時
+            function (jqXHR, textStatus, errorThrown) {
+                alert('ランキングの読み込みに失敗しました');
+            }
+        );
     }
 
 
@@ -281,7 +317,7 @@ function typingGame(silent_mode) {
                 mode.grade = id[0];
                 mode.subject = id[1];
                 mode.time = parseInt(id[2]);
-                mode.div_num=parseInt(id[3]);
+                mode.div_num = parseInt(id[3]);
                 loadSpace();
                 switchScreen('space');
             });
@@ -403,7 +439,7 @@ function typingGame(silent_mode) {
         const words = globalWords[mode.grade][mode.subject];
         let untyped = '';  // 打ってない文字
         let typed = '';    // 打った文字
-        let score = 0;     // 得点
+        score = 0;         // 得点
         let word_count = 0;       // 打ったワード数
         let right_typeCount = 0;  // 正しくキーを押した回数
         let miss_typeCount = 0;   // 誤ったキーを押した回数
@@ -451,7 +487,7 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     wordcount_tick.value = ++word_count;
-                    score+=Math.round(typed.length/mode.div_num);
+                    score += Math.round(typed.length / mode.div_num);
                     updateScore(score);
                     updateWord();
                 }
@@ -478,9 +514,6 @@ function typingGame(silent_mode) {
                 } else {
                     meters[bonus_state].setPercentage(renda_typeCount * 2);
                 }
-
-                // スコアを更新
-                //updateScore(++score);
 
             } else {  //間違ったキーを打った場合
 
@@ -561,17 +594,40 @@ function typingGame(silent_mode) {
             $('#tuuchi_word_value').html(word_count + 'ワード');
             $('#tuuchi_type_value').html(right_typeCount + '回');
 
-            let average_value=right_typeCount / (mode.time + additional_time);
+            let average_value = right_typeCount / (mode.time + additional_time);
             $('#tuuchi_average_value').html(average_value.toFixed(1) + '回/秒');
             $('#tuuchi_misstype_value').html(miss_typeCount + '回');
 
-            let missratio_value=100 * miss_typeCount / (miss_typeCount + right_typeCount);
+            let missratio_value = 100 * miss_typeCount / (miss_typeCount + right_typeCount);
             $('#tuuchi_missratio_value').html(missratio_value.toFixed(2) + '%');
-            
-            set_Evaluation(average_value,missratio_value);
+
+            set_Evaluation(average_value, missratio_value);
 
             let ret = mode2str();
             $('#tuuchi_subject').html(`教科：${ret[0]}/${ret[1]}`);
+
+            let records = ranking[`${mode.grade}_${mode.subject}`];
+            let i;
+            for (i = 0; i < records.length; i++) {
+                if (score > records[i].score) {
+                    break;
+                }
+            }
+            if (i < 100) {
+                $('#tuuchi_rank').html(`${i + 1}位`);
+                $('#tuuchi_btnRegister').html('登録');
+                $('#tuuchi_btnRegister').prop('disabled', false);
+                $('#tuuchi_ranking_name').val('');
+                $('#tuuchi_ranking_name').prop('disabled', false);
+                $('#tuuchi_ranking_name').prop('placeholder', 'ランキング表示名を入力');
+            } else {
+                $('#tuuchi_rank').html('圏外');
+                $('#tuuchi_btnRegister').html('登録');
+                $('#tuuchi_btnRegister').prop('disabled', true);
+                $('#tuuchi_ranking_name').val('');
+                $('#tuuchi_ranking_name').prop('disabled', true);
+                $('#tuuchi_ranking_name').prop('placeholder', `入賞まであと${records[i - 1].score - score + 1}点`);
+            }
 
             $('#result_block1').hide().fadeIn(1000);
             $('#result_block2').hide();
@@ -580,18 +636,19 @@ function typingGame(silent_mode) {
             }, 500);
         }
 
-        function set_Evaluation(average_value,missratio_value){
-            let rank,ave_rank,miss_rank;
+
+        function set_Evaluation(average_value, missratio_value) {
+            let rank, ave_rank, miss_rank;
 
             // Set score,word and type evaluation
-            if(score>=80){
-                rank='A';
+            if (score >= 80) {
+                rank = 'A';
             }
-            else if(score>=50){
-                rank='B';
+            else if (score >= 50) {
+                rank = 'B';
             }
-            else{
-                rank='C';
+            else {
+                rank = 'C';
             }
             $('#tuuchi_score_eval').html(rank);
             $('#tuuchi_word_eval').html(rank);
@@ -599,32 +656,31 @@ function typingGame(silent_mode) {
 
             // Set average evaluation
             // 値は適当です
-            if(average_value>=10){
-                ave_rank='A';
+            if (average_value >= 10) {
+                ave_rank = 'A';
             }
-            else if(average_value>=5){
-                ave_rank='B';
+            else if (average_value >= 5) {
+                ave_rank = 'B';
             }
-            else{
-                ave_rank='C';
+            else {
+                ave_rank = 'C';
             }
             $('#tuuchi_average_eval').html(ave_rank);
 
             // Set score,word and type evaluation
             // 値は適当です
-            if(missratio_value>=5){
-                miss_rank='C';
+            if (missratio_value >= 5) {
+                miss_rank = 'C';
             }
-            else if(missratio_value>=3){
-                miss_rank='B';
+            else if (missratio_value >= 3) {
+                miss_rank = 'B';
             }
-            else{
-                miss_rank='A';
+            else {
+                miss_rank = 'A';
             }
             $('#tuuchi_misstype_eval').html(miss_rank);
             $('#tuuchi_missratio_eval').html(miss_rank);
         }
-
 
 
         // m以上n未満のランダムな整数を返す関数
@@ -731,6 +787,46 @@ function typingGame(silent_mode) {
             wordcount_tick.value = 0;
             switchScreen('title');
         });
+
+        // 登録ボタンを押してランキングに登録
+        $('#tuuchi_btnRegister').on('click', function () {
+            let name = $('#tuuchi_ranking_name').val();
+            if (name === '') {
+                alert('ランキング表示名を入力してください');
+            } else if (name.length > 20) {
+                alert('ランキング表示名は1文字以上20文字以内で入力してください');
+            } else {
+                $('#tuuchi_btnRegister').html('完了');
+                $('#tuuchi_btnRegister').prop('disabled', true);
+                $('#tuuchi_ranking_name').prop('disabled', true);
+                insertRanking(mode.grade, mode.subject, name, score);
+            }
+        });
+
+        // 名前とスコアをランキングに登録する関数
+        function insertRanking(grade, subject, name, score) {
+            $.ajax({
+                type: 'POST',
+                url: '/backend/insert_ranking.php',
+                data: { grade: grade, subject: subject, name: name, score: score }
+            }).then(
+                // 成功時
+                function (data, textStatus, jqXHR) {
+                    if (data === 'ok') {
+                        return;
+                    } else if (data === 'already filled') {
+                        alert('ランキングに登録できませんでした\nすでに100人登録されています\nもう一度挑戦して, より高得点を目指してください!');
+                    } else {
+                        console.log(data);
+                        alert('ランキングの登録に失敗しました');
+                    }
+                },
+                // エラー発生時
+                function (jqXHR, textStatus, errorThrown) {
+                    alert('ランキングの登録に失敗しました');
+                }
+            );
+        }
     }
 }
 
