@@ -32,7 +32,7 @@ try {
     $returnList = array();
 
     foreach ($tables as $table) {
-        $sql = 'select id, date, name, score from ' . $table;
+        $sql = 'select name, score from ' . $table;
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -40,8 +40,6 @@ try {
 
         while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $returnList[$table][] = array(
-                'id' => $result['id'],
-                'date' => $result['date'],
                 'name' => $result['name'],
                 'score' => $result['score']
             );
@@ -52,6 +50,6 @@ try {
     echo json_encode($returnList);
     exit;
 } catch (PDOException $e) {
-    echo $e->getMessage();
+    echo 'server error';
     exit;
 }

@@ -130,6 +130,7 @@ function typingGame(silent_mode) {
             // 成功時
             function (data, textStatus, jqXHR) {
                 if (typeof data !== 'object') {
+                    console.log(data);
                     alert('ランキングの読み込みに失敗しました');
                     return;
                 }
@@ -745,24 +746,31 @@ function typingGame(silent_mode) {
                 $('#tuuchi_btnRegister').html('完了');
                 $('#tuuchi_btnRegister').prop('disabled', true);
                 $('#tuuchi_ranking_name').prop('disabled', true);
-                insertRanking(name, score);
+                insertRanking(mode.grade, mode.subject, name, score);
             }
         });
 
         // 名前とスコアをランキングに登録する関数
-        function insertRanking(name, score) {
+        function insertRanking(grade, subject, name, score) {
             $.ajax({
                 type: 'POST',
                 url: '/backend/insert_ranking.php',
-                data: { name: name, score: score }
+                data: { grade: grade, subject: subject, name: name, score: score }
             }).then(
                 // 成功時
                 function (data, textStatus, jqXHR) {
-
+                    if (data === 'ok') {
+                        return;
+                    } else if (data === 'already filled') {
+                        alert('ランキングに登録できませんでした\nすでに100人登録されています\nもう一度挑戦して, より高得点を目指してください!');
+                    } else {
+                        console.log(data);
+                        alert('ランキングの登録に失敗しました');
+                    }
                 },
                 // エラー発生時
                 function (jqXHR, textStatus, errorThrown) {
-
+                    alert('ランキングの登録に失敗しました');
                 }
             );
         }
