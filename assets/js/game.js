@@ -310,14 +310,104 @@ function typingGame(silent_mode) {
             $('#mode_high').show();
         });
 
+        // 各モードの設定
+        const mode_conf = {
+            elem: {
+                math: {
+                    time: 60,
+                    div_num: 5
+                },
+                jpn: {
+                    time: 60,
+                    div_num: 5
+                },
+                eng: {
+                    time: 60,
+                    div_num: 3
+                },
+                sci: {
+                    time: 60,
+                    div_num: 5
+                },
+                social: {
+                    time: 60,
+                    div_num: 5
+                }
+            },
+            mid: {
+                math: {
+                    time: 90,
+                    div_num: 7
+                },
+                jpn: {
+                    time: 90,
+                    div_num: 7
+                },
+                eng: {
+                    time: 90,
+                    div_num: 4
+                },
+                sci: {
+                    time: 90,
+                    div_num: 7
+                },
+                social: {
+                    time: 90,
+                    div_num: 7
+                }
+            },
+            high: {
+                math: {
+                    time: 120,
+                    div_num: 10
+                },
+                jpn: {
+                    time: 120,
+                    div_num: 10
+                },
+                eng: {
+                    time: 120,
+                    div_num: 5
+                },
+                physics: {
+                    time: 120,
+                    div_num: 10
+                },
+                chem: {
+                    time: 120,
+                    div_num: 10
+                },
+                bio: {
+                    time: 120,
+                    div_num: 10
+                },
+                geology: {
+                    time: 120,
+                    div_num: 10
+                },
+                japanhis: {
+                    time: 120,
+                    div_num: 10
+                },
+                worldhis: {
+                    time: 120,
+                    div_num: 10
+                },
+                geography: {
+                    time: 120,
+                    div_num: 10
+                }
+            }
+        };
+
         // 科目選択
         $('.mode_select').each(function () {
             $(this).on('click', function () {
                 const id = $(this).attr('id').split('_');
                 mode.grade = id[0];
                 mode.subject = id[1];
-                mode.time = parseInt(id[2]);
-                mode.div_num = parseInt(id[3]);
+                mode.time = mode_conf[mode.grade][mode.subject]['time'];
+                mode.div_num = mode_conf[mode.grade][mode.subject]['div_num'];
                 loadSpace();
                 switchScreen('space');
             });
