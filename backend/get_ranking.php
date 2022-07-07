@@ -1,7 +1,14 @@
 <?php
-$dsn = 'mysql:dbname=ranking;host=localhost';
-$user = 'ranking_user';
-$password = 'password';
+//Get Heroku ClearDB connection information
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db = substr($cleardb_url["path"], 1);
+
+$dsn = "mysql:dbname=${cleardb_db};host=${cleardb_server}";
+$user = $cleardb_username;
+$password = $cleardb_password;
 
 try {
     $dbh = new PDO($dsn, $user, $password);
