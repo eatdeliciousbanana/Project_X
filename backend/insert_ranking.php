@@ -6,7 +6,7 @@ $cleardb_username = $cleardb_url["user"];
 $cleardb_password = $cleardb_url["pass"];
 $cleardb_db = substr($cleardb_url["path"], 1);
 
-$dsn = "mysql:dbname=${cleardb_db};host=${cleardb_server}charset=utf8mb4";
+$dsn = "mysql:dbname=${cleardb_db};host=${cleardb_server};charset=utf8mb4";
 $user = $cleardb_username;
 $password = $cleardb_password;
 
