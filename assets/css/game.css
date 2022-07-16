@@ -18,11 +18,29 @@
 
 #gamescreen_config {
     display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
     font-size: x-large;
+}
+
+#hurigana_form {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30px;
+    left: 70px;
+}
+
+#volume_form {
+    position: absolute;
+    top: 25px;
+    left: 270px;
+}
+
+#config_btnBack {
+    position: absolute;
+    top: 193px;
+    left: 223px;
+    width: 90px;
 }
 
 #gamescreen_mode {
