@@ -24,21 +24,29 @@
     font-size: x-large;
 }
 
+#gamescreen_config_title {
+    font-size: x-large;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    left: 245px;
+}
+
 #hurigana_form {
     position: absolute;
-    top: 30px;
+    top: 47px;
     left: 70px;
 }
 
 #volume_form {
     position: absolute;
-    top: 25px;
+    top: 42px;
     left: 270px;
 }
 
 #config_btnBack {
     position: absolute;
-    top: 193px;
+    top: 199px;
     left: 223px;
     width: 90px;
 }
