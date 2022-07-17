@@ -578,7 +578,7 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     wordcount_tick.value = ++word_count;
-                    score += Math.round(typed.length / mode.div_num);
+                    score += typed.length;//Math.round(typed.length / mode.div_num);
                     updateScore(score);
                     updateWord();
                 }
