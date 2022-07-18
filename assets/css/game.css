@@ -94,6 +94,7 @@
 #gamescreen_playing {
     display: none;
     font-size: xx-large;
+    cursor: none;
 }
 
 #kana_field {
