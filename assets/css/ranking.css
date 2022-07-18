@@ -7,9 +7,9 @@
   src: url('../fonts/HGRSK.TTC') format('truetype');
 }
 
-.board{
+#board_group5{
     width: 1000px;
-    height: 1960px;
+    height: 2400px;
     background: url("../img/cork02-p-green.png");
     background-repeat: repeat;
     background-size: 80px;
@@ -21,6 +21,38 @@
     margin: auto;
     top: 0px;
     left: 0px;
+    overflow: hidden;
+  }
+#board_group10{
+    width: 1000px;
+    height: 4300px;
+    background: url("../img/cork02-p-green.png");
+    background-repeat: repeat;
+    background-size: 80px;
+    background-position: center center;
+    border: 20px solid;
+    border-color: rgba(217,217,217,1);
+    opacity: 1;
+    position: relative;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+#ranking_group5 {
+    width: 860px;
+    height: 1956px;
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    overflow: hidden;
+  }
+#ranking_group10 {
+    width: 860px;
+    height: 3800px;
+    position: absolute;
+    top: 400px;
+    left: 50px;
     overflow: hidden;
   }
 .title {
@@ -75,35 +107,80 @@
     right: 5px;
     overflow: hidden;
   }
-.ranking_list {
-    width: 900px;
-    height: 1466px;
+  .ranking_banner {
+    width: 697px;
+    height: 138px;
     position: absolute;
-    top: 400px;
-    left: 30px;
+    top: 230px;
+    left: 132px;
     overflow: hidden;
   }
-.ranking_list_jme {
-    width: 900px;
-    height: 409px;
+.ranking_banner_text {
+    width: 240px;
+    color: rgba(66,55,55,1);
     position: absolute;
-    top: 551px;
+    top: 11px;
+    left: 33px;
+    font-family: UD Digi Kyokasho N-B;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+  }
+.tag_yellow{
+    width: 319px;
+    height: 68px;
+    background: url("../img/yellow_tag.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.high_school {
+    width: 319px;
+    height: 68px;
+    position: absolute;
+    top: 0px;
+    left: 189px;
+    overflow: hidden;
+  }
+.elem_school {
+    width: 319px;
+    height: 68px;
+    position: absolute;
+    top: 67px;
     left: 0px;
     overflow: hidden;
   }
-    /* english */
-.english {
-    width: 280px;
-    height: 409px;
+.mid_school {
+    width: 319px;
+    height: 68px;
     position: absolute;
-    top: 0px;
-    left: 620px;
+    top: 67px;
+    left: 372px;
+    overflow: hidden;
+  }
+.tag_pin_blue {
+    width: 30px;
+    height: 30px;
+    background: url("../img/pin_blue.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 21px;
+    left: 2px;
     overflow: hidden;
   }
     /* 賞状(タテ) */
 .paper_tate {
-    width: 280px;
-    height: 395px;
+    width: 413px;
+    height: 604px;
     background: url("../img/syojo_tate.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -140,304 +217,68 @@
   right: 0px;
   overflow: hidden;
   }
-.english_text {
-    width: 123px;
+.ranking_title {
+    width: 413px;
     color: rgba(0,0,0,1);
     position: absolute;
-    top: 60px;
-    left: 77px;
-    font-family: HGSeikaishotai;
-    font-weight: Regular;
-    font-size: 40px;
-    opacity: 1;
-    text-align: center;
-  }
-    /* math */
-.math {
-    width: 280px;
-    height: 409px;
-    position: absolute;
-    top: 0px;
-    left: 310px;
-    overflow: hidden;
-  }
-
-.math_text {
-    width: 123px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 60px;
-    left: 77px;
-    font-family: HGSeikaishotai;
-    font-size: 40px;
-    opacity: 1;
-    text-align: center;
-  }
-    /* \0 math */
-    /* japanese */
-.japanese {
-    width: 280px;
-    height: 409px;
-    position: absolute;
-    top: 0px;
+    top: 90px;
     left: 0px;
-    overflow: hidden;
-  }
-.japanese_text {
-    width: 123px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 60px;
-    left: 77px;
     font-family: HGSeikaishotai;
-    font-weight: Regular;
     font-size: 40px;
     opacity: 1;
     text-align: center;
   }
-    /* \0 japanese */
-.ranking_list_ss {
-    width: 590px;
-    height: 409px;
-    position: absolute;
-    top: 1057px;
-    left: 155px;
-    overflow: hidden;
-  }
-    /* social */
-.social {
-    width: 280px;
-    height: 409px;
-    position: absolute;
-    top: 0px;
-    left: 310px;
-    overflow: hidden;
-  }
-.social_text {
-    width: 123px;
+.ranking_text {
+    width: 413px;
     color: rgba(0,0,0,1);
-    position: absolute;
-    top: 60px;
-    left: 77px;
+    position: relative;
+    top: 165px;
+    left: 80px;
     font-family: HGSeikaishotai;
-    font-weight: Regular;
-    font-size: 40px;
+    font-size: 25px;
     opacity: 1;
-    text-align: center;
   }
-    /* \0 social */
-    /* science */
-.science {
-    width: 280px;
-    height: 409px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-.science_text {
-    width: 123px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 60px;
-    left: 77px;
-    font-family: HGSeikaishotai;
-    font-weight: Regular;
-    font-size: 40px;
-    opacity: 1;
-    text-align: center;
-  }
-.sogo {
-    width: 700px;
-    height: 511px;
-    position: absolute;
-    top: 0px;
-    left: 100px;
-    overflow: hidden;
-  }
-.paper_yoko {
-    width: 700px;
-    height: 511px;
-    background: url("../img/syojo_yoko.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 700px;
-    opacity: 1;
+.ranking_list_2 {
+    width: 860px;
+    height: 604px;
     position: relative;
     top: 0px;
     left: 0px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     overflow: hidden;
   }
-.sogo_text {
-    width: 150px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 87px;
-    left: 275px;
-    font-family: HGSeikaishotai;
-    font-weight: Regular;
-    font-size: 48px;
-    opacity: 1;
-    text-align: center;
-  }
-.ranking_banner {
-    width: 803px;
-    height: 136px;
-    position: absolute;
-    top: 230px;
-    left: 110px;
+.ranking_list_1{
+    width: 860px;
+    height: 604px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     overflow: hidden;
   }
-.tag_pink{
-    width: 181px;
-    height: 68px;
-    background: url("../img/pink_tag.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
+.paper_right {
+    width: 413px;
+    height: 604px;
+    position: absolute;
+    top: 0px;
+    left: 447px;
+    overflow: hidden;
+  }
+.paper_left {
+    width: 413px;
+    height: 604px;
     position: absolute;
     top: 0px;
     left: 0px;
+    overflow: hidden;
+  }
+.paper_center {
+    width: 413px;
+    height: 604px;
+    position: absolute;
+    top: 0px;
+    left: 223px;
     overflow: hidden;
 }
-.high_school {
-    width: 181px;
-    height: 68px;
-    position: absolute;
-    top: 0px;
-    left: 527px;
-    overflow: hidden;
-  }
-.high_school_text {
-    width: 114px;
-    color: rgba(66,55,55,1);
-    position: absolute;
-    top: 15px;
-    left: 21px;
-    font-family: UD Digi Kyokasho N-B;
-    font-weight: Bold;
-    font-size: 32px;
-    opacity: 1;
-    text-align: center;
-  }
-.tag_pin_yellow {
-    width: 30px;
-    height: 30px;
-    background: url("../img/pin_yellow.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 21px;
-    left: 1px;
-    overflow: hidden;
-  }
-.junior_high_school {
-    width: 181px;
-    height: 68px;
-    opacity: 1;
-    position: absolute;
-    top: 68px;
-    left: 622px;
-    overflow: hidden;
-  }
-.junior_high_school_text {
-    width: 114px;
-    color: rgba(67,56,56,1);
-    position: absolute;
-    top: 15px;
-    left: 21px;
-    font-family: UD Digi Kyokasho N-B;
-    font-weight: Bold;
-    font-size: 32px;
-    opacity: 1;
-    text-align: center;
-  }
-.elementary_school {
-    width: 181px;
-    height: 68px;
-    position: absolute;
-    top: 67px;
-    left: 412px;
-    overflow: hidden;
-  }
-.elementary_school_text {
-    width: 114px;
-    color: rgba(66,55,55,1);
-    position: absolute;
-    top: 15px;
-    left: 21px;
-    font-family: UD Digi Kyokasho N-B;
-    font-weight: Bold;
-    font-size: 32px;
-    opacity: 1;
-    text-align: center;
-  }
-.tag_yellow{
-    width: 319px;
-    height: 68px;
-    background: url("../img/yellow_tag.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-}
-.year {
-    width: 319px;
-    height: 68px;
-    position: absolute;
-    top: 0px;
-    left: 62px;
-    overflow: hidden;
-  }
-.year_text {
-    width: 240px;
-    color: rgba(66,55,55,1);
-    position: absolute;
-    top: 15px;
-    left: 33px;
-    font-family: UD Digi Kyokasho N-B;
-    font-weight: Bold;
-    font-size: 32px;
-    opacity: 1;
-    text-align: center;
-  }
-.tag_pin_blue {
-    width: 30px;
-    height: 30px;
-    background: url("../img/pin_blue.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 21px;
-    left: 2px;
-    overflow: hidden;
-  }
-.month {
-    width: 319px;
-    height: 68px;
-    position: absolute;
-    top: 67px;
-    left: 0px;
-    overflow: hidden;
-  }
-.month_text {
-    width: 240px;
-    color: rgba(66,55,55,1);
-    position: absolute;
-    top: 15px;
-    left: 33px;
-    font-family: UD Digi Kyokasho N-B;
-    font-weight: Bold;
-    font-size: 32px;
-    opacity: 1;
-    text-align: center;
-  }

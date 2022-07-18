@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./ranking.html">
+                        <a class="nav-link" href="./ranking_elem.html">
                             <img src="assets/img/award.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                             ランキング
                         </a>
@@ -124,62 +124,61 @@
 
                 <!-- 設定画面 -->
                 <div class="switch_screen" id="gamescreen_config">
-                    <div class="form-check">
+                    <div id="gamescreen_config_title">設定</div>
+                    <div class="form-check" id="hurigana_form">
                         <input class="form-check-input" type="checkbox" id="hurigana_check" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <label class="form-check-label" for="hurigana_check">
                             ふりがな表示
                         </label>
                     </div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-BGM">BGM音量</label></div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-SE">SE音量</label></div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-type">タイプ音量</label></div>
-                    <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-typeMiss">ミス音量</label></div>
+                    <div id="volume_form">
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-BGM">BGM音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-SE">SE音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-type">タイプ音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-typeMiss">ミス音量</label></div>
+                    </div>
                     <div><button type="button" class="btn btn-light" id="config_btnBack">戻る</button></div>
                 </div>
 
                 <!-- モード選択画面 -->
                 <div class="switch_screen" id="gamescreen_mode">
-                    <div>モード選択</div>
-                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="background-color:white;border-radius:8%;">
+                    <div class="btn-group" id="mode_btn_group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btn_mode" id="btn_elem" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn_elem">小学校</label>
+                        <label class="btn btn-outline-primary" for="btn_elem" style="width:150px">小学校モード</label>
 
                         <input type="radio" class="btn-check" name="btn_mode" id="btn_mid" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btn_mid">中学校</label>
+                        <label class="btn btn-outline-primary" for="btn_mid" style="width:150px">中学校モード</label>
 
                         <input type="radio" class="btn-check" name="btn_mode" id="btn_high" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btn_high">高校</label>
+                        <label class="btn btn-outline-primary" for="btn_high" style="width:150px">高校モード</label>
                     </div>
-                    <div>
-                        <div id="mode_elem">
-                            <button type="button" class="btn btn-light mode_select" id="elem_math">算数</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_jpn">国語</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_eng">英語</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_sci">理科</button>
-                            <button type="button" class="btn btn-light mode_select" id="elem_social">社会</button>
-                        </div>
-                        <div id="mode_mid" style="display:none;">
-                            <button type="button" class="btn btn-light mode_select" id="mid_math">数学</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_jpn">国語</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_eng">英語</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_sci">理科</button>
-                            <button type="button" class="btn btn-light mode_select" id="mid_social">社会</button>
-                        </div>
-                        <div id="mode_high" style="display:none;">
-                            <button type="button" class="btn btn-light mode_select" id="high_math">数学</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_jpn">国語</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_eng">英語</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_physics">物理</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_chem">化学</button>
-                            <br>
-                            <button type="button" class="btn btn-light mode_select" id="high_bio">生物</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_geology">地学</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_japanhis">日本史</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_worldhis">世界史</button>
-                            <button type="button" class="btn btn-light mode_select" id="high_geography">地理</button>
-                        </div>
+                    <div id="mode_elem">
+                        <div class="book mode_select" id="elem_math" style="top:110px;left:45px;">算数</div>
+                        <div class="book mode_select" id="elem_jpn" style="top:110px;left:145px;">国語</div>
+                        <div class="book mode_select" id="elem_eng" style="top:110px;left:245px;">英語</div>
+                        <div class="book mode_select" id="elem_sci" style="top:110px;left:345px;">理科</div>
+                        <div class="book mode_select" id="elem_social" style="top:110px;left:445px;">社会</div>
                     </div>
-                    <div><button type="button" class="btn btn-light" id="mode_btnBack">戻る</button></div>
+                    <div id="mode_mid" style="display:none;">
+                        <div class="book mode_select" id="mid_math" style="top:110px;left:45px;">数学</div>
+                        <div class="book mode_select" id="mid_jpn" style="top:110px;left:145px;">国語</div>
+                        <div class="book mode_select" id="mid_eng" style="top:110px;left:245px;">英語</div>
+                        <div class="book mode_select" id="mid_sci" style="top:110px;left:345px;">理科</div>
+                        <div class="book mode_select" id="mid_social" style="top:110px;left:445px;">社会</div>
+                    </div>
+                    <div id="mode_high" style="display:none;">
+                        <div class="book mode_select" id="high_math" style="top:67px;left:45px;">数学</div>
+                        <div class="book mode_select" id="high_jpn" style="top:67px;left:145px;">国語</div>
+                        <div class="book mode_select" id="high_eng" style="top:67px;left:245px;">英語</div>
+                        <div class="book mode_select" id="high_physics" style="top:67px;left:345px;">物理</div>
+                        <div class="book mode_select" id="high_chem" style="top:67px;left:445px;">化学</div>
+                        <div class="book mode_select" id="high_bio" style="top:170px;left:45px;">生物</div>
+                        <div class="book mode_select" id="high_geolgy" style="top:170px;left:145px;">地学</div>
+                        <div class="book mode_select" id="high_japanhis" style="top:170px;left:245px;">日本史</div>
+                        <div class="book mode_select" id="high_worldhis" style="top:170px;left:345px;">世界史</div>
+                        <div class="book mode_select" id="high_geography" style="top:170px;left:445px;">地理</div>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" id="mode_btnBack"></button>
                 </div>
 
                 <!-- スペースキーを押して開始 -->
@@ -536,53 +535,51 @@
     </footer>
 
     <!-- サウンド -->
-    <div id="sound_field">
-        <audio id="sound_type0" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type1" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type2" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type3" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type4" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type5" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type6" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type7" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type8" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type9" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type10" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type11" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type12" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type13" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type14" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type15" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type16" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type17" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type18" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_type19" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
-        <audio id="sound_typeMiss0" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss1" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss2" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss3" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss4" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss5" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss6" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss7" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss8" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss9" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss10" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss11" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss12" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss13" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss14" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss15" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss16" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss17" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss18" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_typeMiss19" class="sound_type" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
-        <audio id="sound_tap" class="sound_SE" preload="auto" src="assets/audio/tap.mp3"></audio>
-        <audio id="sound_chime" class="sound_SE" preload="auto" src="assets/audio/school_bell.mp3"></audio>
-        <audio id="sound_countDown" class="sound_SE" preload="auto" src="assets/audio/countDown.mp3"></audio>
-        <audio id="sound_bonusTime" class="sound_SE" preload="auto" src="assets/audio/bonus_time.mp3"></audio>
-        <audio id="sound_BGM" preload="auto" src="assets/audio/BGM.mp3" loop></audio>
-    </div>
+    <audio id="sound_type0" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type1" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type2" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type3" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type4" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type5" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type6" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type7" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type8" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type9" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type10" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type11" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type12" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type13" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type14" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type15" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type16" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type17" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type18" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_type19" class="sound_type" preload="auto" src="assets/audio/key_audio.mp3"></audio>
+    <audio id="sound_typeMiss0" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss1" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss2" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss3" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss4" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss5" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss6" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss7" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss8" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss9" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss10" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss11" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss12" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss13" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss14" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss15" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss16" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss17" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss18" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_typeMiss19" class="sound_typeMiss" preload="auto" src="assets/audio/miss_audio.mp3"></audio>
+    <audio id="sound_tap" class="sound_SE" preload="auto" src="assets/audio/tap.mp3"></audio>
+    <audio id="sound_chime" class="sound_SE" preload="auto" src="assets/audio/school_bell.mp3"></audio>
+    <audio id="sound_countDown" class="sound_SE" preload="auto" src="assets/audio/countDown.mp3"></audio>
+    <audio id="sound_bonusTime" class="sound_SE" preload="auto" src="assets/audio/bonus_time.mp3"></audio>
+    <audio id="sound_BGM" preload="auto" src="assets/audio/BGM.mp3" loop></audio>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
