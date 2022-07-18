@@ -53,8 +53,23 @@
 
 #gamescreen_mode {
     display: none;
-    font-size: x-large;
-    text-align: center;
+}
+
+#mode_btn_group {
+    background-color: white;
+    border-radius: 7%;
+    position: absolute;
+    top: 17px;
+    left: 60px;
+}
+
+#mode_btnBack {
+    position: absolute;
+    top: 16px;
+    left: 517px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
 }
 
 #gamescreen_space {
@@ -345,4 +360,38 @@
         font-variation-settings: "wght"var(--text-weight-min), "wdth"var(--text-width-min), "slnt"var(--text-slant-min);
         text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
     }
+}
+
+.book {
+    position: absolute;
+    width: 80px;
+    height: 95px;
+    background: #F33139;
+    border-radius: 10px 5px 5px 10px;
+    background-image: linear-gradient(to right, #D11F2F 15px, #ba0716 15px, transparent 15px);
+    text-align: center;
+    line-height: 70px;
+    font-size: 22px;
+    color: white;
+    text-shadow: 1px 1px 0 #262626, -1px -1px 0 #262626,
+        -1px 1px 0 #262626, 1px -1px 0 #262626,
+        0px 1px 0 #262626, 0-1px 0 #262626,
+        -1px 0 0 #262626, 1px 0 0 #262626;
+}
+
+.book:after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 78px;
+    bottom: 3px;
+    right: 0px;
+    background: white;
+    border-radius: 32px 4px 4px 32px;
+    box-shadow: inset 4px 6px 0px 0px #E4E0CE;
+    background-image: linear-gradient(to bottom, transparent 6px, #E4E0CE 8px, transparent 8px, transparent 12px, #E4E0CE 12px, transparent 14px, transparent 18px, #E4E0CE 18px, transparent 20px, transparent 24px, #E4E0CE 24px, transparent 26px, transparent 30px, #E4E0CE 30px, transparent 32px, transparent 36px, #E4E0CE 36px, transparent 38px, transparent 42px, #E4E0CE 42px, transparent 44px, transparent 48px, #E4E0CE 48px, transparent 50px);
+}
+
+.book:hover {
+    transform: translateY(-5px);
 }
