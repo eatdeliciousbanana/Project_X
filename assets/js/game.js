@@ -548,6 +548,11 @@ function typingGame(silent_mode) {
         // メーターの文字を初期化
         $('#meter_msg').html(`+${bonus_time[bonus_state]}sec`);
 
+        // プレイ中はカーソルが消えるようにする
+        $(".kokuban").css({
+            "cursor":"none"
+        });
+
         // キー入力したときの処理
         document.addEventListener('keydown', typeKey);
 
@@ -578,7 +583,7 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     wordcount_tick.value = ++word_count;
-                    score += Math.round(typed.length / mode.div_num);
+                    score += typed.length;//Math.round(typed.length / mode.div_num);
                     updateScore(score);
                     updateWord();
                 }
@@ -648,6 +653,10 @@ function typingGame(silent_mode) {
 
         // プレイ画面を終了する関数
         function endPlaying() {
+            // プレイ終了後はカーソルを出現させる
+            $(".kokuban").css({
+                "cursor":"default"
+            });
             gameSound('BGM', 'pause');
             document.removeEventListener('keydown', typeKey);
             if (untyped.charAt(0) === '*') {
