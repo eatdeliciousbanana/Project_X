@@ -527,6 +527,7 @@ function typingGame(silent_mode) {
     // プレイ画面
     function loadPlaying() {
         const words = globalWords[mode.grade][mode.subject];
+        let unused_words_index = [];  // 未出題のワードのインデックス
         let untyped = '';  // 打ってない文字
         let typed = '';    // 打った文字
         score = 0;         // 得点
@@ -546,6 +547,11 @@ function typingGame(silent_mode) {
 
         // メーターの文字を初期化
         $('#meter_msg').html(`+${bonus_time[bonus_state]}sec`);
+
+        // プレイ中はカーソルが消えるようにする
+        $(".kokuban").css({
+            "cursor": "none"
+        });
 
         // キー入力したときの処理
         document.addEventListener('keydown', typeKey);
@@ -577,7 +583,7 @@ function typingGame(silent_mode) {
                 // 全部打ち終わったら新しい文字にする
                 if (untyped === '') {
                     wordcount_tick.value = ++word_count;
-                    score += Math.round(typed.length / mode.div_num);
+                    score += typed.length;//Math.round(typed.length / mode.div_num);
                     updateScore(score);
                     updateWord();
                 }
@@ -647,6 +653,10 @@ function typingGame(silent_mode) {
 
         // プレイ画面を終了する関数
         function endPlaying() {
+            // プレイ終了後はカーソルを出現させる
+            $(".kokuban").css({
+                "cursor": "default"
+            });
             gameSound('BGM', 'pause');
             document.removeEventListener('keydown', typeKey);
             if (untyped.charAt(0) === '*') {
@@ -781,17 +791,24 @@ function typingGame(silent_mode) {
 
         // 新たな文字を設定する関数
         function updateWord() {
-            let index = getRandom(0, words.length);
+            if (unused_words_index.length === 0) {
+                for (let i = 0; i < words.length; i++) {
+                    unused_words_index.push(i);
+                }
+            }
+            let index_of_unused_words_index = getRandom(0, unused_words_index.length);
+            let index_of_words = unused_words_index[index_of_unused_words_index];
+            unused_words_index.splice(index_of_unused_words_index, 1);
             let rome = '';
             if (mode.subject === 'eng') {
-                rome = words[index]['kana'].toLowerCase();
+                rome = words[index_of_words]['kana'].toLowerCase();
             } else {
-                rome = kanaToRoman(words[index]['kana'], 'kunrei', { bmp: false, longSound: 'hyphen' });
+                rome = kanaToRoman(words[index_of_words]['kana'], 'kunrei', { bmp: false, longSound: 'hyphen' });
             }
             untyped = rome;
             typed = '';
-            $('#kanzi_field').html(words[index]['kanzi']);
-            $('#kana_field').html(words[index]['kana']);
+            $('#kanzi_field').html(words[index_of_words]['kanzi']);
+            $('#kana_field').html(words[index_of_words]['kana']);
             $('#untyped').html(rome.replace(/\*/g, '').replace(/ /g, '_'));
             $('#typed').html('');
         }
@@ -940,6 +957,3 @@ function setupWordCount(tick) {
 function setupTime(tick) {
     window.time_tick = tick;
 }
-
-// 文字アニメーション
-Splitting();

@@ -18,17 +18,58 @@
 
 #gamescreen_config {
     display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
     font-size: x-large;
+}
+
+#gamescreen_config_title {
+    font-size: x-large;
+    font-weight: bold;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0px;
+    left: 245px;
+}
+
+#hurigana_form {
+    position: absolute;
+    top: 47px;
+    left: 70px;
+}
+
+#volume_form {
+    position: absolute;
+    top: 42px;
+    left: 270px;
+}
+
+#config_btnBack {
+    position: absolute;
+    top: 199px;
+    left: 223px;
+    width: 90px;
 }
 
 #gamescreen_mode {
     display: none;
-    font-size: x-large;
-    text-align: center;
+}
+
+#mode_btn_group {
+    background-color: white;
+    border-radius: 7%;
+    position: absolute;
+    top: 17px;
+    left: 60px;
+}
+
+#mode_btnBack {
+    position: absolute;
+    top: 16px;
+    left: 517px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
 }
 
 #gamescreen_space {
@@ -53,6 +94,7 @@
 #gamescreen_playing {
     display: none;
     font-size: xx-large;
+    cursor: none;
 }
 
 #kana_field {
@@ -215,15 +257,19 @@
 }
 
 .boxA {
-    font-family: "Roboto VF", sans-serif;
     margin-left: 20px;
     font-size: xx-large;
 }
 
 .boxB {
-    font-family: "Roboto VF", sans-serif;
     margin-right: 20px;
     font-size: xx-large;
+}
+
+.flip_title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
 }
 
 #meter_msg {
@@ -253,70 +299,36 @@
     text-align: center;
 }
 
-@font-face {
-    font-family: "Roboto VF";
-    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57225/Roboto-VF.woff2") format("woff2-variations");
-    font-stretch: 75% 100%;
-    font-style: oblique 0deg 12deg;
-    font-weight: 100 900;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-:root {
-    --text-weight: 500;
-    --text-width: 100;
-    --text-slant: 0;
-}
-
-.fun_font {
+.book {
+    position: absolute;
+    width: 80px;
+    height: 95px;
+    background: #F33139;
+    border-radius: 10px 5px 5px 10px;
+    background-image: linear-gradient(to right, #D11F2F 15px, #ba0716 15px, transparent 15px);
+    text-align: center;
+    line-height: 70px;
+    font-size: 22px;
     color: white;
-    display: block;
+    text-shadow: 1px 1px 0 #262626, -1px -1px 0 #262626,
+        -1px 1px 0 #262626, 1px -1px 0 #262626,
+        0px 1px 0 #262626, 0-1px 0 #262626,
+        -1px 0 0 #262626, 1px 0 0 #262626;
 }
 
-.splitting {
-    --text-weight-min: 100;
-    --text-weight-max: 900;
-    --text-slant-min: 1;
-    --text-slant-max: 12;
-    --text-width-min: 75;
-    --text-width-max: 100;
-    --glow-hue-min: 0;
-    --glow-hue-max: 255;
-    --glow-size-min: 0;
-    --glow-size-max: 15;
-    --glow-lightness: 57%;
-    --delay: 0;
-    --duration: 3s;
-    --percent: 0;
+.book:after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 78px;
+    bottom: 3px;
+    right: 0px;
+    background: white;
+    border-radius: 32px 4px 4px 32px;
+    box-shadow: inset 4px 6px 0px 0px #E4E0CE;
+    background-image: linear-gradient(to bottom, transparent 6px, #E4E0CE 8px, transparent 8px, transparent 12px, #E4E0CE 12px, transparent 14px, transparent 18px, #E4E0CE 18px, transparent 20px, transparent 24px, #E4E0CE 24px, transparent 26px, transparent 30px, #E4E0CE 30px, transparent 32px, transparent 36px, #E4E0CE 36px, transparent 38px, transparent 42px, #E4E0CE 42px, transparent 44px, transparent 48px, #E4E0CE 48px, transparent 50px);
 }
 
-.char {
-    font-stretch: var(--text-width);
-    font-style: oblique var(--text-slant);
-    font-weight: var(--text-weight);
-    animation: wave var(--duration) ease-in-out var(--delay) infinite alternate;
-    animation-fill-mode: backwards;
-    --percent: calc(var(--char-index) / var(--char-total));
-    --delay: calc(var(--percent) * var(--duration));
-    --glow-hue: calc(var(--percent) * 510);
-}
-
-@keyframes wave {
-    0% {
-        font-variation-settings: "wght"var(--text-weight-min), "wdth"var(--text-width-min), "slnt"var(--text-slant-min);
-        text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
-    }
-
-    50% {
-        font-variation-settings: "wght"var(--text-weight-max), "wdth"var(--text-width-max), "slnt"var(--text-slant-max);
-        text-shadow: 0 0 calc(var(--glow-size-max) * 1px) hsla(calc(var(--glow-hue) + 255), 100%, var(--glow-lightness), 1);
-    }
-
-    100% {
-        font-variation-settings: "wght"var(--text-weight-min), "wdth"var(--text-width-min), "slnt"var(--text-slant-min);
-        text-shadow: 0 0 calc(var(--glow-size-min) * 1px) hsla(var(--glow-hue), 100%, var(--glow-lightness), 1);
-    }
+.book:hover {
+    transform: translateY(-5px);
 }
