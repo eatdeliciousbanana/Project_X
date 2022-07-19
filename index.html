@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/keyboard.css">
     <link rel="stylesheet" href="assets/css/flip.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 
 <body>
@@ -88,7 +87,7 @@
         <div class="pbox">
             <div id="boxA" class="cbox boxA">
                 <div style="position:relative;top:35px;">
-                    <h3><span class="fun_font" data-splitting>Your Score</span></h3>
+                    <div class="flip_title">Your Score</div>
                     <div class="tick" data-value="0" data-did-init="setupScore" data-credits="false">
                         <div data-repeat="true" aria-hidden="true">
                             <span data-view="flip"></span>
@@ -96,7 +95,7 @@
                     </div>
                 </div>
                 <div style="position:relative;top:60px;">
-                    <h3><span class="fun_font" data-splitting>Word Count</span></h3>
+                    <div class="flip_title">Word Count</div>
                     <div class="tick" data-value="0" data-did-init="setupWordCount" data-credits="false">
                         <div data-repeat="true" aria-hidden="true">
                             <span data-view="flip"></span>
@@ -255,7 +254,7 @@
 
             <div id="boxB" class="cbox boxB">
                 <div style="position:relative;top:35px;">
-                    <h3><span class="fun_font" data-splitting>Time</span></h3>
+                    <div class="flip_title">Time</div>
                     <div class="tick" data-value="0" data-did-init="setupTime" data-credits="false">
                         <div data-repeat="true" aria-hidden="true">
                             <span data-view="flip"></span>
@@ -590,7 +589,6 @@
 
     <!-- JS file -->
     <script src="assets/js/flip.min.js"></script>
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="assets/js/fluid_meter.js"></script>
     <script src="assets/js/kana_to_roman.js"></script>
     <script src="assets/js/check_type_miss.js"></script>
