@@ -550,7 +550,7 @@ function typingGame(silent_mode) {
 
         // プレイ中はカーソルが消えるようにする
         $(".kokuban").css({
-            "cursor":"none"
+            "cursor": "none"
         });
 
         // キー入力したときの処理
@@ -655,7 +655,7 @@ function typingGame(silent_mode) {
         function endPlaying() {
             // プレイ終了後はカーソルを出現させる
             $(".kokuban").css({
-                "cursor":"default"
+                "cursor": "default"
             });
             gameSound('BGM', 'pause');
             document.removeEventListener('keydown', typeKey);
@@ -957,6 +957,3 @@ function setupWordCount(tick) {
 function setupTime(tick) {
     window.time_tick = tick;
 }
-
-// 文字アニメーション
-Splitting();
