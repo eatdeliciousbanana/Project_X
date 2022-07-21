@@ -1,5 +1,6 @@
 // $ = jQuery,$はjQueryのライブラリを示す
 $(function () {
+
     let ranking = {};  // ランキング
     getRanking();
 
@@ -34,15 +35,15 @@ $(function () {
 
         for(let i = 0;i < range; i++){
             if(typeof ranking[subj][i] === "undefined"){
-                console.log("worning: Access violation in ranking '" + subj + "' array.")
+                //  console.log("worning: Access violation in ranking '" + subj + "' array.")
                 break;
             }
-            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"]);  // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
+            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"] + " " + ranking[subj][i]["score"] + "点");  // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
         }
 
     }
 
-    // 全教科のランキングを取得する関数[]
+    // 全教科のランキングを取得する関数
     function getRanking() {
 
         // ランキングをデータベースから取得するphpを呼び出す
@@ -77,3 +78,22 @@ $(function () {
         );
     }
 });
+
+// ランキングの小中高別の表示する関数
+function high_school_show(){
+    $("#ranking_elem_group").hide();
+    $("#ranking_mid_group").hide();
+    $("#ranking_high_group").show();
+}
+
+function mid_school_show(){
+    $("#ranking_elem_group").hide();
+    $("#ranking_high_group").hide();
+    $("#ranking_mid_group").show();
+}
+
+function elem_school_show(){
+    $("#ranking_mid_group").hide();
+    $("#ranking_high_group").hide();
+    $("#ranking_elem_group").show();
+}
