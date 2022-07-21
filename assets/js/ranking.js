@@ -38,7 +38,7 @@ $(function () {
                 //  console.log("worning: Access violation in ranking '" + subj + "' array.")
                 break;
             }
-            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"]);  // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
+            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"] + " " + ranking[subj][i]["score"] + "点");  // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
         }
 
     }
