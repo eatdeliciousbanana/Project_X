@@ -13,18 +13,28 @@ body{
   background-repeat: repeat;
 }
 
+#ranking_elem_group{
+  display:block;
+}
+#ranking_mid_group{
+  display:none;
+}
+#ranking_high_group{
+  display:none;
+}
+
 .wood_board{
   background:url("../img/flooring-pattern-wh\ 1.png");
   position:relative;
   background-size: 1500px;
   border-top: 10px solid;
-  border-color: rgba(178,184,184,1);
+  border-color: rgba(217,217,217,1);
   width: 100%;
   height: 100px;
   background-color: black;
 }
 
-#board_group5{
+.board_group5{
     width: 1000px;
     height: 2400px;
     background: url("../img/cork02-p-green.png");
@@ -32,7 +42,7 @@ body{
     background-size: 80px;
     background-position: center center;
     border: 20px solid;
-    border-color: rgba(178,184,184,1);
+    border-color: rgba(217,217,217,1);
     border-radius: 10px;
     opacity: 1;
     position: relative;
@@ -43,7 +53,7 @@ body{
     left: 0px;
     overflow: hidden;
   }
-#board_group10{
+.board_group10{
     width: 1000px;
     height: 4300px;
     background: url("../img/cork02-p-green.png");
@@ -52,14 +62,17 @@ body{
     background-position: center center;
     border: 20px solid;
     border-color: rgba(217,217,217,1);
+    border-radius: 10px;
     opacity: 1;
     position: relative;
     margin: auto;
+    margin-bottom: 50px;
+    margin-top: 25px;
     top: 0px;
     left: 0px;
     overflow: hidden;
   }
-#ranking_group5 {
+.ranking_group5 {
     width: 860px;
     height: 1956px;
     position: absolute;
@@ -67,7 +80,7 @@ body{
     left: 50px;
     overflow: hidden;
   }
-#ranking_group10 {
+.ranking_group10 {
     width: 860px;
     height: 3800px;
     position: absolute;
@@ -127,7 +140,7 @@ body{
     right: 5px;
     overflow: hidden;
   }
-  .ranking_banner {
+  .ranking_button {
     width: 697px;
     height: 138px;
     position: absolute;
@@ -135,7 +148,7 @@ body{
     left: 132px;
     overflow: hidden;
   }
-.ranking_banner_text {
+.ranking_button_text {
     width: 240px;
     color: rgba(66,55,55,1);
     position: absolute;
@@ -160,29 +173,35 @@ body{
     left: 0px;
     overflow: hidden;
 }
-.high_school {
+#high_school_button {
     width: 319px;
     height: 68px;
     position: absolute;
     top: 0px;
     left: 189px;
     overflow: hidden;
+    background-color:rgba(0,0,0,0);
+    border-color:rgba(0,0,0,0);
   }
-.elem_school {
+#elem_school_button {
     width: 319px;
     height: 68px;
     position: absolute;
     top: 67px;
     left: 0px;
     overflow: hidden;
+    background-color:rgba(0,0,0,0);
+    border-color:rgba(0,0,0,0);
   }
-.mid_school {
+#mid_school_button {
     width: 319px;
     height: 68px;
     position: absolute;
     top: 67px;
     left: 372px;
     overflow: hidden;
+    background-color:rgba(0,0,0,0);
+    border-color:rgba(0,0,0,0);
   }
 .tag_pin_blue {
     width: 30px;
