@@ -1,22 +1,20 @@
 <?php
-//Get Heroku ClearDB connection information
-$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db = substr($cleardb_url["path"], 1);
-
-$dsn = "mysql:dbname=${cleardb_db};host=${cleardb_server};charset=utf8mb4";
-$user = $cleardb_username;
-$password = $cleardb_password;
-
 $grade = $_POST['grade'];
 $subject = $_POST['subject'];
 $name = $_POST['name'];
 $score = (int)$_POST['score'];
 
+$db = parse_url(getenv("DATABASE_URL"));
+
 try {
-    $dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO("pgsql:" . sprintf(
+        "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+        $db["host"],
+        $db["port"],
+        $db["user"],
+        $db["pass"],
+        ltrim($db["path"], "/")
+    ));
 
     $tables = array(
         'elem' => array(
