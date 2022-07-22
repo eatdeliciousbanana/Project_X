@@ -303,9 +303,9 @@
     position: absolute;
     width: 80px;
     height: 95px;
-    background: #F33139;
+    /* background: #F33139; */
     border-radius: 10px 5px 5px 10px;
-    background-image: linear-gradient(to right, #D11F2F 15px, #ba0716 15px, transparent 15px);
+    /* background-image: linear-gradient(to right, #D11F2F 15px, #ba0716 15px, transparent 15px); */
     text-align: center;
     line-height: 70px;
     font-size: 22px;
@@ -331,4 +331,26 @@
 
 .book:hover {
     transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.math{
+    background: #0066cc;
+    background-image: linear-gradient(to right, #336699 15px, #ba0716 15px, transparent 15px);
+}
+.jpn{
+    background: #F33139;
+    background-image: linear-gradient(to right, #D11F2F 15px, #ba0716 15px, transparent 15px);
+}
+.eng{
+    background: #8b008b;
+    background-image: linear-gradient(to right, #800080 15px, #ba0716 15px, transparent 15px);
+}
+.sci{
+    background: #228b22;
+    background-image: linear-gradient(to right, #006400 15px, #ba0716 15px, transparent 15px);
+}
+.social{
+    background: #ffd700;
+    background-image: linear-gradient(to right, #ffa500 15px, #ba0716 15px, transparent 15px);
 }
