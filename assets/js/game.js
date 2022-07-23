@@ -439,6 +439,7 @@ function typingGame(silent_mode) {
         let ret = mode2str();
         $('#gamescreen_space_subject').html(`科目：${ret[0]}/${ret[1]}`);
         $('#gamescreen_space_time').html(`制限時間：${mode.time}秒`);
+        $('#signboard').html(`試験科目:${ret[0]}/${ret[1]}　試験時間:${mode.time}秒`);
 
         // 制限時間セット
         time_tick.value = mode.time;
@@ -692,6 +693,7 @@ function typingGame(silent_mode) {
         function endPlayingBeforeTimeLimit() {
             updateScore(0);
             wordcount_tick.value = 0;
+            $('#signboard').html('');
             clearTimeout(timeoutId);
             timeLimit = 0;
             countDown();
@@ -896,17 +898,20 @@ function typingGame(silent_mode) {
         $('#result_btnAgain').on('click', function () {
             score_tick.value = 0;
             wordcount_tick.value = 0;
+            $('#signboard').html('');
             loadSpace();
             switchScreen('space');
         });
         $('#result_btnMode').on('click', function () {
             score_tick.value = 0;
             wordcount_tick.value = 0;
+            $('#signboard').html('');
             switchScreen('mode');
         });
         $('#result_btnTitle').on('click', function () {
             score_tick.value = 0;
             wordcount_tick.value = 0;
+            $('#signboard').html('');
             switchScreen('title');
         });
 

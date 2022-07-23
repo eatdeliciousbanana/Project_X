@@ -382,7 +382,8 @@
     top: 45px;
     left: 30px;
     width: 385px;
-    padding: 1rem;
+    height: 62px;
+    padding: 1rem 0;
     outline: 7px solid #565656;
     outline-offset: -7px;
     background-color: #999;
