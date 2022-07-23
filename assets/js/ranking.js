@@ -33,8 +33,8 @@ $(function () {
 
     function writeHtml(subj, range) {
 
-        for(let i = 0;i < range; i++){
-            if(typeof ranking[subj][i] === "undefined"){
+        for (let i = 0; i < range; i++) {
+            if (typeof ranking[subj][i] === "undefined") {
                 //  console.log("worning: Access violation in ranking '" + subj + "' array.")
                 break;
             }
@@ -49,7 +49,7 @@ $(function () {
         // ランキングをデータベースから取得するphpを呼び出す
         $.ajax({
             type: 'GET',
-            url: 'backend/get_ranking.php'
+            url: '/backend/get_ranking.php'
         }).then(        // ajax通信のリクエストの成功、失敗に実行される関数
             // 成功時
             function (data, textStatus, jqXHR) {
@@ -80,19 +80,19 @@ $(function () {
 });
 
 // ランキングの小中高別の表示する関数
-function high_school_show(){
+function high_school_show() {
     $("#ranking_elem_group").hide();
     $("#ranking_mid_group").hide();
     $("#ranking_high_group").show();
 }
 
-function mid_school_show(){
+function mid_school_show() {
     $("#ranking_elem_group").hide();
     $("#ranking_high_group").hide();
     $("#ranking_mid_group").show();
 }
 
-function elem_school_show(){
+function elem_school_show() {
     $("#ranking_mid_group").hide();
     $("#ranking_high_group").hide();
     $("#ranking_elem_group").show();

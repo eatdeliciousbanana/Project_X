@@ -72,6 +72,8 @@
 
     <!-- gamescreen -->
     <div id="gamescreen">
+        <!-- 電光掲示板 -->
+        <div id="signboard">現在開発中</div>
 
         <!-- 時計 -->
         <div class="c-clock">
@@ -130,11 +132,13 @@
                             ふりがな表示
                         </label>
                     </div>
+                    <label for="color_picker" id="color_picker_label">掲示板文字色</label>
+                    <input type="color" id="color_picker" value="#1cefe8">
                     <div id="volume_form">
-                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-BGM">BGM音量</label></div>
-                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-SE">SE音量</label></div>
-                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-type">タイプ音量</label></div>
-                        <div><label><input type="range" value="50" min="0" max="100" step="1" id="volumeSlider-typeMiss">ミス音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" class="volumeSlider" id="volumeSlider-BGM"> BGM音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" class="volumeSlider" id="volumeSlider-SE"> SE音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" class="volumeSlider" id="volumeSlider-type"> タイプ音量</label></div>
+                        <div><label><input type="range" value="50" min="0" max="100" step="1" class="volumeSlider" id="volumeSlider-typeMiss"> ミス音量</label></div>
                     </div>
                     <div><button type="button" class="btn btn-light" id="config_btnBack">戻る</button></div>
                 </div>
