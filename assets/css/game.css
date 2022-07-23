@@ -38,10 +38,28 @@
     left: 70px;
 }
 
+#color_picker_label {
+    position: absolute;
+    top: 108px;
+    left: 85px;
+    font-size: 20px;
+}
+
+#color_picker {
+    position: absolute;
+    top: 145px;
+    left: 85px;
+    width: 120px;
+}
+
 #volume_form {
     position: absolute;
     top: 42px;
     left: 270px;
+}
+
+.volumeSlider {
+    width: 140px;
 }
 
 #config_btnBack {
@@ -334,23 +352,45 @@
     cursor: pointer;
 }
 
-.math{
+.math {
     background: #0066cc;
     background-image: linear-gradient(to right, #336699 15px, #ba0716 15px, transparent 15px);
 }
-.jpn{
+
+.jpn {
     background: #F33139;
     background-image: linear-gradient(to right, #D11F2F 15px, #ba0716 15px, transparent 15px);
 }
-.eng{
+
+.eng {
     background: #8b008b;
     background-image: linear-gradient(to right, #800080 15px, #ba0716 15px, transparent 15px);
 }
-.sci{
+
+.sci {
     background: #228b22;
     background-image: linear-gradient(to right, #006400 15px, #ba0716 15px, transparent 15px);
 }
-.social{
+
+.social {
     background: #ffd700;
     background-image: linear-gradient(to right, #ffa500 15px, #ba0716 15px, transparent 15px);
+}
+
+#signboard {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    width: 385px;
+    padding: 1rem;
+    outline: 7px solid #565656;
+    outline-offset: -7px;
+    background-color: #999;
+    background-image: radial-gradient(transparent 0 1px, #000 1px);
+    background-size: 3px 3px;
+    color: #1cefe8;
+    text-shadow: 0 0 5px, 0 0 0px, 0 0 15px;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
 }

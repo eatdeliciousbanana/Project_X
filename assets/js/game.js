@@ -170,12 +170,14 @@ function typingGame(silent_mode) {
     // 設定画面
     function loadConfig() {
         const kana_field = document.getElementById('kana_field');
+        const signboard = document.getElementById('signboard');
         const media_BGM = document.getElementById('sound_BGM');
         const media_SE = document.getElementsByClassName('sound_SE');
         const media_type = document.getElementsByClassName('sound_type');
         const media_typeMiss = document.getElementsByClassName('sound_typeMiss');
 
         const hurigana_check = document.getElementById('hurigana_check');
+        const color_picker = document.getElementById('color_picker');
         const volumeSlider_BGM = document.getElementById('volumeSlider-BGM');
         const volumeSlider_SE = document.getElementById('volumeSlider-SE');
         const volumeSlider_type = document.getElementById('volumeSlider-type');
@@ -197,6 +199,11 @@ function typingGame(silent_mode) {
                     kana_field.style.display = 'none';
                     hurigana_check.checked = false;
                 }
+            }
+            if ((index = cookie.indexOf('signboard=')) !== -1) {
+                value = cookie.slice(index + 10, index + 17);
+                signboard.style.color = value;
+                color_picker.value = value;
             }
             if ((index = cookie.indexOf('BGM=')) !== -1) {
                 value = parseInt(cookie.slice(index + 4));
@@ -252,6 +259,14 @@ function typingGame(silent_mode) {
                 kana_field.style.display = 'none';
                 document.cookie = `hurigana=false; Max-Age=${expires}`;
             }
+        });
+
+        color_picker.addEventListener('input', function () {
+            signboard.style.color = this.value;
+        });
+
+        color_picker.addEventListener('change', function () {
+            document.cookie = `signboard=${this.value}; Max-Age=${expires}`;
         });
 
         // ID.media : 0 is min, 1.0 is max.
