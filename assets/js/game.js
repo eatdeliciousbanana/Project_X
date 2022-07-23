@@ -9,6 +9,7 @@ function typingGame(silent_mode) {
     };
     let ranking = {};  // ランキング
     let score = 0;     // ゲームの得点
+    const signboard_default_message = $('#signboard').html();
 
     // ゲーム読み込み
     loadClock();
@@ -693,7 +694,7 @@ function typingGame(silent_mode) {
         function endPlayingBeforeTimeLimit() {
             updateScore(0);
             wordcount_tick.value = 0;
-            $('#signboard').html('');
+            $('#signboard').html(signboard_default_message);
             clearTimeout(timeoutId);
             timeLimit = 0;
             countDown();
@@ -898,20 +899,20 @@ function typingGame(silent_mode) {
         $('#result_btnAgain').on('click', function () {
             score_tick.value = 0;
             wordcount_tick.value = 0;
-            $('#signboard').html('');
+            $('#signboard').html(signboard_default_message);
             loadSpace();
             switchScreen('space');
         });
         $('#result_btnMode').on('click', function () {
             score_tick.value = 0;
             wordcount_tick.value = 0;
-            $('#signboard').html('');
+            $('#signboard').html(signboard_default_message);
             switchScreen('mode');
         });
         $('#result_btnTitle').on('click', function () {
             score_tick.value = 0;
             wordcount_tick.value = 0;
-            $('#signboard').html('');
+            $('#signboard').html(signboard_default_message);
             switchScreen('title');
         });
 
