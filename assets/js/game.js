@@ -13,6 +13,7 @@ function typingGame(silent_mode) {
 
     // ゲーム読み込み
     new Promise((resolve) => {
+        loadTypeSound();
         loadClock();
         loadKeyboard();
         loadTitle();
@@ -59,6 +60,45 @@ function typingGame(silent_mode) {
             document.getElementById('sound_' + name).play();
         } else if (play_or_pause === 'pause') {
             document.getElementById('sound_' + name).pause();
+        }
+    }
+
+
+    // キー打鍵音を読み込む関数
+    function loadTypeSound() {
+        innerfunc('key_audio.mp3', 'sound_type');
+        innerfunc('miss_audio.mp3', 'sound_typeMiss');
+
+        function innerfunc(filename, dest_elem) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `/assets/audio/${filename}`, true);
+            xhr.responseType = 'blob';
+
+            xhr.onload = () => {
+                const blob = xhr.response;
+                const objectUrl = URL.createObjectURL(blob);
+
+                let done = 0;
+                for (let i = 0; i < 20; i++) {
+                    const elem = document.getElementById(dest_elem + i);
+                    elem.setAttribute('src', objectUrl);
+                    elem.addEventListener('loadeddata', function () {
+                        done++;
+                    });
+                }
+
+                new Promise((resolve) => {
+                    const intervalId = setInterval(function () {
+                        if (done === 20) {
+                            clearInterval(intervalId);
+                            resolve();
+                        }
+                    }, 100);
+                }).then(() => {
+                    URL.revokeObjectURL(objectUrl);
+                });
+            };
+            xhr.send();
         }
     }
 
