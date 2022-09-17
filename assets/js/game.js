@@ -12,22 +12,25 @@ function typingGame(silent_mode) {
     const signboard_default_message = $('#signboard').html();
 
     // ゲーム読み込み
-    loadClock();
-    loadKeyboard();
-    loadTitle();
-    loadConfig();
-    loadMode();
-    loadResult();
-    getWords();  // jsonから文字取得
-    getRanking();  // ランキング取得
-
-    // ゲーム読み込み完了
-    const intervalId = setInterval(function () {
-        if (Object.keys(globalWords).length === 3) {
-            switchScreen('title');
-            clearInterval(intervalId);
-        }
-    }, 100);
+    new Promise((resolve) => {
+        loadTypeSound();
+        loadClock();
+        loadKeyboard();
+        loadTitle();
+        loadConfig();
+        loadMode();
+        loadResult();
+        getWords();
+        getRanking();
+        const intervalId = setInterval(function () {
+            if (Object.keys(globalWords).length === 3) {
+                clearInterval(intervalId);
+                resolve();
+            }
+        }, 100);
+    }).then(() => {
+        switchScreen('title');
+    });
 
 
     /* 各ゲーム画面を遷移させる関数
@@ -57,6 +60,45 @@ function typingGame(silent_mode) {
             document.getElementById('sound_' + name).play();
         } else if (play_or_pause === 'pause') {
             document.getElementById('sound_' + name).pause();
+        }
+    }
+
+
+    // キー打鍵音を読み込む関数
+    function loadTypeSound() {
+        innerfunc('key_audio.mp3', 'sound_type');
+        innerfunc('miss_audio.mp3', 'sound_typeMiss');
+
+        function innerfunc(filename, dest_elem) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `/assets/audio/${filename}`, true);
+            xhr.responseType = 'blob';
+
+            xhr.onload = () => {
+                const blob = xhr.response;
+                const objectUrl = URL.createObjectURL(blob);
+
+                let done = 0;
+                for (let i = 0; i < 20; i++) {
+                    const elem = document.getElementById(dest_elem + i);
+                    elem.setAttribute('src', objectUrl);
+                    elem.addEventListener('loadeddata', function () {
+                        done++;
+                    });
+                }
+
+                new Promise((resolve) => {
+                    const intervalId = setInterval(function () {
+                        if (done === 20) {
+                            clearInterval(intervalId);
+                            resolve();
+                        }
+                    }, 100);
+                }).then(() => {
+                    URL.revokeObjectURL(objectUrl);
+                });
+            };
+            xhr.send();
         }
     }
 
@@ -132,7 +174,7 @@ function typingGame(silent_mode) {
             // 成功時
             function (data, textStatus, jqXHR) {
                 if (typeof data !== 'object') {
-                    console.log(data);
+                    console.log('server error');
                     alert('ランキングの読み込みに失敗しました');
                     return;
                 }
@@ -945,7 +987,7 @@ function typingGame(silent_mode) {
                     } else if (data === 'already filled') {
                         alert('ランキングに登録できませんでした\nすでに100人登録されています\nもう一度挑戦して, より高得点を目指してください!');
                     } else {
-                        console.log(data);
+                        console.log('server error');
                         alert('ランキングの登録に失敗しました');
                     }
                 },

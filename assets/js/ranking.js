@@ -1,24 +1,27 @@
 // $ = jQuery,$はjQueryのライブラリを示す
 $(function () {
-
     let ranking = {};  // ランキング
-    getRanking();
 
-    // ランキングの読込みに時間がかかるために1秒後にランキングの要素にアクセス
-    setTimeout(function () {
-        console.log(ranking);
+    // ランキング読み込み
+    new Promise((resolve) => {
+        getRanking();
+        const intervalId = setInterval(function () {
+            if (Object.keys(ranking).length === 20) {
+                clearInterval(intervalId);
+                resolve();
+            }
+        }, 100);
+    }).then(() => {
         writeHtml("elem_math", 5);
         writeHtml("elem_jpn", 5);
         writeHtml("elem_eng", 5);
         writeHtml("elem_sci", 5);
         writeHtml("elem_social", 5);
-
         writeHtml("mid_math", 5);
         writeHtml("mid_jpn", 5);
         writeHtml("mid_eng", 5);
         writeHtml("mid_sci", 5);
         writeHtml("mid_social", 5);
-
         writeHtml("high_math", 5);
         writeHtml("high_jpn", 5);
         writeHtml("high_eng", 5);
@@ -29,23 +32,23 @@ $(function () {
         writeHtml("high_worldhis", 5);
         writeHtml("high_japanhis", 5);
         writeHtml("high_geology", 5);
-    }, 1000);
+    });
+
 
     function writeHtml(subj, range) {
-
         for (let i = 0; i < range; i++) {
             if (typeof ranking[subj][i] === "undefined") {
                 //  console.log("worning: Access violation in ranking '" + subj + "' array.")
                 break;
             }
-            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"] + " " + ranking[subj][i]["score"] + "点");  // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
+            // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
+            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"] + " " + ranking[subj][i]["score"] + "点");
         }
-
     }
+
 
     // 全教科のランキングを取得する関数
     function getRanking() {
-
         // ランキングをデータベースから取得するphpを呼び出す
         $.ajax({
             type: 'GET',
@@ -54,7 +57,7 @@ $(function () {
             // 成功時
             function (data, textStatus, jqXHR) {
                 if (typeof data !== 'object') {
-                    console.log(data);
+                    console.log('server error');
                     alert('ランキングの読み込みに失敗しました');
                     return;
                 }
