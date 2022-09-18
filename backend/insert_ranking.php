@@ -4,12 +4,10 @@ $subject = $_POST['subject'];
 $name = $_POST['name'];
 $score = (int)$_POST['score'];
 
-$dsn = 'mysql:dbname=ranking;host=localhost';
-$user = 'ranking_user';
-$password = 'password';
+$dsn = 'sqlite:../../ranking.sqlite';
 
 try {
-    $dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO($dsn);
 
     $tables = array(
         'elem' => array(
@@ -45,8 +43,8 @@ try {
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    $records_count = $result['records_count'];
-    $min_score = $result['min_score'];
+    $records_count = (int)$result['records_count'];
+    $min_score = (int)$result['min_score'];
 
     function insert_record()
     {

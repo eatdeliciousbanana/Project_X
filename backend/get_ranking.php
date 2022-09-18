@@ -1,10 +1,8 @@
 <?php
-$dsn = 'mysql:dbname=ranking;host=localhost';
-$user = 'ranking_user';
-$password = 'password';
+$dsn = 'sqlite:../../ranking.sqlite';
 
 try {
-    $dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO($dsn);
 
     $tables = array(
         'elem_math',
@@ -41,7 +39,7 @@ try {
         while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $returnList[$table][] = array(
                 'name' => $result['name'],
-                'score' => $result['score']
+                'score' => (int)$result['score']
             );
         }
     }
