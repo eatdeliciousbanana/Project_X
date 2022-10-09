@@ -1,8 +1,10 @@
 <?php
-$grade = $_POST['grade'];
-$subject = $_POST['subject'];
-$name = $_POST['name'];
-$score = (int)$_POST['score'];
+$json = file_get_contents("php://input");
+$data = json_decode($json, true);
+$grade = $data['grade'];
+$subject = $data['subject'];
+$name = $data['name'];
+$score = (int)$data['score'];
 
 $dsn = 'sqlite:../../ranking.sqlite';
 
