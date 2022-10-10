@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: https://eatdeliciousbanana.github.io');
 $dsn = 'sqlite:../../ranking.sqlite';
 
 try {
