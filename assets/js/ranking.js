@@ -1,17 +1,9 @@
-// $ = jQuery,$はjQueryのライブラリを示す
 $(function () {
     let ranking = {};  // ランキング
 
     // ランキング読み込み
-    new Promise((resolve) => {
-        getRanking();
-        const intervalId = setInterval(function () {
-            if (Object.keys(ranking).length === 20) {
-                clearInterval(intervalId);
-                resolve();
-            }
-        }, 100);
-    }).then(() => {
+    getRanking().then((data) => {
+        ranking = data;
         writeHtml("elem_math", 5);
         writeHtml("elem_jpn", 5);
         writeHtml("elem_eng", 5);
@@ -34,7 +26,6 @@ $(function () {
         writeHtml("high_geology", 5);
     });
 
-
     function writeHtml(subj, range) {
         for (let i = 0; i < range; i++) {
             if (typeof ranking[subj][i] === "undefined") {
@@ -46,17 +37,13 @@ $(function () {
         }
     }
 
-
     // 全教科のランキングを取得する関数
-    function getRanking() {
-        // ランキングをデータベースから取得するphpを呼び出す
-        $.ajax({
-            type: 'GET',
-            url: '/backend/get_ranking.php'
-        }).then(        // ajax通信のリクエストの成功、失敗に実行される関数
-            // 成功時
-            function (data, textStatus, jqXHR) {
-                if (typeof data !== 'object') {
+    async function getRanking() {
+        try {
+            const response = await fetch('/backend/get_ranking.php');
+            if (response.ok) {
+                let data = await response.json();
+                if (Object.keys(data).length !== 20) {
                     console.log('server error');
                     alert('ランキングの読み込みに失敗しました');
                     return;
@@ -72,13 +59,13 @@ $(function () {
                         }
                     });
                 }
-                ranking = data;
-            },
-            // エラー発生時
-            function (jqXHR, textStatus, errorThrown) {
+                return data;
+            } else {
                 alert('ランキングの読み込みに失敗しました');
             }
-        );
+        } catch (error) {
+            alert('ランキングの読み込みに失敗しました');
+        }
     }
 });
 

@@ -1,4 +1,4 @@
-function typingGame(silent_mode) {
+async function typingGame(silent_mode) {
     // グローバル変数
     let globalWords = {};  // 文字
     let mode = {           // モード
@@ -12,25 +12,16 @@ function typingGame(silent_mode) {
     const signboard_default_message = $('#signboard').html();
 
     // ゲーム読み込み
-    new Promise((resolve) => {
-        loadTypeSound();
-        loadClock();
-        loadKeyboard();
-        loadTitle();
-        loadConfig();
-        loadMode();
-        loadResult();
-        getWords();
-        getRanking();
-        const intervalId = setInterval(function () {
-            if (Object.keys(globalWords).length === 3) {
-                clearInterval(intervalId);
-                resolve();
-            }
-        }, 100);
-    }).then(() => {
-        switchScreen('title');
-    });
+    loadTypeSound();
+    loadClock();
+    loadKeyboard();
+    loadTitle();
+    loadConfig();
+    loadMode();
+    loadResult();
+    globalWords = await getWords();
+    ranking = await getRanking();
+    switchScreen('title');
 
 
     /* 各ゲーム画面を遷移させる関数
@@ -70,35 +61,29 @@ function typingGame(silent_mode) {
         innerfunc('miss_audio.mp3', 'sound_typeMiss');
 
         function innerfunc(filename, dest_elem) {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `/assets/audio/${filename}`, true);
-            xhr.responseType = 'blob';
-
-            xhr.onload = () => {
-                const blob = xhr.response;
-                const objectUrl = URL.createObjectURL(blob);
-
-                let done = 0;
-                for (let i = 0; i < 20; i++) {
-                    const elem = document.getElementById(dest_elem + i);
-                    elem.setAttribute('src', objectUrl);
-                    elem.addEventListener('loadeddata', function () {
-                        done++;
+            fetch(`/assets/audio/${filename}`)
+                .then(response => response.blob())
+                .then(blob => {
+                    const objectUrl = URL.createObjectURL(blob);
+                    let done = 0;
+                    for (let i = 0; i < 20; i++) {
+                        const elem = document.getElementById(dest_elem + i);
+                        elem.setAttribute('src', objectUrl);
+                        elem.addEventListener('loadeddata', function () {
+                            done++;
+                        });
+                    }
+                    new Promise((resolve) => {
+                        const intervalId = setInterval(function () {
+                            if (done === 20) {
+                                clearInterval(intervalId);
+                                resolve();
+                            }
+                        }, 100);
+                    }).then(() => {
+                        URL.revokeObjectURL(objectUrl);
                     });
-                }
-
-                new Promise((resolve) => {
-                    const intervalId = setInterval(function () {
-                        if (done === 20) {
-                            clearInterval(intervalId);
-                            resolve();
-                        }
-                    }, 100);
-                }).then(() => {
-                    URL.revokeObjectURL(objectUrl);
                 });
-            };
-            xhr.send();
         }
     }
 
@@ -145,35 +130,23 @@ function typingGame(silent_mode) {
 
 
     // jsonから文字のオブジェクトを取ってくる関数
-    function getWords() {
-        $.ajax({
-            type: 'GET',
-            url: './words.json',
-            dataType: 'json'
-        }).then(
-            // 取得成功時
-            function (json) {
-                let data_stringify = JSON.stringify(json);
-                let data_json = JSON.parse(data_stringify);
-                globalWords = data_json;
-            },
-            // エラー発生時
-            function () {
-                alert('ワードの読み込みに失敗しました');
-            }
-        );
+    async function getWords() {
+        const response = await fetch('/words.json');
+        if (response.ok) {
+            return await response.json();
+        } else {
+            alert('ワードの読み込みに失敗しました');
+        }
     }
 
 
     // 全教科のランキングを取得する関数
-    function getRanking() {
-        $.ajax({
-            type: 'GET',
-            url: '/backend/get_ranking.php'
-        }).then(
-            // 成功時
-            function (data, textStatus, jqXHR) {
-                if (typeof data !== 'object') {
+    async function getRanking() {
+        try {
+            const response = await fetch('/backend/get_ranking.php');
+            if (response.ok) {
+                let data = await response.json();
+                if (Object.keys(data).length !== 20) {
                     console.log('server error');
                     alert('ランキングの読み込みに失敗しました');
                     return;
@@ -189,13 +162,13 @@ function typingGame(silent_mode) {
                         }
                     });
                 }
-                ranking = data;
-            },
-            // エラー発生時
-            function (jqXHR, textStatus, errorThrown) {
+                return data;
+            } else {
                 alert('ランキングの読み込みに失敗しました');
             }
-        );
+        } catch (error) {
+            alert('ランキングの読み込みに失敗しました');
+        }
     }
 
 
@@ -975,27 +948,34 @@ function typingGame(silent_mode) {
 
         // 名前とスコアをランキングに登録する関数
         function insertRanking(grade, subject, name, score) {
-            $.ajax({
-                type: 'POST',
-                url: '/backend/insert_ranking.php',
-                data: { grade: grade, subject: subject, name: name, score: score }
-            }).then(
-                // 成功時
-                function (data, textStatus, jqXHR) {
-                    if (data === 'ok') {
+            fetch('/backend/insert_ranking.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    grade: grade,
+                    subject: subject,
+                    name: name,
+                    score: score
+                })
+            }).then(async (response) => {
+                if (response.ok) {
+                    const text = await response.text();
+                    if (text === 'ok') {
                         return;
-                    } else if (data === 'already filled') {
+                    } else if (text === 'already filled') {
                         alert('ランキングに登録できませんでした\nすでに100人登録されています\nもう一度挑戦して, より高得点を目指してください!');
                     } else {
                         console.log('server error');
                         alert('ランキングの登録に失敗しました');
                     }
-                },
-                // エラー発生時
-                function (jqXHR, textStatus, errorThrown) {
+                } else {
                     alert('ランキングの登録に失敗しました');
                 }
-            );
+            }).catch((error) => {
+                alert('ランキングの登録に失敗しました');
+            });
         }
     }
 }
