@@ -61,7 +61,7 @@ async function typingGame(silent_mode) {
         innerfunc('miss_audio.mp3', 'sound_typeMiss');
 
         function innerfunc(filename, dest_elem) {
-            fetch(`/assets/audio/${filename}`)
+            fetch(`/Project_X/assets/audio/${filename}`)
                 .then(response => response.blob())
                 .then(blob => {
                     const objectUrl = URL.createObjectURL(blob);
@@ -131,7 +131,7 @@ async function typingGame(silent_mode) {
 
     // jsonから文字のオブジェクトを取ってくる関数
     async function getWords() {
-        const response = await fetch('/words.json');
+        const response = await fetch('/Project_X/words.json');
         if (response.ok) {
             return await response.json();
         } else {
@@ -143,7 +143,7 @@ async function typingGame(silent_mode) {
     // 全教科のランキングを取得する関数
     async function getRanking() {
         try {
-            const response = await fetch('/backend/get_ranking.php');
+            const response = await fetch('https://projectx-typing.glitch.me/backend/get_ranking.php');
             if (response.ok) {
                 let data = await response.json();
                 if (Object.keys(data).length !== 20) {
@@ -948,7 +948,7 @@ async function typingGame(silent_mode) {
 
         // 名前とスコアをランキングに登録する関数
         function insertRanking(grade, subject, name, score) {
-            fetch('/backend/insert_ranking.php', {
+            fetch('https://projectx-typing.glitch.me/backend/insert_ranking.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

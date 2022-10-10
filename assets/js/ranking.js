@@ -40,7 +40,7 @@ $(function () {
     // 全教科のランキングを取得する関数
     async function getRanking() {
         try {
-            const response = await fetch('/backend/get_ranking.php');
+            const response = await fetch('https://projectx-typing.glitch.me/backend/get_ranking.php');
             if (response.ok) {
                 let data = await response.json();
                 if (Object.keys(data).length !== 20) {
