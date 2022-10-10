@@ -1,5 +1,11 @@
 <?php
 header('Access-Control-Allow-Origin: https://eatdeliciousbanana.github.io');
+header('Access-Control-Allow-Headers: *');
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    header('HTTP/1.1 200 OK');
+    exit;
+}
+
 $json = file_get_contents("php://input");
 $data = json_decode($json, true);
 $grade = $data['grade'];
