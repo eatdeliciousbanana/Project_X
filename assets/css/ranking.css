@@ -1,248 +1,268 @@
-@font-face{
+@font-face {
   font-family: 'HGSGyoshotai';
   src: url('../fonts/HGRGY.TTC') format('truetype');
 }
-@font-face{
+
+@font-face {
   font-family: 'HGSeikaishotai';
   src: url('../fonts/HGRSK.TTC') format('truetype');
 }
 
-body{
-  background:url("../img/canvas01.png");
+body {
+  background: url("../img/canvas01.png");
   background-size: 100px;
   background-repeat: repeat;
 }
 
-#ranking_elem_group{
-  display:block;
-}
-#ranking_mid_group{
-  display:none;
-}
-#ranking_high_group{
-  display:none;
+#ranking_elem_group {
+  display: block;
 }
 
-.wood_board{
-  background:url("../img/flooring-pattern-wh\ 1.png");
-  position:relative;
+#ranking_mid_group {
+  display: none;
+}
+
+#ranking_high_group {
+  display: none;
+}
+
+.wood_board {
+  background: url("../img/flooring-pattern-wh\ 1.png");
+  position: relative;
   background-size: 1500px;
   border-top: 10px solid;
-  border-color: rgba(217,217,217,1);
+  border-color: rgba(217, 217, 217, 1);
   width: 100%;
   height: 100px;
   background-color: black;
 }
 
-.board_group5{
-    width: 1000px;
-    height: 2400px;
-    background: url("../img/cork02-p-green.png");
-    background-repeat: repeat;
-    background-size: 80px;
-    background-position: center center;
-    border: 20px solid;
-    border-color: rgba(217,217,217,1);
-    border-radius: 10px;
-    opacity: 1;
-    position: relative;
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 25px;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-.board_group10{
-    width: 1000px;
-    height: 4300px;
-    background: url("../img/cork02-p-green.png");
-    background-repeat: repeat;
-    background-size: 80px;
-    background-position: center center;
-    border: 20px solid;
-    border-color: rgba(217,217,217,1);
-    border-radius: 10px;
-    opacity: 1;
-    position: relative;
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 25px;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-.ranking_group5 {
-    width: 860px;
-    height: 1956px;
-    position: absolute;
-    top: 400px;
-    left: 50px;
-    overflow: hidden;
-  }
-.ranking_group10 {
-    width: 860px;
-    height: 3800px;
-    position: absolute;
-    top: 400px;
-    left: 50px;
-    overflow: hidden;
-  }
-.title {
-    width: 700px;
-    height: 166px;
-    background: url("../img/paper_shadow.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 50px;
-    left: 130px;
-    overflow: hidden;
-  }
-.title_text_outside {
-    width: 695px;
-    height: 80px;
-    opacity: 1;
-    position: absolute;
-    top: 25px;
-    left: 0px;
-    overflow: hidden;
-    font-family: HGSGyoshotai;
-    font-size: 64px;
-    opacity: 1;
-    text-align: center;
-  }
-.title_pin1 {
-    width: 25px;
-    height: 25px;
-    background: url("../img/pin_red.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    overflow: hidden;
-  }
-.title_pin2 {
-    width: 25px;
-    height: 25px;
-    background: url("../img/pin_red.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    overflow: hidden;
-  }
-  .ranking_button {
-    width: 697px;
-    height: 138px;
-    position: absolute;
-    top: 230px;
-    left: 132px;
-    overflow: hidden;
-  }
-.ranking_button_text {
-    width: 240px;
-    color: rgba(66,55,55,1);
-    position: absolute;
-    top: 11px;
-    left: 33px;
-    font-family: UD Digi Kyokasho N-B;
-    font-weight: Bold;
-    font-size: 32px;
-    opacity: 1;
-    text-align: center;
-  }
-.tag_yellow{
-    width: 319px;
-    height: 68px;
-    background: url("../img/yellow_tag.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
+.board_group5 {
+  width: 1000px;
+  height: 2400px;
+  background: url("../img/cork02-p-green.png");
+  background-repeat: repeat;
+  background-size: 80px;
+  background-position: center center;
+  border: 20px solid;
+  border-color: rgba(217, 217, 217, 1);
+  border-radius: 10px;
+  opacity: 1;
+  position: relative;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
 }
+
+.board_group10 {
+  width: 1000px;
+  height: 4300px;
+  background: url("../img/cork02-p-green.png");
+  background-repeat: repeat;
+  background-size: 80px;
+  background-position: center center;
+  border: 20px solid;
+  border-color: rgba(217, 217, 217, 1);
+  border-radius: 10px;
+  opacity: 1;
+  position: relative;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.ranking_group5 {
+  width: 860px;
+  height: 1956px;
+  position: absolute;
+  top: 400px;
+  left: 50px;
+  overflow: hidden;
+}
+
+.ranking_group10 {
+  width: 860px;
+  height: 3800px;
+  position: absolute;
+  top: 400px;
+  left: 50px;
+  overflow: hidden;
+}
+
+.title {
+  width: 700px;
+  height: 166px;
+  background: url("../img/paper_shadow.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 50px;
+  left: 130px;
+  overflow: hidden;
+}
+
+.title_text_outside {
+  width: 695px;
+  height: 80px;
+  opacity: 1;
+  position: absolute;
+  top: 25px;
+  left: 0px;
+  overflow: hidden;
+  font-family: HGSGyoshotai;
+  font-size: 64px;
+  opacity: 1;
+  text-align: center;
+}
+
+.title_pin1 {
+  width: 25px;
+  height: 25px;
+  background: url("../img/pin_red.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  overflow: hidden;
+}
+
+.title_pin2 {
+  width: 25px;
+  height: 25px;
+  background: url("../img/pin_red.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  overflow: hidden;
+}
+
+.ranking_button {
+  width: 697px;
+  height: 138px;
+  position: absolute;
+  top: 230px;
+  left: 132px;
+  overflow: hidden;
+}
+
+.ranking_button_text {
+  width: 240px;
+  color: rgba(66, 55, 55, 1);
+  position: absolute;
+  top: 11px;
+  left: 33px;
+  font-family: UD Digi Kyokasho N-B;
+  font-weight: Bold;
+  font-size: 32px;
+  opacity: 1;
+  text-align: center;
+}
+
+.tag_yellow {
+  width: 319px;
+  height: 68px;
+  background: url("../img/yellow_tag.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
 #high_school_button {
-    width: 319px;
-    height: 68px;
-    position: absolute;
-    top: 0px;
-    left: 189px;
-    overflow: hidden;
-    background-color:rgba(0,0,0,0);
-    border-color:rgba(0,0,0,0);
-  }
+  width: 319px;
+  height: 68px;
+  position: absolute;
+  top: 0px;
+  left: 189px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
 #elem_school_button {
-    width: 319px;
-    height: 68px;
-    position: absolute;
-    top: 67px;
-    left: 0px;
-    overflow: hidden;
-    background-color:rgba(0,0,0,0);
-    border-color:rgba(0,0,0,0);
-  }
+  width: 319px;
+  height: 68px;
+  position: absolute;
+  top: 67px;
+  left: 0px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
 #mid_school_button {
-    width: 319px;
-    height: 68px;
-    position: absolute;
-    top: 67px;
-    left: 372px;
-    overflow: hidden;
-    background-color:rgba(0,0,0,0);
-    border-color:rgba(0,0,0,0);
-  }
+  width: 319px;
+  height: 68px;
+  position: absolute;
+  top: 67px;
+  left: 372px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
 .tag_pin_blue {
-    width: 30px;
-    height: 30px;
-    background: url("../img/pin_blue.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 21px;
-    left: 2px;
-    overflow: hidden;
-  }
-    /* 賞状(タテ) */
+  width: 30px;
+  height: 30px;
+  background: url("../img/pin_blue.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 21px;
+  left: 2px;
+  overflow: hidden;
+}
+
+/* 賞状(タテ) */
 .paper_tate {
-    width: 413px;
-    height: 604px;
-    background: url("../img/syojo_tate.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
+  width: 413px;
+  height: 604px;
+  background: url("../img/syojo_tate.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
 .tate_pin1 {
-    width: 25px;
-    height: 25px;
-    background: url("../img/pin_red.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    overflow: hidden;
-  }
+  width: 25px;
+  height: 25px;
+  background: url("../img/pin_red.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  overflow: hidden;
+}
+
 .tate_pin2 {
   width: 25px;
   height: 25px;
@@ -255,69 +275,450 @@ body{
   top: 5px;
   right: 0px;
   overflow: hidden;
-  }
+}
+
 .ranking_title {
-    width: 413px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 90px;
-    left: 0px;
-    font-family: HGSeikaishotai;
-    font-size: 40px;
-    opacity: 1;
-    text-align: center;
-  }
+  width: 413px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  font-family: HGSeikaishotai;
+  font-size: 40px;
+  opacity: 1;
+  text-align: center;
+}
+
 .ranking_text {
-    width: 413px;
-    color: rgba(0,0,0,1);
-    position: relative;
-    top: 165px;
-    left: 80px;
-    font-family: HGSeikaishotai;
-    font-size: 25px;
-    opacity: 1;
-  }
+  width: 413px;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  top: 165px;
+  left: 80px;
+  font-family: HGSeikaishotai;
+  font-size: 25px;
+  opacity: 1;
+}
+
 .ranking_list_2 {
-    width: 860px;
-    height: 604px;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    overflow: hidden;
-  }
-.ranking_list_1{
-    width: 860px;
-    height: 604px;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    overflow: hidden;
-  }
+  width: 860px;
+  height: 604px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.ranking_list_1 {
+  width: 860px;
+  height: 604px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
 .paper_right {
-    width: 413px;
-    height: 604px;
-    position: absolute;
-    top: 0px;
-    left: 447px;
-    overflow: hidden;
-  }
+  width: 413px;
+  height: 604px;
+  position: absolute;
+  top: 0px;
+  left: 447px;
+  overflow: hidden;
+}
+
 .paper_left {
-    width: 413px;
-    height: 604px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
+  width: 413px;
+  height: 604px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
 .paper_center {
-    width: 413px;
-    height: 604px;
-    position: absolute;
+  width: 413px;
+  height: 604px;
+  position: absolute;
+  top: 0px;
+  left: 223px;
+  overflow: hidden;
+}
+
+@media screen and (min-width:680px) and (max-width:1000px) {
+  .wood_board {
+    height: 10vw;
+  }
+
+  .board_group5 {
+    width: 100%;
+    height: 240vw;
+    border: 2vw solid;
+    border-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    margin-top: 2.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .board_group10 {
+    width: 100%;
+    height: 430vw;
+    border: 2vw solid;
+    border-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    margin-top: 2.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .ranking_group5 {
+    width: 100%;
+    height: auto;
+    top: 40vw;
+    left: 0px;
+  }
+
+  .ranking_group10 {
+    width: 100%;
+    height: auto;
+    top: 40vw;
+    left: 0px;
+  }
+
+  .title {
+    width: 73%;
+    height: 16vw;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .title_text_outside {
+    width: 100%;
+    top: 3vw;
+    font-size: 6vw;
+  }
+
+  .title_pin1 {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .title_pin2 {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .ranking_button {
+    top: 23vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ranking_button_text {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, -50%);
+    font-size: 3vw;
+  }
+
+  .tag_yellow {
+    width: 32vw;
+    height: 7vw;
+  }
+
+  #high_school_button {
+    width: 32vw;
+    height: 7vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #elem_school_button {
+    width: 32vw;
+    height: 7vw;
+    top: 7vw;
+    left: 50%;
+    transform: translateX(-110%);
+  }
+
+  #mid_school_button {
+    width: 32vw;
+    height: 7vw;
+    top: 7vw;
+    left: 50%;
+    transform: translateX(10%);
+  }
+
+  .tag_pin_blue {
+    width: 3vw;
+    height: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .paper_tate {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tate_pin1 {
+    width: 3vw;
+    height: 3vw;
+    top: 5px;
+    left: 5px;
+  }
+
+  .tate_pin2 {
+    width: 3vw;
+    height: 3vw;
+    top: 5px;
+    right: 0px;
+  }
+
+  .ranking_title {
+    width: 100%;
+    top: 9vw;
+    font-size: 4vw;
+  }
+
+  .ranking_text {
+    width: 100%;
+    top: 16vw;
+    left: 0px;
+    padding-left: 8vw;
+    font-size: 2.6vw;
+  }
+
+  .ranking_list_2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 60vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .ranking_list_1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 60vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .paper_right {
+    position: relative;
+    width: 42vw;
+    height: 60vw;
+    left: initial;
+  }
+
+  .paper_left {
+    position: relative;
+    width: 42vw;
+    height: 60vw;
+    left: initial;
+  }
+
+  .paper_center {
+    position: relative;
+    width: 42vw;
+    height: 60vw;
+    left: initial;
+  }
+}
+
+@media screen and (max-width:680px) {
+  .wood_board {
+    height: 10vw;
+  }
+
+  .board_group5 {
+    width: 100%;
+    height: 667vw;
+    border: 2vw solid;
+    border-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    margin-top: 2.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .board_group10 {
+    width: 100%;
+    height: 1270vw;
+    border: 2vw solid;
+    border-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    margin-top: 2.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .ranking_group5 {
+    width: 100%;
+    height: auto;
+    top: 53vw;
+    left: 0px;
+  }
+
+  .ranking_group10 {
+    width: 100%;
+    height: auto;
+    top: 53vw;
+    left: 0px;
+  }
+
+  .title {
+    width: 80%;
+    height: 18vw;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .title_text_outside {
+    width: 100%;
+    top: 3vw;
+    font-size: 7vw;
+  }
+
+  .title_pin1 {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .title_pin2 {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .ranking_button {
+    height: 30vw;
+    top: 23vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ranking_button_text {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, -50%);
+    font-size: 5vw;
+  }
+
+  .tag_yellow {
+    width: 50vw;
+    height: 10vw;
+  }
+
+  #high_school_button {
+    width: 50vw;
+    height: 10vw;
+    top: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #elem_school_button {
+    width: 50vw;
+    height: 10vw;
     top: 0px;
-    left: 223px;
-    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #mid_school_button {
+    width: 50vw;
+    height: 10vw;
+    top: 10vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tag_pin_blue {
+    width: 3vw;
+    height: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .paper_tate {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tate_pin1 {
+    width: 3vw;
+    height: 3vw;
+    top: 5px;
+    left: 5px;
+  }
+
+  .tate_pin2 {
+    width: 3vw;
+    height: 3vw;
+    top: 5px;
+    right: 0px;
+  }
+
+  .ranking_title {
+    width: 100%;
+    top: 18vw;
+    font-size: 7vw;
+  }
+
+  .ranking_text {
+    width: 100%;
+    top: 31vw;
+    left: 0px;
+    padding-left: 14vw;
+    font-size: 5vw;
+  }
+
+  .ranking_list_2 {
+    width: 100%;
+    height: 238vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .ranking_list_1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 118vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .paper_right {
+    position: relative;
+    width: 80%;
+    height: 120vw;
+    left: initial;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .paper_left {
+    position: relative;
+    width: 80%;
+    height: 120vw;
+    left: initial;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .paper_center {
+    position: relative;
+    width: 80%;
+    height: 120vw;
+    left: initial;
+  }
 }
