@@ -290,7 +290,7 @@ body {
 }
 
 .ranking_text {
-  width: 413px;
+  width: 330px;
   color: rgba(0, 0, 0, 1);
   position: relative;
   top: 165px;
@@ -347,6 +347,33 @@ body {
   top: 0px;
   left: 223px;
   overflow: hidden;
+}
+
+.ranking_content {
+  height: 360px;
+  counter-reset: rank;
+  list-style: none;
+  padding-left: 0px;
+  overflow: scroll;
+  display: none;
+}
+
+.ranking_content li::before {
+  counter-increment: rank;
+  content: counter(rank) "位";
+}
+
+.ranking_loading {
+  font-size: x-large;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-border {
+  width: 25px;
+  height: 25px;
 }
 
 @media screen and (min-width:680px) and (max-width:1000px) {
@@ -514,23 +541,27 @@ body {
 
   .paper_right {
     position: relative;
-    width: 42vw;
+    width: 41vw;
     height: 60vw;
     left: initial;
   }
 
   .paper_left {
     position: relative;
-    width: 42vw;
+    width: 41vw;
     height: 60vw;
     left: initial;
   }
 
   .paper_center {
     position: relative;
-    width: 42vw;
+    width: 41vw;
     height: 60vw;
     left: initial;
+  }
+
+  .ranking_content {
+    height: 36vw;
   }
 }
 
@@ -720,5 +751,9 @@ body {
     width: 80%;
     height: 120vw;
     left: initial;
+  }
+
+  .ranking_content {
+    height: 73vw;
   }
 }

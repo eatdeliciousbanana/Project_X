@@ -936,8 +936,8 @@ async function typingGame(silent_mode) {
             let name = $('#tuuchi_ranking_name').val();
             if (name === '') {
                 alert('ランキング表示名を入力してください');
-            } else if (name.length > 20) {
-                alert('ランキング表示名は1文字以上20文字以内で入力してください');
+            } else if (name.length > 10) {
+                alert('ランキング表示名は1文字以上10文字以内で入力してください');
             } else {
                 $('#tuuchi_btnRegister').html('完了');
                 $('#tuuchi_btnRegister').prop('disabled', true);
