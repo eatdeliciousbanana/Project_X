@@ -354,7 +354,16 @@ body {
   counter-reset: rank;
   list-style: none;
   padding-left: 0px;
-  overflow: scroll;
+  overflow: hidden scroll;
+  display: none;
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+}
+
+/*Google Chrome、Safariへの対応*/
+.ranking_content::-webkit-scrollbar {
   display: none;
 }
 
