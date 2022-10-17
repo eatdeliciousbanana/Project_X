@@ -4,37 +4,29 @@ $(function () {
     // ランキング読み込み
     getRanking().then((data) => {
         ranking = data;
-        writeHtml("elem_math", 5);
-        writeHtml("elem_jpn", 5);
-        writeHtml("elem_eng", 5);
-        writeHtml("elem_sci", 5);
-        writeHtml("elem_social", 5);
-        writeHtml("mid_math", 5);
-        writeHtml("mid_jpn", 5);
-        writeHtml("mid_eng", 5);
-        writeHtml("mid_sci", 5);
-        writeHtml("mid_social", 5);
-        writeHtml("high_math", 5);
-        writeHtml("high_jpn", 5);
-        writeHtml("high_eng", 5);
-        writeHtml("high_chem", 5);
-        writeHtml("high_physics", 5);
-        writeHtml("high_geography", 5);
-        writeHtml("high_bio", 5);
-        writeHtml("high_worldhis", 5);
-        writeHtml("high_japanhis", 5);
-        writeHtml("high_geology", 5);
+        writeHtml();
+        initPopover();
+        $('.ranking_loading').each((i, elem) => {
+            $(elem).hide();
+        });
+        $('.ranking_content').each((i, elem) => {
+            $(elem).show();
+        });
     });
 
-    function writeHtml(subj, range) {
-        for (let i = 0; i < range; i++) {
-            if (typeof ranking[subj][i] === "undefined") {
-                //  console.log("worning: Access violation in ranking '" + subj + "' array.")
-                break;
+    function writeHtml() {
+        for (let subj in ranking) {
+            for (let i = 0; i < ranking[subj].length; i++) {
+                $(`.${subj}`).append(`<li style="width:fit-content;" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="${ranking[subj][i]['score']}点" data-bs-trigger="hover"> ${ranking[subj][i]['name']}</li>`);
             }
-            // 左から1番目の()は書き込みたいhtmlの要素、2番目のeq()でhtmlにおける要素の順番指定、3番目のhtml()でhtmlに書き込む文字列を指定
-            $("ol." + subj + " > li").eq(i).html(ranking[subj][i]["name"] + " " + ranking[subj][i]["score"] + "点");
         }
+    }
+
+    function initPopover() {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
     }
 
     // 全教科のランキングを取得する関数
